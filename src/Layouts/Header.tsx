@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 //import images
 import logoSm from "../assets/images/logo-sm.png"
@@ -13,8 +13,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { createSelector } from 'reselect';
 import NotificationDropdown from 'Components/Common/NotificationDropdown';
 import SearchDropdown from 'Components/Common/SearchDropdown';
+import classNames from 'classnames';
 
 const Header = ({ headerClass }: any) => {
+    const { pathname } = useLocation()
     const dispatch: any = useDispatch();
 
 
@@ -22,6 +24,13 @@ const Header = ({ headerClass }: any) => {
         (state: any) => state.Layout,
         (sidebarVisibilitytype: any) => sidebarVisibilitytype.sidebarVisibilitytype
     );
+
+    const chatLayoutState = createSelector((state: any) => state.ChatLayout, (state) => ({
+        isOnChatDetailsPage: state?.isOnChatDetailsPage
+    }))
+
+    const { isOnChatDetailsPage } = useSelector(chatLayoutState)
+
     // Inside your component
     const sidebarVisibilitytype = useSelector(selectDashboardData);
 
@@ -93,30 +102,43 @@ const Header = ({ headerClass }: any) => {
             document.body.style.overflow = "";
         };
     }, [isNotificationDropdown, isSmallScreen, isSearchDropdown]);
+
     return (
         <React.Fragment>
-            <header id="page-topbar" className={headerClass}>
+            <header id="page-topbar"
+                className={classNames(headerClass, {
+                    'd-none': isOnChatDetailsPage,
+                    "d-block": !isOnChatDetailsPage
+                })}>
                 <div className="layout-width">
                     <div className="navbar-header">
                         <div className="d-flex">
-                            <div className="navbar-brand-box horizontal-logo">
-                                <Link to="/" className="logo logo-light">
-                                    <span className="logo-sm">
-                                        <img src={logoSm} alt="" height="48" />
-                                    </span>
-                                    <span className="logo-lg">
-                                        <img src={logoLight} alt="" height="48" />
-                                    </span>
-                                </Link>
-                                <Link to="/" className="logo logo-dark">
-                                    <span className="logo-sm">
-                                        <img src={logoSm} alt="" height="48" />
-                                    </span>
-                                    <span className="logo-lg">
-                                        <img src={logoDark} alt="" height="48" />
-                                    </span>
-                                </Link>
-                            </div>
+                            {
+                                pathname?.includes("/chat") ?
+
+                                    <button className='btn '>
+                                        <i className='ri  ri-arrow-left-line fs-1'></i>
+                                    </button>
+                                    :
+                                    <div className="navbar-brand-box horizontal-logo">
+                                        <Link to="/" className="logo logo-light">
+                                            <span className="logo-sm">
+                                                <img src={logoSm} alt="" height="48" />
+                                            </span>
+                                            <span className="logo-lg">
+                                                <img src={logoLight} alt="" height="48" />
+                                            </span>
+                                        </Link>
+                                        <Link to="/" className="logo logo-dark">
+                                            <span className="logo-sm">
+                                                <img src={logoSm} alt="" height="48" />
+                                            </span>
+                                            <span className="logo-lg">
+                                                <img src={logoDark} alt="" height="48" />
+                                            </span>
+                                        </Link>
+                                    </div>
+                            }
                             {
                                 (!isNotificationDropdown && !isSearchDropdown) &&
                                 <div className='d-block d-md-none'>
@@ -181,44 +203,48 @@ const Header = ({ headerClass }: any) => {
                         </div>
                     </div>
                 </div>
-                <nav className='navbar-header d-md-none w-100 h-auto pb-2'>
-                    <ul className='d-flex w-100 justify-content-between mb-0 align-items-center list-unstyled'>
-                        <li>
-                            <Link to="#">
-                                <i className='ri ri-home-line fs-2'></i>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="#">
-                                <i className='ri ri-user-smile-line fs-2'></i>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="#">
-                                <i className='ri ri-settings-2-line fs-2'></i>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="#">
-                                <i className='ri ri-mail-send-line fs-2'></i>
-                            </Link>
-                        </li>
-                        <li>
-                            <button
-                                onClick={() => { }}
-                                className={"btn btn-light p-2 btn-icon rounded-circle btn-sm favourite-btn"}
-                            >
-                                <img
-                                    className='rounded-circle'
-                                    height={32}
-                                    width={32}
-                                    src='https://themes.themesbrand.com/velzon/react-ts/master/static/media/avatar-2.58874a6f667b9b04ce55.jpg'
-                                    alt='user-image'
-                                />
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
+                {
+                    (isSmallScreen && !pathname?.includes("/chat")) &&
+
+                    <nav className='navbar-header d-md-none w-100 h-auto pb-2'>
+                        <ul className='d-flex w-100 justify-content-between mb-0 align-items-center list-unstyled'>
+                            <li>
+                                <Link to="#">
+                                    <i className='ri ri-home-line fs-2'></i>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="#">
+                                    <i className='ri ri-user-smile-line fs-2'></i>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="#">
+                                    <i className='ri ri-settings-2-line fs-2'></i>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="#">
+                                    <i className='ri ri-mail-send-line fs-2'></i>
+                                </Link>
+                            </li>
+                            <li>
+                                <button
+                                    onClick={() => { }}
+                                    className={"btn btn-light p-2 btn-icon rounded-circle btn-sm favourite-btn"}
+                                >
+                                    <img
+                                        className='rounded-circle'
+                                        height={32}
+                                        width={32}
+                                        src='https://themes.themesbrand.com/velzon/react-ts/master/static/media/avatar-2.58874a6f667b9b04ce55.jpg'
+                                        alt='user-image'
+                                    />
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                }
 
             </header>
         </React.Fragment>

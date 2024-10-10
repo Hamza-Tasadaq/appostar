@@ -323,7 +323,7 @@ const Calender = () => {
                 show={deleteModal}
                 onDeleteClick={handleDeleteEvent}
                 onCloseClick={() => { setDeleteModal(false); }} recordId={""} />
-            <div className="page-content no-padding-x overflow-x-hidden-md padding-top-sm">
+            <div className="page-content no-padding-x overflow-x-hidden-md padding-top-large-sm">
                 <Container fluid className="no-padding-x">
                     {/* <BreadCrumb title="Month Grid" pageTitle="Apps" /> */}
                     <Row>

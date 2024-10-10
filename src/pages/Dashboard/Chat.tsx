@@ -25,7 +25,8 @@ import {
     getDirectContact as onGetDirectContact,
     getMessages as onGetMessages,
     addMessage as onAddMessage,
-    deleteMessage as onDeleteMessage
+    deleteMessage as onDeleteMessage,
+    toggleIsOnChatDetailsPage
 } from "../../slices/thunks";
 
 import avatar2 from "../../assets/images/users/avatar-2.jpg";
@@ -92,6 +93,7 @@ type userMessagesType = {
 
 const Chat = () => {
     const userChatShow: any = useRef();
+    const wrapper: any = useRef()
 
     const dispatch = useDispatch<any>();
     const [isInfoDetails, setIsInfoDetails] = useState<boolean>(false);
@@ -105,6 +107,8 @@ const Chat = () => {
     const [emojiPicker, setemojiPicker] = useState<boolean>(false);
 
     const selectLayoutState = (state: any) => state.Chat;
+
+
     const chatProperties = createSelector(
         selectLayoutState,
         (state: any) => ({
@@ -113,7 +117,6 @@ const Chat = () => {
             loading: state?.loading
         })
     );
-
 
     // Inside your component
     const {
@@ -143,7 +146,10 @@ const Chat = () => {
         setUser_Status(chats.status)
         dispatch(onGetMessages(chats.roomId));
         if (window.innerWidth < 892) {
+            dispatch(toggleIsOnChatDetailsPage())
             userChatShow.current.classList.add("user-chat-show");
+
+            wrapper?.current?.classList.add("padding-top-4")
         }
         // remove unread msg on read in chat
         var unreadMessage: any = document.getElementById("unread-msg-user" + chats.id);
@@ -157,7 +163,9 @@ const Chat = () => {
     };
 
     const backToUserChat = () => {
+        dispatch(toggleIsOnChatDetailsPage())
         userChatShow.current.classList.remove("user-chat-show");
+        wrapper?.current?.classList.remove("padding-top-4")
     }
 
     // add message
@@ -225,9 +233,9 @@ const Chat = () => {
     document.title = "Chat";
     return (
         <React.Fragment>
-            <div className="page-content no-padding-x overflow-x-hidden-md padding-top-sm">
+            <div ref={wrapper} className="page-content no-padding-x overflow-x-hidden-md no-padding-bottom-md padding-top-small-sm">
                 <Container fluid>
-                    <div className="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
+                    <div className="chat-wrapper no-padding-bottom-md d-lg-flex gap-1 mx-n4 mt-n4 p-1">
                         <div className="chat-leftsidebar minimal-border">
                             <div className="px-4 pt-4 mb-2">
                                 <div className="d-flex align-items-start">
@@ -236,37 +244,10 @@ const Chat = () => {
                                     </div>
                                 </div>
                             </div>
-                            {/* <Nav tabs className="nav nav-tabs nav-tabs-custom nav-success nav-justified mb-3">
-                                <NavItem>
-                                    <NavLink
-                                        style={{ cursor: "pointer" }}
-                                        className={classnames("text-start", {
-                                            active: customActiveTab === "1",
-                                        })}
-                                        onClick={() => {
-                                            toggleCustom("1");
-                                        }}
-
-                                    >
-                                        Chats
-                                    </NavLink>
-                                </NavItem>
-                            </Nav> */}
-
-                            {/* <TabContent activeTab={customActiveTab} className="text-muted"> */}
-                            {/* <TabPane tabId="1" id="chats"> */}
                             {
                                 isLoading ? <Spinners setLoading={setLoading} />
                                     :
                                     <SimpleBar className="chat-room-list pt-3" style={{ margin: "-16px 0px 0px" }}>
-                                        <div className="d-flex align-items-center px-4 mb-2">
-                                            <div className="flex-grow-1">
-                                                <h4 className="mb-0 fs-11 text-muted text-uppercase">
-                                                    Direct Messages
-                                                </h4>
-                                            </div>
-                                        </div>
-
                                         <div className="chat-message-list">
                                             <ul className="list-unstyled chat-list chat-user-list users-list" id="userList">
                                                 {(chats || []).map((chatContact: chatContactType) => (
@@ -275,7 +256,7 @@ const Chat = () => {
                                                             <Link to="#!" onClick={() => userChatOpen(chat)} className={chat.badge && chat.badge !== 0 ? "unread-msg-user" : ''} id={"msgUser" + chat.id}>
                                                                 <div className="d-flex align-items-center">
                                                                     <div className={`flex-shrink-0 chat-user-img ${chat.status === 'Online' ? "online" : "away"} align-self-center me-2 ms-0`}>
-                                                                        <div className="avatar-xxs">
+                                                                        <div className="avatar-xs">
                                                                             {chat.image ? (
                                                                                 <img src={chat.image} className="rounded-circle img-fluid userprofile" alt="" />
                                                                             ) : (
@@ -303,8 +284,6 @@ const Chat = () => {
                                         </div>
                                     </SimpleBar>
                             }
-                            {/* </TabPane> */}
-                            {/* </TabContent> */}
                         </div>
 
                         <div className="user-chat w-100 overflow-hidden minimal-border" ref={userChatShow}>

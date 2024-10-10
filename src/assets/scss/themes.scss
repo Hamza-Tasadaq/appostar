@@ -292,12 +292,27 @@ aside.EmojiPickerReact.epr-main {
   }
 }
 
-@media (max-width: 600px) {
-  .padding-top-sm {
-    padding-top: 142px !important;
+@media (max-width: 767px) {
+  .padding-top-small-sm {
+    padding-top: calc(4px + #{$header-height}) !important;
+  }
+  .padding-top-large-sm {
+    padding-top: calc(4px + #{$header-height-lg}) !important;
   }
   .overflow-x-hidden-md {
     overflow-x: hidden;
+  }
+  .no-padding-bottom-md {
+    padding-bottom: 0 !important;
+  }
+  .no-margin-bottom-md {
+    margin-bottom: 0 !important;
+  }
+  .no-padding-top {
+    padding-top: 0 !important;
+  }
+  .padding-top-4 {
+    padding-top: 1rem !important ;
   }
 }
 

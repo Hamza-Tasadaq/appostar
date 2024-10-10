@@ -11,6 +11,7 @@ export * from "./layouts/thunk";
 export * from "./calendar/thunk";
 // //Chat
 export * from "./chat/thunk";
+export * from "./chat-layout/thunk";
 // //Ecommerce
 // export * from "./ecommerce/thunk";
 

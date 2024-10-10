@@ -13,6 +13,8 @@ import ProfileReducer from "./auth/profile/reducer";
 import CalendarReducer from "./calendar/reducer";
 // //Chat
 import chatReducer from "./chat/reducer";
+import chatLayoutReducer from "./chat-layout/reducer"
+
 // //Ecommerce
 // import EcommerceReducer from "./ecommerce/reducer";
 
@@ -80,6 +82,7 @@ const rootReducer = combineReducers({
     Profile: ProfileReducer,
     Calendar: CalendarReducer,
     Chat: chatReducer,
+    ChatLayout: chatLayoutReducer,
     // Projects: ProjectsReducer,
     // Ecommerce: EcommerceReducer,
     // Tasks: TasksReducer,
