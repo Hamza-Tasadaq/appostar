@@ -247,7 +247,7 @@ const Chat = () => {
                             {
                                 isLoading ? <Spinners setLoading={setLoading} />
                                     :
-                                    <SimpleBar className="chat-room-list pt-3" style={{ margin: "-16px 0px 0px" }}>
+                                    <SimpleBar className="chat-room-list h-100 pt-3" style={{ margin: "-16px 0px 0px" }}>
                                         <div className="chat-message-list">
                                             <ul className="list-unstyled chat-list chat-user-list users-list" id="userList">
                                                 {(chats || []).map((chatContact: chatContactType) => (

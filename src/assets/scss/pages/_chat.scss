@@ -10,7 +10,7 @@
 // chat left sidebar
 
 .chat-leftsidebar {
-  height: calc(100vh - #{$header-height});
+  height: calc(100dvh - 54px);
   position: relative;
   background-color: var(--#{$prefix}secondary-bg);
 
@@ -105,10 +105,10 @@
 }
 
 .chat-room-list {
-  max-height: calc(100vh - 296px);
+  max-height: calc(100dvh - 122px);
 
   @media (max-width: 991.98px) {
-    height: calc(100vh - 296px);
+    height: calc(100dvh - 122px) !important;
   }
 }
 
@@ -216,7 +216,7 @@
 .chat-conversation {
   height: calc(100vh - 299px);
   @media (max-width: 991.98px) {
-    height: calc(100vh - 275px);
+    height: calc(100vh - 194px);
   }
 
   .simplebar-content-wrapper {

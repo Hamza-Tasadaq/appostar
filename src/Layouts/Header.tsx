@@ -108,8 +108,8 @@ const Header = ({ headerClass }: any) => {
         <React.Fragment>
             <header id="page-topbar"
                 className={classNames(headerClass, {
-                    'd-none': isOnChatDetailsPage,
-                    "d-block": !isOnChatDetailsPage
+                    'd-none opacity-0': isOnChatDetailsPage,
+                    "d-block opacity-100": !isOnChatDetailsPage
                 })}>
                 <div className="layout-width">
                     <div className="navbar-header">
