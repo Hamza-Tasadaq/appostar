@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 //import images
 import logoSm from "../assets/images/logo-sm.png"
@@ -18,6 +18,7 @@ import classNames from 'classnames';
 const Header = ({ headerClass }: any) => {
     const { pathname } = useLocation()
     const dispatch: any = useDispatch();
+    const navigate = useNavigate()
 
 
     const selectDashboardData = createSelector(
@@ -113,34 +114,26 @@ const Header = ({ headerClass }: any) => {
                 <div className="layout-width">
                     <div className="navbar-header">
                         <div className="d-flex">
+                            <div className="navbar-brand-box horizontal-logo">
+                                <Link to="/" className="logo logo-light">
+                                    <span className="logo-sm">
+                                        <img src={logoSm} alt="" height="48" />
+                                    </span>
+                                    <span className="logo-lg">
+                                        <img src={logoLight} alt="" height="48" />
+                                    </span>
+                                </Link>
+                                <Link to="/" className="logo logo-dark">
+                                    <span className="logo-sm">
+                                        <img src={logoSm} alt="" height="48" />
+                                    </span>
+                                    <span className="logo-lg">
+                                        <img src={logoDark} alt="" height="48" />
+                                    </span>
+                                </Link>
+                            </div>
                             {
-                                pathname?.includes("/chat") ?
-
-                                    <button className='btn '>
-                                        <i className='ri  ri-arrow-left-line fs-1'></i>
-                                    </button>
-                                    :
-                                    <div className="navbar-brand-box horizontal-logo">
-                                        <Link to="/" className="logo logo-light">
-                                            <span className="logo-sm">
-                                                <img src={logoSm} alt="" height="48" />
-                                            </span>
-                                            <span className="logo-lg">
-                                                <img src={logoLight} alt="" height="48" />
-                                            </span>
-                                        </Link>
-                                        <Link to="/" className="logo logo-dark">
-                                            <span className="logo-sm">
-                                                <img src={logoSm} alt="" height="48" />
-                                            </span>
-                                            <span className="logo-lg">
-                                                <img src={logoDark} alt="" height="48" />
-                                            </span>
-                                        </Link>
-                                    </div>
-                            }
-                            {
-                                (!isNotificationDropdown && !isSearchDropdown) &&
+                                (!isNotificationDropdown && !isSearchDropdown && !pathname?.includes("/chat")) &&
                                 <div className='d-block d-md-none'>
                                     <Link to="/" className="logo logo-dark">
                                         <span className="logo-lg">
@@ -155,13 +148,17 @@ const Header = ({ headerClass }: any) => {
                                 </div>
                             }
                             {
-                                (isNotificationDropdown || isSearchDropdown) &&
+                                (isNotificationDropdown || isSearchDropdown || pathname?.includes("/chat")) &&
                                 <button className='d-md-none btn btn-icon' onClick={() => {
                                     if (isNotificationDropdown) {
                                         toggleNotificationDropdown()
                                     }
                                     if (isSearchDropdown) {
                                         toggleSearchDropdown()
+                                    }
+
+                                    if (pathname?.includes("/chat")) {
+                                        navigate(-1)
                                     }
                                 }}>
                                     <i className=' ri-arrow-left-line fs-2'></i>
