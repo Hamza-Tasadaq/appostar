@@ -1,9 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import {
     Container,
-    Button,
-    UncontrolledTooltip,
-    Input,
     DropdownToggle,
     DropdownMenu,
     Dropdown,
@@ -13,22 +10,14 @@ import {
     Card,
     CardBody,
     UncontrolledDropdown,
-    Nav,
-    NavItem,
-    NavLink,
-    TabContent,
-    TabPane,
     Alert
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import SimpleBar from "simplebar-react";
-import classnames from "classnames";
 import EmojiPicker from 'emoji-picker-react';
 
 //Import Icons
 import FeatherIcon from "feather-icons-react";
-
-import { chatContactData } from "../../common/data";
 
 //redux
 import { useSelector, useDispatch } from "react-redux";
@@ -103,12 +92,6 @@ type userMessagesType = {
 
 const Chat = () => {
     const userChatShow: any = useRef();
-    const [customActiveTab, setcustomActiveTab] = useState("1");
-    const toggleCustom = (tab: any) => {
-        if (customActiveTab !== tab) {
-            setcustomActiveTab(tab);
-        }
-    };
 
     const dispatch = useDispatch<any>();
     const [isInfoDetails, setIsInfoDetails] = useState<boolean>(false);
@@ -117,7 +100,6 @@ const Chat = () => {
     const [Chat_Box_Image, setChat_Box_Image] = useState<any>(avatar2);
     const [currentRoomId, setCurrentRoomId] = useState<any>(1);
     const [curMessage, setcurMessage] = useState<string>("");
-    const [search_Menu, setsearch_Menu] = useState<boolean>(false);
     const [settings_Menu, setsettings_Menu] = useState<boolean>(false);
     const [reply, setreply] = useState<any>("");
     const [emojiPicker, setemojiPicker] = useState<boolean>(false);
@@ -139,10 +121,6 @@ const Chat = () => {
     } = useSelector(chatProperties);
     const [isLoading, setLoading] = useState(loading);
 
-    //Toggle Chat Box Menus
-    const toggleSearch = () => {
-        setsearch_Menu(!search_Menu);
-    };
 
     //Info details offcanvas
     const toggleInfo = () => {
@@ -221,48 +199,6 @@ const Chat = () => {
         }
     };
 
-    //serach recent user
-
-    const searchUsers = () => {
-        const input = document.getElementById("search-user") as HTMLInputElement;
-        const filter = input.value.toUpperCase();
-        const userList = document.getElementsByClassName("users-list");
-
-        Array.prototype.forEach.call(userList, (el: HTMLElement) => {
-            const li = el.getElementsByTagName("li");
-
-            for (let i = 0; i < li.length; i++) {
-                const a = li[i].getElementsByTagName("a")[0];
-                const txtValue = a.textContent || a.innerText;
-
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        });
-    };
-
-    //Search Message
-    const searchMessages = () => {
-        const searchInput = document.getElementById("searchMessage") as HTMLInputElement;
-        const searchFilter = searchInput.value.toUpperCase();
-        const searchUL = document.getElementById("users-conversation") as HTMLInputElement;
-        const searchLI = searchUL.getElementsByTagName("li");
-
-        Array.prototype.forEach.call(searchLI, (search: HTMLElement) => {
-            const a = search.getElementsByTagName("p")[0] || '';
-            const txtValue = a.textContent || a.innerText || '';
-
-            if (txtValue.toUpperCase().indexOf(searchFilter) > -1) {
-                search.style.display = "";
-            } else {
-                search.style.display = "none";
-            }
-        });
-    };
-
     // Copy Message
     const handleClick = (ele: HTMLElement) => {
         const copy = ele.closest(".chat-list")?.querySelector('.ctext-content')?.innerHTML;
@@ -293,239 +229,82 @@ const Chat = () => {
                 <Container fluid>
                     <div className="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
                         <div className="chat-leftsidebar minimal-border">
-                            <div className="px-4 pt-4 mb-3">
+                            <div className="px-4 pt-4 mb-2">
                                 <div className="d-flex align-items-start">
                                     <div className="flex-grow-1">
-                                        <h5 className="mb-4">Chats</h5>
+                                        <h5 className="">Chats</h5>
                                     </div>
-                                    <div className="flex-shrink-0">
-                                        <UncontrolledTooltip placement="bottom" target="addcontact">
-                                            Add Contact
-                                        </UncontrolledTooltip>
-
-                                        <Button
-                                            color=""
-                                            id="addcontact"
-                                            className="btn btn-soft-success btn-sm shadow-none material-shadow-none"
-                                        >
-                                            <i className="ri-add-line align-bottom"></i>
-                                        </Button>
-                                    </div>
-                                </div>
-                                <div className="search-box">
-                                    <input
-                                        onKeyUp={searchUsers}
-                                        id="search-user"
-                                        type="text"
-                                        className="form-control bg-light border-light"
-                                        placeholder="Search here..."
-                                    />
-                                    <i className="ri-search-2-line search-icon"></i>
                                 </div>
                             </div>
-
-                            <Nav tabs className="nav nav-tabs nav-tabs-custom nav-success nav-justified mb-3">
+                            {/* <Nav tabs className="nav nav-tabs nav-tabs-custom nav-success nav-justified mb-3">
                                 <NavItem>
                                     <NavLink
                                         style={{ cursor: "pointer" }}
-                                        className={classnames({
+                                        className={classnames("text-start", {
                                             active: customActiveTab === "1",
                                         })}
                                         onClick={() => {
                                             toggleCustom("1");
                                         }}
+
                                     >
                                         Chats
                                     </NavLink>
                                 </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        style={{ cursor: "pointer" }}
-                                        className={classnames({
-                                            active: customActiveTab === "2",
-                                        })}
-                                        onClick={() => {
-                                            toggleCustom("2");
-                                        }}
-                                    >
-                                        Contacts
-                                    </NavLink>
-                                </NavItem>
-                            </Nav>
+                            </Nav> */}
 
-                            <TabContent activeTab={customActiveTab} className="text-muted">
-                                <TabPane tabId="1" id="chats">
-                                    {
-                                        isLoading ? <Spinners setLoading={setLoading} />
-                                            :
-                                            <SimpleBar className="chat-room-list pt-3" style={{ margin: "-16px 0px 0px" }}>
-                                                <div className="d-flex align-items-center px-4 mb-2">
-                                                    <div className="flex-grow-1">
-                                                        <h4 className="mb-0 fs-11 text-muted text-uppercase">
-                                                            Direct Messages
-                                                        </h4>
-                                                    </div>
-                                                    <div className="flex-shrink-0">
-                                                        <UncontrolledTooltip placement="bottom" target="addnewmsg">
-                                                            New Message
-                                                        </UncontrolledTooltip>
-
-                                                        <button
-                                                            type="button"
-                                                            id="addnewmsg"
-                                                            className="btn btn-soft-success btn-sm material-shadow"
-                                                        >
-                                                            <i className="ri-add-line align-bottom"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-
-                                                <div className="chat-message-list">
-                                                    <ul className="list-unstyled chat-list chat-user-list users-list" id="userList">
-                                                        {(chats || []).map((chatContact: chatContactType) => (
-                                                            chatContact.direactContact && (chatContact.direactContact || [])?.map((chat) => (
-                                                                <li key={chat.id + chat.status} className={Chat_Box_Username === chat.name ? "active" : ""}>
-                                                                    <Link to="#!" onClick={() => userChatOpen(chat)} className={chat.badge && chat.badge !== 0 ? "unread-msg-user" : ''} id={"msgUser" + chat.id}>
-                                                                        <div className="d-flex align-items-center">
-                                                                            <div className={`flex-shrink-0 chat-user-img ${chat.status === 'Online' ? "online" : "away"} align-self-center me-2 ms-0`}>
-                                                                                <div className="avatar-xxs">
-                                                                                    {chat.image ? (
-                                                                                        <img src={chat.image} className="rounded-circle img-fluid userprofile" alt="" />
-                                                                                    ) : (
-                                                                                        <div className={"avatar-title rounded-circle bg-" + chat.bgColor + " userprofile"}>
-                                                                                            {chat.name.charAt(0)}
-                                                                                        </div>
-                                                                                    )}
-                                                                                </div>
-                                                                                <span className="user-status"></span>
-                                                                            </div>
-                                                                            <div className="flex-grow-1 overflow-hidden">
-                                                                                <p className="text-truncate mb-0">{chat.name}</p>
-                                                                            </div>
-                                                                            {chat.badge &&
-                                                                                <div className="flex-shrink-0" id={"unread-msg-user" + chat.id}>
-                                                                                    <span className="badge bg-dark-subtle text-body rounded p-1">{chat.badge}</span>
-                                                                                </div>
-                                                                            }
-                                                                        </div>
-                                                                    </Link>
-                                                                </li>
-                                                            )))
-                                                        )}
-                                                    </ul>
-                                                </div>
-
-                                                <div className="d-flex align-items-center px-4 mt-4 pt-2 mb-2">
-                                                    <div className="flex-grow-1">
-                                                        <h4 className="mb-0 fs-11 text-muted text-uppercase">
-                                                            Channels
-                                                        </h4>
-                                                    </div>
-                                                    <div className="flex-shrink-0">
-                                                        <UncontrolledTooltip
-                                                            placement="bottom"
-                                                            target="createnewmsg"
-                                                        >
-                                                            Create group
-                                                        </UncontrolledTooltip>
-                                                        <Button
-                                                            color=""
-                                                            id="createnewmsg"
-                                                            className="btn btn-soft-success btn-sm"
-                                                        >
-                                                            <i className="ri-add-line align-bottom"></i>
-                                                        </Button>
-                                                    </div>
-                                                </div>
-
-                                                <div className="chat-message-list">
-                                                    <ul className="list-unstyled chat-list chat-user-list mb-0 users-list" id="channelList">
-                                                        {(chats || []).map((chatsChannel: chatContactType) => (
-                                                            chatsChannel.channelsList && (chatsChannel.channelsList || [])?.map((channel, key: number) => (
-                                                                <React.Fragment key={key}>
-                                                                    <li className={Chat_Box_Username === channel.name ? "active" : ""}>
-                                                                        <Link to="#" className="unread-msg-user" onClick={() => userChatOpen(channel)}>
-                                                                            <div className="d-flex align-items-center">
-                                                                                <div className="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
-                                                                                    <div className="avatar-xxs">
-                                                                                        <div className="avatar-title bg-light rounded-circle text-body">
-                                                                                            #
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div className="flex-grow-1 overflow-hidden">
-                                                                                    <p className="text-truncate mb-0">
-                                                                                        {channel.name}
-                                                                                    </p>
-                                                                                </div>
-                                                                                {channel.unReadMessage && (
-                                                                                    <div className="flex-shrink-0" id={"unread-msg-user" + channel.id}>
-                                                                                        <span className="badge bg-dark-subtle text-body rounded p-1">
-                                                                                            {channel.unReadMessage}
-                                                                                        </span>
-                                                                                    </div>
-                                                                                )}
-                                                                            </div>
-                                                                        </Link>
-                                                                    </li>
-                                                                </React.Fragment>
-                                                            ))
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            </SimpleBar>
-                                    }
-                                </TabPane>
-                                <TabPane tabId="2" id="contacts">
+                            {/* <TabContent activeTab={customActiveTab} className="text-muted"> */}
+                            {/* <TabPane tabId="1" id="chats"> */}
+                            {
+                                isLoading ? <Spinners setLoading={setLoading} />
+                                    :
                                     <SimpleBar className="chat-room-list pt-3" style={{ margin: "-16px 0px 0px" }}>
-                                        {
-                                            isLoading ? <Spinners setLoading={setLoading} />
-                                                :
-                                                <div className="sort-contact">
-                                                    {(chatContactData || []).map((contact: chatContactDataTye, key: number) => (
-                                                        <div className="mt-3" key={key}>
-                                                            <div className="contact-list-title">{contact.title}</div>
-                                                            <ul id={"contact-sort-" + contact.title} className="list-unstyled contact-list">
-                                                                {
-                                                                    contact.contacts && contact.contacts.map((item, key: number) => (
-                                                                        <li key={key} className={Chat_Box_Username === item.name ? "active" : ""}>
-                                                                            <div className="d-flex align-items-center">
-                                                                                <div className="flex-shrink-0 me-2">
-                                                                                    <div className="avatar-xxs">
-                                                                                        {item.image ? <img src={item.image} className="img-fluid rounded-circle" alt="" /> :
-                                                                                            <span className="avatar-title rounded-circle bg-primary fs-10">
-                                                                                                {item.name.charAt(0) + item.name.split(" ").slice(-1).toString().charAt(0)}
-                                                                                            </span>}
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div className="flex-grow-1" onClick={() => userChatOpen(item)}>
-                                                                                    <p className="text-truncate contactlist-name mb-0">{item.name}</p>
-                                                                                </div>
-                                                                                <div className="flex-shrink-0">
-                                                                                    <UncontrolledDropdown>
-                                                                                        <DropdownToggle tag="a" className="text-muted">
-                                                                                            <i className="ri-more-2-fill" />
-                                                                                        </DropdownToggle>
-                                                                                        <DropdownMenu className="dropdown-menu-end">
-                                                                                            <DropdownItem><i className="ri-pencil-line text-muted me-2 align-bottom" />Edit</DropdownItem>
-                                                                                            <DropdownItem><i className="ri-forbid-2-line text-muted me-2 align-bottom" />Block</DropdownItem>
-                                                                                            <DropdownItem><i className="ri-delete-bin-6-line text-muted me-2 align-bottom" /> Remove</DropdownItem>
-                                                                                        </DropdownMenu>
-                                                                                    </UncontrolledDropdown>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                    )
-                                                                    )}
-                                                            </ul>
-                                                        </div>)
-                                                    )}
-                                                </div>
-                                        }
-                                    </SimpleBar>
-                                </TabPane>
+                                        <div className="d-flex align-items-center px-4 mb-2">
+                                            <div className="flex-grow-1">
+                                                <h4 className="mb-0 fs-11 text-muted text-uppercase">
+                                                    Direct Messages
+                                                </h4>
+                                            </div>
+                                        </div>
 
-                            </TabContent>
+                                        <div className="chat-message-list">
+                                            <ul className="list-unstyled chat-list chat-user-list users-list" id="userList">
+                                                {(chats || []).map((chatContact: chatContactType) => (
+                                                    chatContact.direactContact && (chatContact.direactContact || [])?.map((chat) => (
+                                                        <li key={chat.id + chat.status} className={Chat_Box_Username === chat.name ? "active" : ""}>
+                                                            <Link to="#!" onClick={() => userChatOpen(chat)} className={chat.badge && chat.badge !== 0 ? "unread-msg-user" : ''} id={"msgUser" + chat.id}>
+                                                                <div className="d-flex align-items-center">
+                                                                    <div className={`flex-shrink-0 chat-user-img ${chat.status === 'Online' ? "online" : "away"} align-self-center me-2 ms-0`}>
+                                                                        <div className="avatar-xxs">
+                                                                            {chat.image ? (
+                                                                                <img src={chat.image} className="rounded-circle img-fluid userprofile" alt="" />
+                                                                            ) : (
+                                                                                <div className={"avatar-title rounded-circle bg-" + chat.bgColor + " userprofile"}>
+                                                                                    {chat.name.charAt(0)}
+                                                                                </div>
+                                                                            )}
+                                                                        </div>
+                                                                        <span className="user-status"></span>
+                                                                    </div>
+                                                                    <div className="flex-grow-1 overflow-hidden">
+                                                                        <p className="text-truncate mb-0">{chat.name}</p>
+                                                                    </div>
+                                                                    {chat.badge &&
+                                                                        <div className="flex-shrink-0" id={"unread-msg-user" + chat.id}>
+                                                                            <span className="badge bg-dark-subtle text-body rounded p-1">{chat.badge}</span>
+                                                                        </div>
+                                                                    }
+                                                                </div>
+                                                            </Link>
+                                                        </li>
+                                                    )))
+                                                )}
+                                            </ul>
+                                        </div>
+                                    </SimpleBar>
+                            }
+                            {/* </TabPane> */}
+                            {/* </TabContent> */}
                         </div>
 
                         <div className="user-chat w-100 overflow-hidden minimal-border" ref={userChatShow}>
@@ -572,28 +351,6 @@ const Chat = () => {
                                                 </Col>
                                                 <Col sm={8} xs={4}>
                                                     <ul className="list-inline user-chat-nav text-end mb-0">
-                                                        <li className="list-inline-item m-0">
-                                                            <Dropdown isOpen={search_Menu} toggle={toggleSearch}>
-                                                                <DropdownToggle className="btn btn-ghost-secondary btn-icon material-shadow-none" tag="button">
-                                                                    <FeatherIcon icon="search" className="icon-sm" />
-                                                                </DropdownToggle>
-                                                                <DropdownMenu className="p-0 dropdown-menu-end dropdown-menu-lg">
-                                                                    <div className="p-2">
-                                                                        <div className="search-box">
-                                                                            <Input
-                                                                                onKeyUp={searchMessages}
-                                                                                type="text"
-                                                                                className="form-control bg-light border-light"
-                                                                                placeholder="Search here..."
-                                                                                id="searchMessage"
-                                                                            />
-                                                                            <i className="ri-search-2-line search-icon"></i>
-                                                                        </div>
-                                                                    </div>
-                                                                </DropdownMenu>
-                                                            </Dropdown>
-                                                        </li>
-
                                                         <li className="list-inline-item d-none d-lg-inline-block m-0">
                                                             <button type="button" className="btn btn-ghost-secondary btn-icon material-shadow-none" onClick={toggleInfo}                              >
                                                                 <FeatherIcon icon="info" className="icon-sm" />
@@ -790,7 +547,7 @@ const Chat = () => {
                                                             <div className="links-list-item">
                                                                 <button
                                                                     type="button"
-                                                                    className="btn btn-link text-decoration-none emoji-btn"
+                                                                    className="btn btn-links text-decoration-none emoji-btn"
                                                                     id="emoji-btn"
                                                                     onClick={() => setemojiPicker(!emojiPicker)}
                                                                 >
@@ -821,7 +578,7 @@ const Chat = () => {
                                                                     type="button"
                                                                     disabled={curMessage === ""}
                                                                     onClick={() => { addMessage(); setemojiPicker(false); setemojiArray(''); }}
-                                                                    className="btn btn-success chat-send waves-effect waves-light disable"
+                                                                    className="btn btn-primary chat-send waves-effect waves-light disable"
                                                                 >
                                                                     <i className="ri-send-plane-2-fill align-bottom"></i>
                                                                 </button>
