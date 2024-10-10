@@ -59,18 +59,18 @@ interface chatContactType {
     direactContact?: DirectContact[];
     channelsList?: channelsListType[];
 }
-interface contact {
-    id: number,
-    name: string,
-    status: string,
-    roomId: number,
-    image?: string
-}
-interface chatContactDataTye {
-    id: number,
-    title: string,
-    contacts?: contact[],
-}
+// interface contact {
+//     id: number,
+//     name: string,
+//     status: string,
+//     roomId: number,
+//     image?: string
+// }
+// interface chatContactDataTye {
+//     id: number,
+//     title: string,
+//     contacts?: contact[],
+// }
 type UserMessage = {
     id: number;
     from_id: number;
