@@ -214,9 +214,9 @@
 }
 
 .chat-conversation {
-  height: calc(100vh - 299px);
+  height: calc(100dvh - 299px);
   @media (max-width: 991.98px) {
-    height: calc(100vh - 136px);
+    height: calc(100dvh - 136px);
   }
 
   .simplebar-content-wrapper {

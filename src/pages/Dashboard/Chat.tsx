@@ -244,10 +244,10 @@ const Chat = () => {
                 <Container fluid>
                     <div className="chat-wrapper no-padding-bottom-md d-lg-flex gap-1 mx-n4 mt-n4 p-1">
                         <div className={classNames("chat-leftsidebar minimal-border", { "height-screen": isOnChatDetailsPage })}>
-                            <div className="px-4 pt-4 mb-2">
+                            <div className="px-4 bg-primary bg-pattern  position-relative pt-4 pb-2 mb-2" style={{ zIndex: 1 }}>
                                 <div className="d-flex align-items-start">
                                     <div className="flex-grow-1">
-                                        <h5 className="">Chats</h5>
+                                        <h5 className="text-white">Chats</h5>
                                     </div>
                                 </div>
                             </div>
