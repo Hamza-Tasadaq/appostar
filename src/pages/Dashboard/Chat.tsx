@@ -37,6 +37,7 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import { createSelector } from "reselect";
 import Spinners from "Components/Common/Spinner";
 import PersonalInfo from "Components/chat/PersonalInfo";
+import classNames from "classnames";
 
 interface DirectContact {
     id: number,
@@ -107,6 +108,12 @@ const Chat = () => {
     const [emojiPicker, setemojiPicker] = useState<boolean>(false);
 
     const selectLayoutState = (state: any) => state.Chat;
+
+    const chatLayoutState = createSelector((state: any) => state.ChatLayout, (state) => ({
+        isOnChatDetailsPage: state?.isOnChatDetailsPage
+    }))
+
+    const { isOnChatDetailsPage } = useSelector(chatLayoutState)
 
 
     const chatProperties = createSelector(
@@ -236,7 +243,7 @@ const Chat = () => {
             <div ref={wrapper} className="page-content no-padding-x overflow-x-hidden-md no-padding-bottom-md padding-top-small-sm">
                 <Container fluid>
                     <div className="chat-wrapper no-padding-bottom-md d-lg-flex gap-1 mx-n4 mt-n4 p-1">
-                        <div className="chat-leftsidebar minimal-border">
+                        <div className={classNames("chat-leftsidebar minimal-border", { "height-screen": isOnChatDetailsPage })}>
                             <div className="px-4 pt-4 mb-2">
                                 <div className="d-flex align-items-start">
                                     <div className="flex-grow-1">
@@ -247,7 +254,7 @@ const Chat = () => {
                             {
                                 isLoading ? <Spinners setLoading={setLoading} />
                                     :
-                                    <SimpleBar className="chat-room-list h-100 pt-3" style={{ margin: "-16px 0px 0px" }}>
+                                    <SimpleBar className="chat-room-list pt-3" style={{ margin: "-16px 0px 0px" }}>
                                         <div className="chat-message-list">
                                             <ul className="list-unstyled chat-list chat-user-list users-list" id="userList">
                                                 {(chats || []).map((chatContact: chatContactType) => (
