@@ -332,3 +332,13 @@ aside.EmojiPickerReact.epr-main {
     border-top-right-radius: 18px !important ;
   }
 }
+
+@media (min-width: 768px) {
+  .bg-md-transparent {
+    background-color: transparent !important;
+  }
+
+  .text-md-default {
+    color: inherit !important;
+  }
+}
