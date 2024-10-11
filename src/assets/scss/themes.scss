@@ -327,4 +327,8 @@ aside.EmojiPickerReact.epr-main {
   .height-screen {
     height: 100dvh !important;
   }
+  .rounded-top-sm {
+    border-top-left-radius: 18px !important;
+    border-top-right-radius: 18px !important ;
+  }
 }

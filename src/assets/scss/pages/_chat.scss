@@ -20,7 +20,7 @@
   }
   @media (min-width: 776px) {
     height: calc(
-      100vh - #{$header-height} - #{$footer-height} - 8px
+      100dvh - #{$header-height} - #{$footer-height} - 8px
     ) !important;
   }
 }
@@ -591,23 +591,23 @@
   }
 
   .chat-leftsidebar {
-    height: calc(100vh - #{$header-height} - #{$footer-height} - 54px);
+    height: calc(100dvh - #{$header-height} - #{$footer-height} - 54px);
     @media (max-width: 991.98px) {
-      height: calc(100vh - #{$header-height} - #{$footer-height} - 8px);
+      height: calc(100dvh - #{$header-height} - #{$footer-height} - 8px);
     }
   }
 
   .chat-room-list {
-    height: calc(100vh - 352px);
+    height: calc(100dvh - 352px);
     @media (max-width: 991.98px) {
-      height: calc(100vh - 265px);
+      height: calc(100dvh - 265px);
     }
   }
 
   .chat-conversation {
-    height: calc(100vh - 343px);
+    height: calc(100dvh - 343px);
     @media (max-width: 991.98px) {
-      height: calc(100vh - 275px);
+      height: calc(100dvh - 275px);
     }
   }
 }

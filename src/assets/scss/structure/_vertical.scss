@@ -823,7 +823,7 @@
   &[data-layout-style="detached"] {
     #layout-wrapper,
     .main-content {
-      min-height: 100vh;
+      min-height: 100dvh;
     }
 
     @media (min-width: 1024.1px) {
@@ -956,7 +956,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: rgba($dark, 0.35);
   z-index: 1003;
   display: none;
