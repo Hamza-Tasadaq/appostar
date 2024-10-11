@@ -327,7 +327,7 @@ const Chat = () => {
                                                                             {Chat_Box_Username}
                                                                         </a>
                                                                     </h5>
-                                                                    <p className="text-truncate text-muted fs-14 mb-0 userStatus">
+                                                                    <p className="text-truncate text-start text-muted fs-14 mb-0 userStatus">
                                                                         <small>{user_Status === null ? "24 Members" : user_Status}</small>
                                                                     </p>
                                                                 </div>
