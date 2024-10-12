@@ -89,12 +89,18 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
 
                                     <button onClick={() => {
                                         setShowQrCode(true)
-                                    }} className='btn btn-success'>
-                                        <i className='ri  ri-qr-scan-2-line fs-5'></i>
+                                    }} style={{
+                                        width: "48px",
+                                        height: "38px"
+                                    }} className='btn  btn-success p-0'>
+                                        <i className='ri  ri-qr-scan-2-line fs-3'></i>
                                     </button>
                                     <Input className="form-control flex-grow-1 form-control-icon" id="search" onChange={(e) => { setUserCurrentAddress(e?.target?.value) }} value={useCurrentAddress} placeholder='Search' />
-                                    <button onClick={handleGetCurrentAddress} className='btn btn-success'>
-                                        <i className='ri ri-user-location-line fs-5'></i>
+                                    <button onClick={handleGetCurrentAddress} style={{
+                                        width: "48px",
+                                        height: "38px"
+                                    }} className='btn  btn-success p-0'>
+                                        <i className='ri ri-crosshair-2-line fs-3'></i>
                                     </button>
                                 </div>
                             </div>
