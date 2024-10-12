@@ -178,12 +178,35 @@ const Header = ({ headerClass }: any) => {
                             {/* <SearchOption /> */}
                         </div>
                         <div className="d-flex align-items-center">
-                            <Link to={"/chat"} className='btn btn-icon btn-topbar btn-ghost-secondary rounded-circle' >
-                                <i className='fs-22 ri-chat-1-line'></i>
-                            </Link>
-                            <Link to={"/calendar"} className='btn btn-icon btn-topbar btn-ghost-secondary rounded-circle' >
-                                <i className='fs-22 ri-calendar-line'></i>
-                            </Link>
+                            <div className="d-flex d-md-none align-items-center">
+                                {
+                                    isSmallScreen
+                                        ? (!isSearchDropdown && !isNotificationDropdown)
+                                            ? (
+                                                <Link to="/chat" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+                                                    <i className="fs-22 ri-chat-1-line"></i>
+                                                </Link>
+                                            ) : null
+                                        : (
+                                            <Link to="/chat" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+                                                <i className="fs-22 ri-chat-1-line"></i>
+                                            </Link>
+                                        )
+                                }
+                                {
+                                    isSmallScreen
+                                        ? (!isSearchDropdown && !isNotificationDropdown)
+                                            ? (
+                                                <Link to={"/calendar"} className='btn btn-icon btn-topbar btn-ghost-secondary rounded-circle' >
+                                                    <i className='fs-22 ri-calendar-line'></i>
+                                                </Link>)
+                                            :
+                                            null
+                                        : (<Link to={"/calendar"} className='btn btn-icon btn-topbar btn-ghost-secondary rounded-circle' >
+                                            <i className='fs-22 ri-calendar-line'></i>
+                                        </Link>)
+                                }
+                            </div>
                             <FullScreenDropdown />
 
                             {isSmallScreen ?

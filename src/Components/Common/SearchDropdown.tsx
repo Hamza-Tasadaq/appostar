@@ -104,7 +104,7 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                                     </button>
                                 </div>
                             </div>
-                            <div className="mb-3">
+                            <div className="mb-2">
                                 <Select
                                     value={categories}
                                     isMulti={true}
@@ -118,12 +118,16 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                                     components={animatedComponents}
                                 />
                             </div>
+                            <div className='mb-2'>
+                                <button onClick={handleGetCurrentAddress} className='btn  w-100 btn-success '>
+                                    Search
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <SimpleBar
                         // style={{ maxHeight: "300px" }}
                         className="p-3 full-screen-dropdown">
-
                         <div className="text-reset notification-item d-block dropdown-item position-relative active">
                             <div className="d-flex align-items-center">
                                 <img src={avatar2}
@@ -133,19 +137,6 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                                 </div>
                                 <div className="ms-2">
                                     <Badge color='primary'>Company</Badge>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="text-reset notification-item d-block dropdown-item position-relative">
-                            <div className="d-flex align-items-center">
-                                <img src={avatar2}
-                                    className="me-3 rounded-circle avatar-xs" alt="user-pic" />
-                                <div className="flex-grow-1">
-
-                                    <Link to="#" className="stretched-link"><h6 className="mt-0 mb-1 fs-13 fw-semibold">Company Name 2</h6></Link>
-                                </div>
-                                <div className="ms-2">
-                                    <Badge color='primary'>User</Badge>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +153,7 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                             id="myModalLabel" toggle={() => {
                                 setShowQrCode(!showQrCode)
                             }}>
-                            Scan Qr Code
+                            Scan to search a company
                         </ModalHeader>
                         <ModalBody className="py-3 ">
                             <QrScannerModal />
