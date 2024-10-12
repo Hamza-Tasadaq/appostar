@@ -37,7 +37,7 @@ const Sidebar = ({ layoutType }: any) => {
 
     return (
         <React.Fragment>
-            <div className="app-menu navbar-menu">
+            <div className="d-none d-md-block app-menu navbar-menu">
                 <div className="navbar-brand-box">
                     <Link to="/" className="logo logo-dark">
                         <span className="logo-sm">
