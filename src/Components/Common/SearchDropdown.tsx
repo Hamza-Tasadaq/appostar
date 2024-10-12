@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from 'react';
-import { Badge, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Modal, ModalBody, Row } from 'reactstrap';
+import { Badge, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
 import Select from "react-select";
 import { Link } from 'react-router-dom';
 //import images
@@ -151,6 +151,13 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                 showQrCode &&
                 <Suspense fallback={<></>}>
                     <Modal fade={true} isOpen={showQrCode} toggle={() => { setShowQrCode(!showQrCode) }} centered={true}>
+
+                        <ModalHeader className="modal-title"
+                            id="myModalLabel" toggle={() => {
+                                setShowQrCode(!showQrCode)
+                            }}>
+                            Scan Qr Code
+                        </ModalHeader>
                         <ModalBody className="py-3 ">
                             <QrScannerModal />
                         </ModalBody>
