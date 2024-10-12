@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Badge, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Row } from 'reactstrap';
+import React, { Suspense, useState } from 'react';
+import { Badge, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Modal, ModalBody, Row } from 'reactstrap';
 import Select from "react-select";
 import { Link } from 'react-router-dom';
 //import images
@@ -9,9 +9,9 @@ import avatar2 from "../../assets/images/users/avatar-2.jpg";
 import SimpleBar from "simplebar-react";
 import { getAddressFromCordinates } from 'actions';
 import makeAnimated from "react-select/animated";
+
+const QrScannerModal = React.lazy(() => import('./QrCodeScanner'));
 const animatedComponents = makeAnimated();
-
-
 
 const SingleOptions = [
     { value: 'Category 1', label: 'Category 1' },
@@ -39,6 +39,8 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
 
     }
 
+    const [showQrCode, setShowQrCode] = useState(false)
+
     const customStyles = {
         multiValue: (styles: any, { data }: any) => {
             return {
@@ -62,6 +64,7 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
         }),
     }
 
+
     return (
         <React.Fragment>
             <Dropdown isOpen={isSearchDropdown} toggle={toggleSearchDropdown} className="topbar-head-dropdown ms-1 header-item">
@@ -83,12 +86,15 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                         <div className=" p-3">
                             <div>
                                 <div className='mb-2 d-flex gap-1'>
+
+                                    <button onClick={() => {
+                                        setShowQrCode(true)
+                                    }} className='btn btn-success'>
+                                        <i className='ri  ri-qr-scan-2-line fs-5'></i>
+                                    </button>
                                     <Input className="form-control flex-grow-1 form-control-icon" id="search" onChange={(e) => { setUserCurrentAddress(e?.target?.value) }} value={useCurrentAddress} placeholder='Search' />
                                     <button onClick={handleGetCurrentAddress} className='btn btn-success'>
                                         <i className='ri ri-user-location-line fs-5'></i>
-                                    </button>
-                                    <button className='btn btn-success'>
-                                        <i className='ri  ri-qr-scan-2-line fs-5'></i>
                                     </button>
                                 </div>
                             </div>
@@ -141,6 +147,16 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
 
                 </DropdownMenu>
             </Dropdown>
+            {
+                showQrCode &&
+                <Suspense fallback={<></>}>
+                    <Modal fade={true} isOpen={showQrCode} toggle={() => { setShowQrCode(!showQrCode) }} centered={true}>
+                        <ModalBody className="py-3 ">
+                            <QrScannerModal />
+                        </ModalBody>
+                    </Modal>
+                </Suspense>
+            }
         </React.Fragment>
     );
 };
