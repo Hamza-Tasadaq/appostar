@@ -185,6 +185,7 @@ import Profile from "pages/Dashboard/Profile";
 import MobileTesting from 'pages/Dashboard/MobileTesting';
 import Chat from 'pages/Dashboard/Chat';
 import Calendar from 'pages/Dashboard/Calendar';
+import Map from 'pages/Dashboard/Map';
 // import Offlinepage from "../pages/AuthenticationInner/Errors/Offlinepage";
 
 // // //APi Key
@@ -264,6 +265,10 @@ const authProtectedRoutes = [
     {
         path: "/mobile-testing",
         component: <MobileTesting />
+    },
+    {
+        path: "/map",
+        component: <Map />
     }
     // { path: "/dashboard-analytics", component: <DashboardAnalytics /> },
     // { path: "/dashboard-crm", component: <DashboardCrm /> },

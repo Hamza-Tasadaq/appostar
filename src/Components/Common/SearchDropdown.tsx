@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from 'react';
-import { Badge, Button, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
+import { Button, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
 import Select from "react-select";
 //SimpleBar
 import SimpleBar from "simplebar-react";
