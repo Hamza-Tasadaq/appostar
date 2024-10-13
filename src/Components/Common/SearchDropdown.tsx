@@ -1,10 +1,6 @@
 import React, { Suspense, useState } from 'react';
-import { Badge, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
+import { Badge, Button, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
 import Select from "react-select";
-import { Link } from 'react-router-dom';
-//import images
-import avatar2 from "../../assets/images/users/avatar-2.jpg";
-
 //SimpleBar
 import SimpleBar from "simplebar-react";
 import { getAddressFromCordinates } from 'actions';
@@ -128,18 +124,51 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                     <SimpleBar
                         // style={{ maxHeight: "300px" }}
                         className="p-3 full-screen-dropdown">
-                        <div className="text-reset notification-item d-block dropdown-item position-relative active">
-                            <div className="d-flex align-items-center">
-                                <img src={avatar2}
-                                    className="me-3 rounded-circle avatar-xs" alt="user-pic" />
-                                <div className="flex-grow-1">
-                                    <Link to="#" className="stretched-link"><h6 className="mt-0 mb-1 fs-13 fw-semibold">Company Name 1</h6></Link>
-                                </div>
-                                <div className="ms-2">
-                                    <Badge color='primary'>Company</Badge>
+                        <div className="text-reset rounded notification-item d-block dropdown-item position-relative active">
+                            <div
+                                style={{
+                                    height: "150px",
+                                }}
+                                className="d-flex align-items-center position-relative"
+                            >
+                                <img
+                                    src={"https://images.pexels.com/photos/13485217/pexels-photo-13485217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+                                    className="w-100 object-fit-cover h-100 "
+                                    alt="user-pic"
+                                />
+                                <div className='position-absolute bottom-0 start-0 end-0 p-2'>
+                                    <Button
+                                        color="primary"
+                                        className="w-100 "
+                                    >
+                                        Category 1
+                                    </Button>
                                 </div>
                             </div>
                         </div>
+                        <div className="text-reset rounded notification-item d-block dropdown-item position-relative">
+                            <div
+                                style={{
+                                    height: "150px",
+                                }}
+                                className="d-flex align-items-center position-relative"
+                            >
+                                <img
+                                    src={"https://images.pexels.com/photos/13485217/pexels-photo-13485217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+                                    className="w-100 object-fit-cover h-100 "
+                                    alt="user-pic"
+                                />
+                                <div className='position-absolute bottom-0 start-0 end-0 p-2'>
+                                    <Button
+                                        color="primary"
+                                        className="w-100 "
+                                    >
+                                        Category 2
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+
                     </SimpleBar>
 
                 </DropdownMenu>
