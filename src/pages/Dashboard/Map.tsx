@@ -1,8 +1,48 @@
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
+import { Container } from 'reactstrap';
+import { loadTreeDataset, Tree } from './components/trees';
+import { APIProvider, Map as GoogleMap } from '@vis.gl/react-google-maps';
+import { ClusteredTreeMarkers } from './components/clustered-tree-marker';
+import '@vis.gl/react-google-maps/examples.css';
+
 
 const Map = () => {
+
+    const [trees, setTrees] = useState<Tree[]>();
+    const [selectedCategory] = useState<string | null>(null);
+
+    // load data asynchronously
+    useEffect(() => {
+        loadTreeDataset().then(data => setTrees(data));
+    }, []);
+
+    const filteredTrees = useMemo(() => {
+        if (!trees) return null;
+
+        return trees.filter(
+            t => !selectedCategory || t.category === selectedCategory
+        );
+    }, [trees, selectedCategory]);
+
     return (
-        <div>Map</div>
+        <React.Fragment>
+            <div className="page-content no-padding-x overflow-x-hidden-md  padding-top-large-sm">
+                <Container fluid className='no-padding-x overflow-x-hidden-md '
+                    style={{ height: "calc(100dvh - 164px)" }}
+                >
+                    <APIProvider apiKey={process.env.REACT_APP_PUBLIC_GOOGLE_API_KEY!}>
+                        <GoogleMap
+                            mapId={'bf51a910020fa25a'}
+                            defaultCenter={{ lat: 43.64, lng: -79.41 }}
+                            defaultZoom={10}
+                            gestureHandling={'greedy'}
+                            disableDefaultUI>
+                            {filteredTrees && <ClusteredTreeMarkers trees={filteredTrees} />}
+                        </GoogleMap>
+                    </APIProvider>
+                </Container>
+            </div>
+        </React.Fragment>
     )
 }
 
