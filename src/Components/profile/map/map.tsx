@@ -3,10 +3,9 @@ import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-cluster'
 import { Link } from 'react-router-dom';
 
-import 'leaflet/dist/leaflet.css';
 import { useEffect, useState } from 'react';
-import { Button } from 'reactstrap';
-import { useSharedState } from 'pages/Dashboard/NewMap';
+import { useMapState } from 'pages/Dashboard/NewMap';
+import 'leaflet/dist/leaflet.css';
 
 // Create the custom icon using the provided div content
 const customMarkerIcon = new DivIcon({
@@ -28,7 +27,7 @@ const ChangeView = ({ center }: { center: number[] }) => {
     return null;
 };
 const Map = () => {
-    const { addressCords, setAddressCords } = useSharedState()
+    const { addressCords } = useMapState()
     const [markers, setMarkers] = useState([
         { lat: 40.73061, lon: -73.935242, name: 'Location 1', image: 'https://example.com/img1.jpg' },
         { lat: 40.74061, lon: -73.945242, name: 'Location 2', image: 'https://example.com/img2.jpg' },

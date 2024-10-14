@@ -1,13 +1,13 @@
 import { getAddressFromCordinates } from 'actions';
 import classNames from 'classnames';
-import { useSharedState } from 'pages/Dashboard/NewMap';
+import { useMapState } from 'pages/Dashboard/NewMap';
 import { useState } from 'react'
 import { Card, CardBody, Input, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
 
 
 
 const Filters = () => {
-    const { addressCords, setAddressCords, address, setAddress } = useSharedState();
+    const { setAddressCords, address, setAddress } = useMapState();
 
     const [activeTab, setactiveTab] = useState<string>("1");
     const toggle = (tab: any) => {

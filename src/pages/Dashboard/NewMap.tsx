@@ -37,10 +37,10 @@ export const SharedStateProvider = ({ children }: SharedStateProviderProps) => {
 
 
 // Custom hook to use the shared state
-export const useSharedState = () => {
+export const useMapState = () => {
     const context = useContext(SharedStateContext);
     if (!context) {
-        throw new Error('useSharedState must be used within a SharedStateProvider');
+        throw new Error('useMapState must be used within a SharedStateProvider');
     }
     return context;
 };
