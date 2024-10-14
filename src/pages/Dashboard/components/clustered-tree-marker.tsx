@@ -1,8 +1,9 @@
 import { InfoWindow, useMap } from '@vis.gl/react-google-maps';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { type Marker, MarkerClusterer } from '@googlemaps/markerclusterer';
 import { Tree } from './trees';
 import { TreeMarker } from './tree-marker';
+import { Link } from 'react-router-dom';
 
 export type ClusteredTreeMarkersProps = {
     trees: Tree[];
@@ -80,9 +81,28 @@ export const ClusteredTreeMarkers = ({ trees }: ClusteredTreeMarkersProps) => {
                 <InfoWindow
                     anchor={markers[selectedTreeKey]}
                     onCloseClick={handleInfoWindowClose}>
-                    {selectedTree?.name}
+                    <div className="info-window">
+                        <>
+                            <div className='cover-image-wrapper position-relative'>
+                                <img src='https://townhub.kwst.net/images/all/56.jpg' alt='cover-image' />
+                            </div>
+                            <div className='rounded-top info-content'>
+                                <div className='p-2'>
+                                    <h3>Iconic Cafe in Manhattan</h3>
+                                    <div className=""><i className="ri-map-pin-line fs-4"></i> 40 Journal Square Plaza, NJ, USA</div>
+                                </div>
+                                <div className='p-2 border-top'>
+                                    <Link to={"/"}>Details
+                                        <i className="ri-arrow-right-line fs-"></i>
+                                    </Link>
+                                </div>
+                            </div>
+                        </>
+                    </div>
                 </InfoWindow>
             )}
         </>
     );
 };
+
+

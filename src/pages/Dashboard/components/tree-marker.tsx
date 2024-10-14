@@ -1,6 +1,6 @@
+import { useCallback } from 'react';
 import { Tree } from './trees';
 import type { Marker } from '@googlemaps/markerclusterer';
-import React, { useCallback } from 'react';
 import { AdvancedMarker } from '@vis.gl/react-google-maps';
 
 export type TreeMarkerProps = {
