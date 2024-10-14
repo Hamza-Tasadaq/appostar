@@ -1,10 +1,10 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L, { DivIcon, point } from 'leaflet';
-import 'leaflet/dist/leaflet.css';
 import { Link } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import MarkerClusterGroup from 'react-leaflet-cluster';
+import 'leaflet/dist/leaflet.css';
 
 // Fix default Leaflet icon issue in React-Leaflet (required due to how Webpack processes assets)
 // @ts-ignore
@@ -14,6 +14,7 @@ L?.Icon?.Default?.mergeOptions({
     iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
     shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 });
+
 // Create the custom icon using the provided div content
 const customMarkerIcon = new DivIcon({
     className: '', // No additional class to avoid default styles
@@ -27,8 +28,6 @@ const customMarkerIcon = new DivIcon({
 });
 
 const NewMap = () => {
-
-
     // Define some locations
     const locations = [
         { lat: 40.73061, lon: -73.935242, name: 'Location 1', image: 'https://example.com/img1.jpg' },
@@ -46,12 +45,9 @@ const NewMap = () => {
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
-
                         <MarkerClusterGroup
                             chunkedLoading
                         >
-
-
                             {locations.map((location, index) => (
                                 <Marker key={index} position={[location.lat, location.lon]} icon={customMarkerIcon}>
                                     <Popup>
@@ -71,7 +67,6 @@ const NewMap = () => {
                                                 </div>
                                             </div>
                                         </>
-
                                     </Popup>
                                 </Marker>
                             ))}
@@ -80,7 +75,6 @@ const NewMap = () => {
                 </Container>
             </div>
         </React.Fragment>
-
     )
 }
 

@@ -24,7 +24,6 @@ interface SearchDropdownProps {
 const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdownProps) => {
     const [useCurrentAddress, setUserCurrentAddress] = useState("")
 
-    const [categories, setCategories] = useState<any>('');
     const handleGetCurrentAddress = async () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(async (position) => {
@@ -36,30 +35,6 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
     }
 
     const [showQrCode, setShowQrCode] = useState(false)
-
-    const customStyles = {
-        multiValue: (styles: any, { data }: any) => {
-            return {
-                ...styles,
-                backgroundColor: "#3762ea",
-            };
-        },
-        multiValueLabel: (styles: any, { data }: any) => ({
-            ...styles,
-            backgroundColor: "#405189",
-            color: "white",
-        }),
-        multiValueRemove: (styles: any, { data }: any) => ({
-            ...styles,
-            color: "white",
-            backgroundColor: "#405189",
-            ':hover': {
-                backgroundColor: "#405189",
-                color: 'white',
-            },
-        }),
-    }
-
 
     return (
         <React.Fragment>
@@ -100,7 +75,7 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                                     </button>
                                 </div>
                             </div>
-                            <div className="mb-2">
+                            {/* <div className="mb-2">
                                 <Select
                                     value={categories}
                                     isMulti={true}
@@ -113,7 +88,7 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                                     styles={customStyles}
                                     components={animatedComponents}
                                 />
-                            </div>
+                            </div> */}
                             <div className='mb-2'>
                                 <button onClick={handleGetCurrentAddress} className='btn  w-100 btn-success '>
                                     Search
@@ -121,7 +96,7 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                             </div>
                         </div>
                     </div>
-                    <SimpleBar
+                    {/* <SimpleBar
                         // style={{ maxHeight: "300px" }}
                         className="p-3 full-screen-dropdown">
                         <div className="text-reset rounded notification-item d-block dropdown-item position-relative active">
@@ -169,8 +144,7 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                             </div>
                         </div>
 
-                    </SimpleBar>
-
+                    </SimpleBar> */}
                 </DropdownMenu>
             </Dropdown>
             {
