@@ -1,18 +1,18 @@
 import { useCallback } from 'react';
 import { Tree } from './trees';
-import type { Marker } from '@googlemaps/markerclusterer';
+import type { Marker as GoogleMarkerType } from '@googlemaps/markerclusterer';
 import { AdvancedMarker } from '@vis.gl/react-google-maps';
 
-export type TreeMarkerProps = {
+export type MarkerProps = {
     tree: Tree;
     onClick: (tree: Tree) => void;
-    setMarkerRef: (marker: Marker | null, key: string) => void;
+    setMarkerRef: (marker: GoogleMarkerType | null, key: string) => void;
 };
 
 /**
  * Wrapper Component for an AdvancedMarker for a single tree.
  */
-export const TreeMarker = (props: TreeMarkerProps) => {
+export const Marker = (props: MarkerProps) => {
     const { tree, onClick, setMarkerRef } = props;
 
     const handleClick = useCallback(() => onClick(tree), [onClick, tree]);
@@ -24,7 +24,10 @@ export const TreeMarker = (props: TreeMarkerProps) => {
 
     return (
         <AdvancedMarker position={tree.position} ref={ref} onClick={handleClick}>
-            <span className="marker-clustering-tree">🌳</span>
+            {/* <span className="marker-clustering-tree">🌳</span> */}
+            <div className='rounded-circle marker-item d-flex align-items-center justify-content-center' >
+                <img src="https://townhub.kwst.net/images/all/18.jpg" className='rounded-circle' alt="marker-image" />
+            </div>
         </AdvancedMarker>
     );
 };

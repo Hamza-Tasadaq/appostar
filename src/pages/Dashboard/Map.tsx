@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { Container } from 'reactstrap';
 import { loadTreeDataset, Tree } from './components/trees';
 import { APIProvider, Map as GoogleMap } from '@vis.gl/react-google-maps';
-import { ClusteredTreeMarkers } from './components/clustered-tree-marker';
+import { MarkersCluster } from './components/markers-cluster';
 import '@vis.gl/react-google-maps/examples.css';
 
 
@@ -32,12 +32,13 @@ const Map = () => {
                 >
                     <APIProvider apiKey={process.env.REACT_APP_PUBLIC_GOOGLE_API_KEY!}>
                         <GoogleMap
+                            // How i can get this mapId
                             mapId={'bf51a910020fa25a'}
                             defaultCenter={{ lat: 43.64, lng: -79.41 }}
                             defaultZoom={10}
                             gestureHandling={'greedy'}
                             disableDefaultUI>
-                            {filteredTrees && <ClusteredTreeMarkers trees={filteredTrees} />}
+                            {filteredTrees && <MarkersCluster trees={filteredTrees} />}
                         </GoogleMap>
                     </APIProvider>
                 </Container>

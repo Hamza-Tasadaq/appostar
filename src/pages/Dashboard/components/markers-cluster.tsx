@@ -1,20 +1,20 @@
 import { InfoWindow, useMap } from '@vis.gl/react-google-maps';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { type Marker, MarkerClusterer } from '@googlemaps/markerclusterer';
+import { type Marker as GoogleMarkerType, MarkerClusterer } from '@googlemaps/markerclusterer';
 import { Tree } from './trees';
-import { TreeMarker } from './tree-marker';
+import { Marker } from './tree-marker';
 import { Link } from 'react-router-dom';
 
-export type ClusteredTreeMarkersProps = {
+export type MarkersClusterProps = {
     trees: Tree[];
 };
 
 /**
- * The ClusteredTreeMarkers component is responsible for integrating the
+ * The MarkersCluster component is responsible for integrating the
  * markers with the markerclusterer.
  */
-export const ClusteredTreeMarkers = ({ trees }: ClusteredTreeMarkersProps) => {
-    const [markers, setMarkers] = useState<{ [key: string]: Marker }>({});
+export const MarkersCluster = ({ trees }: MarkersClusterProps) => {
+    const [markers, setMarkers] = useState<{ [key: string]: GoogleMarkerType }>({});
     const [selectedTreeKey, setSelectedTreeKey] = useState<string | null>(null);
 
     const selectedTree = useMemo(
@@ -43,7 +43,7 @@ export const ClusteredTreeMarkers = ({ trees }: ClusteredTreeMarkersProps) => {
 
     // this callback will effectively get passsed as ref to the markers to keep
     // tracks of markers currently on the map
-    const setMarkerRef = useCallback((marker: Marker | null, key: string) => {
+    const setMarkerRef = useCallback((marker: GoogleMarkerType | null, key: string) => {
         setMarkers(markers => {
             if ((marker && markers[key]) || (!marker && !markers[key]))
                 return markers;
@@ -69,7 +69,7 @@ export const ClusteredTreeMarkers = ({ trees }: ClusteredTreeMarkersProps) => {
     return (
         <>
             {trees.map(tree => (
-                <TreeMarker
+                <Marker
                     key={tree.key}
                     tree={tree}
                     onClick={handleMarkerClick}
