@@ -9,32 +9,6 @@ export type MarkersClusterProps = {
     trees: Tree[];
 };
 
-const clusterStyles = [
-    {
-        textColor: 'white', // Color of the text showing the number of markers
-        url: 'path_to_your_custom_cluster_image.png', // Path to the custom image
-        height: 50, // Height of the cluster icon
-        width: 50,  // Width of the cluster icon
-        anchorText: [-10, 0], // Position of the cluster text
-        textSize: 14, // Size of the text
-    },
-    {
-        textColor: 'white',
-        url: 'path_to_another_custom_cluster_image.png',
-        height: 60,
-        width: 60,
-        anchorText: [-12, 0],
-        textSize: 16,
-    },
-    {
-        textColor: 'white',
-        url: 'path_to_yet_another_custom_cluster_image.png',
-        height: 70,
-        width: 70,
-        anchorText: [-14, 0],
-        textSize: 18,
-    },
-];
 
 
 /**
@@ -45,13 +19,13 @@ export const MarkersCluster = ({ trees }: MarkersClusterProps) => {
     const [markers, setMarkers] = useState<{ [key: string]: GoogleMarkerType }>({});
     const [selectedTreeKey, setSelectedTreeKey] = useState<string | null>(null);
 
-    const selectedTree = useMemo(
-        () =>
-            trees && selectedTreeKey
-                ? trees.find(t => t.key === selectedTreeKey)!
-                : null,
-        [trees, selectedTreeKey]
-    );
+    // const selectedTree = useMemo(
+    //     () =>
+    //         trees && selectedTreeKey
+    //             ? trees.find(t => t.key === selectedTreeKey)!
+    //             : null,
+    //     [trees, selectedTreeKey]
+    // );
 
     // create the markerClusterer once the map is available and update it when
     // the markers are changed
