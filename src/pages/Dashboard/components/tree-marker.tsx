@@ -24,7 +24,6 @@ export const Marker = (props: MarkerProps) => {
 
     return (
         <AdvancedMarker position={tree.position} ref={ref} onClick={handleClick}>
-            {/* <span className="marker-clustering-tree">🌳</span> */}
             <div className='rounded-circle marker-item d-flex align-items-center justify-content-center' >
                 <img src="https://townhub.kwst.net/images/all/18.jpg" className='rounded-circle' alt="marker-image" />
             </div>

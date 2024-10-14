@@ -89,3 +89,11 @@
     z-index: 3;
   }
 }
+
+.IPAZAH-content-container {
+  svg {
+    fill: var(--#{$prefix}primary);
+    width: 40;
+    height: 40px;
+  }
+}

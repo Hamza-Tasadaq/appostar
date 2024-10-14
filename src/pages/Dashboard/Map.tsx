@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Container } from 'reactstrap';
 import { loadTreeDataset, Tree } from './components/trees';
-import { APIProvider, Map as GoogleMap } from '@vis.gl/react-google-maps';
+import { APIProvider, Map as GoogleMap, MapControl } from '@vis.gl/react-google-maps';
 import { MarkersCluster } from './components/markers-cluster';
 import '@vis.gl/react-google-maps/examples.css';
 
@@ -39,6 +39,9 @@ const Map = () => {
                             gestureHandling={'greedy'}
                             disableDefaultUI>
                             {filteredTrees && <MarkersCluster trees={filteredTrees} />}
+                            <MapControl position={12}>
+                                <div>COntrol</div>
+                            </MapControl>
                         </GoogleMap>
                     </APIProvider>
                 </Container>
