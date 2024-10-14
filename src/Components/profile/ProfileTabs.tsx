@@ -7,7 +7,6 @@ import Security from './Security'
 import UserMetaInfo from './UserMetaInfo'
 
 const ProfileTabs = () => {
-
     const [activeTab, setactiveTab] = useState<string>("1");
     const toggle = (tab: any) => {
         if (activeTab !== tab) {

@@ -1,20 +1,8 @@
 import React, { Suspense, useState } from 'react';
-import { Button, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
-import Select from "react-select";
-//SimpleBar
-import SimpleBar from "simplebar-react";
+import { Col, Dropdown, DropdownMenu, DropdownToggle, Input, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
 import { getAddressFromCordinates } from 'actions';
-import makeAnimated from "react-select/animated";
 
 const QrScannerModal = React.lazy(() => import('./QrCodeScanner'));
-const animatedComponents = makeAnimated();
-
-const SingleOptions = [
-    { value: 'Category 1', label: 'Category 1' },
-    { value: 'Category 2', label: 'Category 2' },
-    { value: 'Category 3', label: 'Category 3' },
-    { value: 'Category 4', label: 'Category 4' }
-];
 
 interface SearchDropdownProps {
     isSearchDropdown: boolean,
@@ -31,7 +19,6 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                 setUserCurrentAddress(response)
             })
         }
-
     }
 
     const [showQrCode, setShowQrCode] = useState(false)
@@ -57,7 +44,6 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                         <div className=" p-3">
                             <div>
                                 <div className='mb-2 d-flex gap-1'>
-
                                     <button onClick={() => {
                                         setShowQrCode(true)
                                     }} style={{

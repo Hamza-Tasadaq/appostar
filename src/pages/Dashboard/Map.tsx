@@ -1,5 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import { Container } from 'reactstrap';
+import { useEffect, useMemo, useState } from 'react'
 import { loadTreeDataset, Tree } from './components/trees';
 import { APIProvider, ControlPosition, Map as GoogleMap, MapControl } from '@vis.gl/react-google-maps';
 import { MarkersCluster } from './components/markers-cluster';
@@ -25,28 +24,20 @@ const Map = () => {
     }, [trees, selectedCategory]);
 
     return (
-        <React.Fragment>
-            <div className="page-content no-padding-x overflow-x-hidden-md  padding-top-large-sm">
-                <Container fluid className='no-padding-x overflow-x-hidden-md '
-                    style={{ height: "calc(100dvh - 164px)" }}
-                >
-                    <APIProvider apiKey={process.env.REACT_APP_PUBLIC_GOOGLE_API_KEY!}>
-                        <GoogleMap
-                            // How i can get this mapId
-                            mapId={'bf51a910020fa25a'}
-                            defaultCenter={{ lat: 43.64, lng: -79.41 }}
-                            defaultZoom={10}
-                            gestureHandling={'greedy'}
-                            disableDefaultUI>
-                            {filteredTrees && <MarkersCluster trees={filteredTrees} />}
-                            <MapControl position={ControlPosition.BOTTOM_RIGHT}>
-                                <div>COntrol</div>
-                            </MapControl>
-                        </GoogleMap>
-                    </APIProvider>
-                </Container>
-            </div>
-        </React.Fragment>
+        <APIProvider apiKey={process.env.REACT_APP_PUBLIC_GOOGLE_API_KEY!}>
+            <GoogleMap
+                // How i can get this mapId
+                mapId={'bf51a910020fa25a'}
+                defaultCenter={{ lat: 43.64, lng: -79.41 }}
+                defaultZoom={10}
+                gestureHandling={'greedy'}
+                disableDefaultUI>
+                {filteredTrees && <MarkersCluster trees={filteredTrees} />}
+                <MapControl position={ControlPosition.BOTTOM_RIGHT}>
+                    <div>COntrol</div>
+                </MapControl>
+            </GoogleMap>
+        </APIProvider>
     )
 }
 
