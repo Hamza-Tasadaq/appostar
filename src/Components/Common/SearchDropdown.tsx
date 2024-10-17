@@ -137,7 +137,6 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                 showQrCode &&
                 <Suspense fallback={<></>}>
                     <Modal fade={true} isOpen={showQrCode} toggle={() => { setShowQrCode(!showQrCode) }} centered={true}>
-
                         <ModalHeader className="modal-title"
                             id="myModalLabel" toggle={() => {
                                 setShowQrCode(!showQrCode)

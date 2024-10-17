@@ -154,9 +154,9 @@ const Layout = (props: any) => {
                 />
                 <div className="main-content">
                     {props.children}
-                    {/* <div className='d-none d-md-block'>
+                    <div className='d-none d-md-block'>
                         <Footer />
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </React.Fragment>

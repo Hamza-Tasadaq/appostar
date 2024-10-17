@@ -10,10 +10,9 @@ interface TermsModalProps {
 const TermsModal = ({ open, setOpen, setIsAgreeWithTerms }: TermsModalProps) => {
     return (
         <Modal id="showModal" className='container' isOpen={open} toggle={() => setOpen((open) => !open)} centered>
-            <ModalHeader className="p-0"
+            <ModalHeader className="p-0 no-close-btn"
                 toggle={() => setOpen((open) => !open)}
             >
-                {/* {!!isEdit ? "Edit Order" : "Add Order"} */}
                 <div className='bg-warning-subtle w-100 position-relative'>
 
                     <div className="p-5">

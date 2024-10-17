@@ -12,11 +12,10 @@ const PrivacyModal = ({ open, setOpen, setIsAgreeWithPrivacy }: PrivacyModalProp
     return (
 
         <Modal id="showModal" className='container' isOpen={open} toggle={() => setOpen((open) => !open)} centered>
-            <ModalHeader className="p-0"
+            <ModalHeader className="p-0 no-close-btn"
                 toggle={() => setOpen((open) => !open)}
             >
                 <div className='bg-warning-subtle w-100 position-relative'>
-
                     <div className="p-5">
                         <div className="text-center">
                             <h3>Privacy Policy</h3>
@@ -25,7 +24,6 @@ const PrivacyModal = ({ open, setOpen, setIsAgreeWithPrivacy }: PrivacyModalProp
                             </p>
                         </div>
                     </div>
-
 
                     <div className="shape">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns-svgjs="http://svgjs.com/svgjs" width="1440" height="60" preserveAspectRatio="none" viewBox="0 0 1440 60">
