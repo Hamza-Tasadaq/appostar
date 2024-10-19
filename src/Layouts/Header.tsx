@@ -221,6 +221,7 @@ const Header = ({ headerClass }: any) => {
                                 <NotificationDropdown isNotificationDropdown={isNotificationDropdown} toggleNotificationDropdown={toggleNotificationDropdown} /> :
                                 <NotificationDropdown isNotificationDropdown={isNotificationDropdown} toggleNotificationDropdown={toggleNotificationDropdown} />
                             }
+                            <div style={{ width: "600px" }}></div>
                         </div>
                     </div>
                 </div>

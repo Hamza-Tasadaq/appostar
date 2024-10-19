@@ -19,8 +19,6 @@ interface NotificationDropdownProps {
 }
 
 const NotificationDropdown = ({ isNotificationDropdown, toggleNotificationDropdown }: NotificationDropdownProps) => {
-
-
     //Tab 
     const [activeTab, setActiveTab] = useState('1');
     const toggleTab = (tab: any) => {

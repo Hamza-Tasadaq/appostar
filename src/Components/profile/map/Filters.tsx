@@ -3,8 +3,9 @@ import classNames from 'classnames';
 import timezone from 'common/data/timezone';
 import { useMapState } from 'pages/Dashboard/NewMap';
 import { useState } from 'react'
-import { Card, CardBody, CardFooter, CardHeader, Col, Input, Label, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
+import { Button, Card, CardBody, CardFooter, CardHeader, Col, Input, Label, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
 import SimpleBar from 'simplebar-react';
+import SearchDropdown from './SearchDropdown';
 
 
 
@@ -32,27 +33,23 @@ const Filters = () => {
     }
     return (
         <Card className='h-100'>
+            <CardHeader>
+                <Row className="g-2 align-items-center">
+                    <Col sm={4} className='d-flex align-items-center gap-2'>
+                        <h4 className='m-0'>Result For:</h4>
+                        <p className='m-0'>Address Wil Come Over Here</p>
+                    </Col>
+                    <Col className="col-sm-auto ms-auto">
+                        <div className="list-grid-nav hstack gap-1">
+                            <Button color="info" id="grid-view-button" className="btn btn-soft-info nav-link btn-icon fs-14 active filter-button material-shadow-none"><i className="ri-grid-fill"></i></Button>
+                            <Button color="info" id="list-view-button" className="btn btn-soft-info nav-link  btn-icon fs-14 filter-button material-shadow-none"><i className="ri-list-unordered"></i></Button>
+                            <SearchDropdown />
+                        </div>
+                    </Col>
+                </Row>
+
+            </CardHeader>
             <CardBody>
-
-
-                {/* <Nav tabs className="nav nav-tabs nav-justified mb-3">
-                    <NavItem>
-                        <NavLink style={{ cursor: "pointer" }} className={classNames({ active: activeTab === "1", })} onClick={() => { toggle("1"); }} >
-                            Filters
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink style={{ cursor: "pointer" }} className={classNames({ active: activeTab === "2", })} onClick={() => { toggle("2"); }} >
-                            List
-                        </NavLink>
-                    </NavItem>
-                </Nav>
-                <TabContent activeTab={activeTab} className="text-muted" >
-                    <TabPane tabId="1" id="Filters">
-                        Filter
-                    </TabPane>
-                    <TabPane tabId="2" id="list"> */}
-
                 <SimpleBar style={{ height: "calc(100dvh - 200px)" }}>
 
                     <Row className=''>
@@ -147,40 +144,6 @@ const Filters = () => {
 
                 {/* </TabPane>
                 </TabContent> */}
-
-                {/* <div>
-                    <div className='mb-2 d-flex gap-1'>
-                        <button
-                            //  onClick={
-                            //     () => {
-                            //     setShowQrCode(true)
-                            // }
-                            // }
-                            style={{
-                                width: "48px",
-                                height: "38px"
-                            }} className='btn  btn-success p-0'>
-                            <i className='ri  ri-qr-scan-2-line fs-3'></i>
-                        </button>
-                        <Input className="form-control flex-grow-1 form-control-icon" id="search" onChange={(e) => { setAddress(e?.target?.value) }} value={address} placeholder='Search' />
-                        <button onClick={handleGetCurrentAddress} style={{
-                            width: "48px",
-                            height: "38px"
-                        }} className='btn  btn-success p-0'>
-                            <i className='ri ri-crosshair-2-line fs-3'></i>
-                        </button>
-                    </div>
-                    <div className='mb-2'>
-                        <Label htmlFor="timezone" className="form-label">Time Zone</Label>
-                        <select className='form-select' id='timezone' aria-label='Default select time zone'>
-                            <option>Select your Timezone</option>
-                            {
-                                timezone?.map(({ zone, gmt, name }) => <option value={gmt} key={gmt}>{name} {gmt}</option>)
-                            }
-                        </select>
-                    </div>
-
-                </div> */}
 
             </CardBody>
         </Card>
