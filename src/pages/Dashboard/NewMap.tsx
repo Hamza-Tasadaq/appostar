@@ -54,11 +54,21 @@ const NewMap = () => {
                     <Container fluid className='no-padding-x overflow-x-hidden-md '
                         style={{ height: "calc(100dvh - 164px)" }}
                     >
-                        <Row className='h-100'>
-                            <Col xxl={3}>
+                        <Row className='h-100 position-relative '>
+                            <Col xxl={7}
+                                //  style={{
+                                //     zIndex: 10
+                                // }}
+                                className='pe-0'
+                            //  className='position-absolute start-0 top-0 bottom-0'
+                            >
                                 <Filters />
                             </Col>
-                            <Col xxl={9}>
+                            <Col className='position-relative ps-0'
+                            // style={{
+                            //     zIndex: 0
+                            // }}
+                            >
                                 <Map />
                             </Col>
                         </Row>

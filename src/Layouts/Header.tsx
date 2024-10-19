@@ -14,6 +14,7 @@ import { createSelector } from 'reselect';
 import NotificationDropdown from 'Components/Common/NotificationDropdown';
 import SearchDropdown from 'Components/Common/SearchDropdown';
 import classNames from 'classnames';
+import LightDark from 'Components/Common/LightDark';
 
 const Header = ({ headerClass }: any) => {
     const { pathname } = useLocation()
@@ -265,6 +266,8 @@ const Header = ({ headerClass }: any) => {
                         </ul>
                     </nav>
                 }
+
+                {/* <LightDark /> */}
 
             </header>
         </React.Fragment>
