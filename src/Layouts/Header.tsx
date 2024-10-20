@@ -221,7 +221,8 @@ const Header = ({ headerClass }: any) => {
                                 <NotificationDropdown isNotificationDropdown={isNotificationDropdown} toggleNotificationDropdown={toggleNotificationDropdown} /> :
                                 <NotificationDropdown isNotificationDropdown={isNotificationDropdown} toggleNotificationDropdown={toggleNotificationDropdown} />
                             }
-                            <div style={{ width: "600px" }}></div>
+
+                            <LightDark />
                         </div>
                     </div>
                 </div>
@@ -268,7 +269,6 @@ const Header = ({ headerClass }: any) => {
                     </nav>
                 }
 
-                {/* <LightDark /> */}
 
             </header>
         </React.Fragment>

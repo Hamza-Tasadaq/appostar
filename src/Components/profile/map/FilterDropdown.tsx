@@ -8,10 +8,10 @@ import Nouislider from "nouislider-react";
 // import "nouislider/distribute/nouislider.css";
 
 
-const SearchDropdown = () => {
-    const [isSearchDropdown, setIsSearchDropdown] = useState(false)
-    const toggleSearchDropdown = () => {
-        setIsSearchDropdown((isSearchDropdown) => !isSearchDropdown)
+const FiltersDropdown = () => {
+    const [isFiltersDropdown, setIsFiltersDropdown] = useState(false)
+    const toggleFiltersDropdown = () => {
+        setIsFiltersDropdown((isFiltersDropdown) => !isFiltersDropdown)
     }
 
 
@@ -24,14 +24,12 @@ const SearchDropdown = () => {
         }
     };
     return (
-
         <React.Fragment>
-
-            <Dropdown isOpen={isSearchDropdown} toggle={toggleSearchDropdown} className="topbar-head-dropdown ms-1 header-item">
-                <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+            <Dropdown isOpen={isFiltersDropdown} toggle={toggleFiltersDropdown} className="topbar-head-dropdown ms-1 header-item">
+                <DropdownToggle type="button" tag="button" color='primary' className="btn btn-icon btn-topbar btn-ghost-secondarys rounded-circle">
                     <i className='bx bx-search fs-22'></i>
                 </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-xl full-screen-dropdown dropdown-menu-end p-0">
+                <DropdownMenu end={true} className="dropdown-menu-xl full-screen-dropdown dropdown-menu-end p-0">
                     <div className="dropdown-head bg-primary bg-pattern rounded-top">
                         <div className="p-3">
                             <Row className="align-items-center">
@@ -180,4 +178,4 @@ const SearchDropdown = () => {
     )
 }
 
-export default SearchDropdown
+export default FiltersDropdown

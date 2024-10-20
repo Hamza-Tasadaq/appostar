@@ -29,7 +29,7 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                 <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
                     <i className='bx bx-search fs-22'></i>
                 </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-xl full-screen-dropdown dropdown-menu-end p-0">
+                <DropdownMenu end={true} className="dropdown-menu-xl full-screen-dropdown dropdown-menu-end p-0">
                     <div className="dropdown-head bg-primary bg-pattern rounded-top">
                         <div className="p-3">
                             <Row className="align-items-center">

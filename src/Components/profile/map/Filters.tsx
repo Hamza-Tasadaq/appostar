@@ -1,58 +1,30 @@
-import { getAddressFromCordinates } from 'actions';
-import classNames from 'classnames';
-import timezone from 'common/data/timezone';
-import { useMapState } from 'pages/Dashboard/NewMap';
-import { useState } from 'react'
-import { Button, Card, CardBody, CardFooter, CardHeader, Col, Input, Label, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
+import { Button, Card, CardBody, CardFooter, CardHeader, Col, Row } from 'reactstrap';
 import SimpleBar from 'simplebar-react';
-import SearchDropdown from './SearchDropdown';
+import FiltersDropdown from './FilterDropdown';
 
 
 
 const Filters = () => {
-    const { setAddressCords, address, setAddress } = useMapState();
-
-    const [activeTab, setactiveTab] = useState<string>("1");
-    const toggle = (tab: any) => {
-        if (activeTab !== tab) {
-            setactiveTab(tab);
-        }
-    };
-
-
-
-
-    const handleGetCurrentAddress = async () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(async (position) => {
-                setAddressCords([position?.coords?.latitude, position?.coords?.longitude])
-                const response = await getAddressFromCordinates(position?.coords?.latitude, position?.coords?.longitude)
-                setAddress(response)
-            })
-        }
-    }
     return (
         <Card className='h-100'>
             <CardHeader>
                 <Row className="g-2 align-items-center">
-                    <Col sm={4} className='d-flex align-items-center gap-2'>
+                    <Col className='d-flex align-items-center gap-2'>
                         <h4 className='m-0'>Result For:</h4>
                         <p className='m-0'>Address Wil Come Over Here</p>
                     </Col>
                     <Col className="col-sm-auto ms-auto">
                         <div className="list-grid-nav hstack gap-1">
-                            <Button color="info" id="grid-view-button" className="btn btn-soft-info nav-link btn-icon fs-14 active filter-button material-shadow-none"><i className="ri-grid-fill"></i></Button>
-                            <Button color="info" id="list-view-button" className="btn btn-soft-info nav-link  btn-icon fs-14 filter-button material-shadow-none"><i className="ri-list-unordered"></i></Button>
-                            <SearchDropdown />
+                            <Button color='primary' id="grid-view-button" className="btn btn-icon fs-14 active filter-button material-shadow-none"><i className="ri-grid-fill fs-3"></i></Button>
+                            <Button color='primary' id="list-view-button" className="btn nav-link btn-icon fs-14 filter-button material-shadow-none"><i className="ri-list-unordered fs-3"></i></Button>
+                            <FiltersDropdown />
                         </div>
                     </Col>
                 </Row>
-
             </CardHeader>
             <CardBody>
-                <SimpleBar style={{ height: "calc(100dvh - 200px)" }}>
-
-                    <Row className=''>
+                <SimpleBar style={{ height: "calc(100dvh - 324px)" }} className='pe-2'>
+                    <Row className='ms-0 me-0'>
                         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]?.map((_, index) =>
                             <Col
                                 xxl={6}
@@ -141,10 +113,6 @@ const Filters = () => {
                         )}
                     </Row>
                 </SimpleBar>
-
-                {/* </TabPane>
-                </TabContent> */}
-
             </CardBody>
         </Card>
     )
