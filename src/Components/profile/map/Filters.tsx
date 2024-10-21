@@ -65,29 +65,24 @@ const Filters = () => {
                                         </div>
                                         <img
                                             src='https://townhub.kwst.net/images/all/31.jpg'
-                                            className="w-100 object-fit-cover  h-100 "
+                                            className="w-100 object-fit-cover h-100 "
                                             alt="user-pic"
                                         />
                                     </div>
                                     <Card className='no-box-shadow'>
-                                        <CardHeader >
+                                        <CardHeader>
                                             <div>
                                                 <div className='d-flex justify-content-between align-items-center'>
                                                     <div className='d-flex align-items-center gap-2 mb-1'>
                                                         <h3 className='m-0'>Premium Fitness GYM</h3>
                                                         <i className='ri ri-checkbox-circle-fill text-success fs-2' ></i>
                                                     </div>
-                                                    <div style={{
-                                                        width: 60,
-                                                        height: 60,
-                                                        background: "white",
-                                                        marginTop: -74
-                                                    }} className='d-flex align-items-center justify-content-center rounded-circle' >
+                                                    <div className='user-avatar d-flex align-items-center justify-content-center rounded-circle' >
                                                         <img src="https://townhub.kwst.net/images/avatar/1.jpg" width={50} height={50} className='rounded-circle' alt="" />
                                                     </div>
                                                 </div>
                                                 <div className='d-flex align-items-center gap-2'>
-                                                    <i className='ri  ri-map-pin-2-line text-primary fs-3'></i>
+                                                    <i className='ri ri-map-pin-2-line text-primary fs-3'></i>
                                                     <p className='m-0'> 27th Brooklyn New York, USA</p>
                                                 </div>
                                             </div>

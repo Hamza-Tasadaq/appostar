@@ -160,6 +160,7 @@
       width: 100%; // Ensure the image covers the wrapper
       height: 100%; // Ensure the image covers the wrapper
       object-fit: cover; // Maintain the aspect ratio and cover the container
+      object-position: top;
       transition: transform 0.3s ease-in-out;
       position: relative; // Ensure the image is under the gradient
       z-index: -1; // Keep the image behind the gradient
@@ -197,5 +198,14 @@
 .icons-list {
   ul li i:hover {
     color: var(--#{$prefix}primary);
+  }
+}
+
+.card-header {
+  .user-avatar {
+    background-color: var(--vz-card-cap-bg);
+    width: 60px !important;
+    height: 60px !important;
+    margin-top: -74px !important;
   }
 }
