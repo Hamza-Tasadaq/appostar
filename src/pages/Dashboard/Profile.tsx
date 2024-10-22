@@ -6,7 +6,7 @@ import ProfileTabs from 'Components/profile/ProfileTabs';
 const Profile = () => {
     return (
         <React.Fragment>
-            <div className="page-content no-padding-x overflow-x-hidden-md padding-top-large-sm">
+            <div className="page-content no-padding-bottom-md no-padding-x overflow-x-hidden-md padding-top-large-sm">
                 <Container fluid className='no-padding-x overflow-x-hidden-md'>
                     <Row>
                         <Col xxl={3}>

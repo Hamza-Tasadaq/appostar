@@ -1,38 +1,3 @@
-// Override Custom Styles
-
-.gm-style-iw-d {
-  overflow-x: hidden;
-  overflow-y: auto !important;
-  max-width: 300px !important;
-  position: relative !important;
-}
-
-.gm-style-iw-d {
-  padding: 0 !important;
-}
-
-.gm-style .gm-style-iw-c {
-  padding-left: 0 !important;
-}
-
-.gm-style-iw-ch {
-  padding: 0 !important;
-}
-
-.gm-style-iw-chr {
-  position: absolute;
-  width: 100%;
-  height: fit-content;
-  top: 0;
-  right: 0;
-  z-index: 100;
-}
-.gm-ui-hover-effect {
-  background-color: white !important;
-  border-bottom-left-radius: 10px !important;
-  opacity: 1 !important;
-}
-
 // New Styles
 .info-window {
   img {
@@ -61,13 +26,6 @@
     font-size: 14px;
     text-align: left;
     font-weight: 600;
-  }
-}
-.IPAZAH-content-container {
-  svg {
-    fill: var(--#{$prefix}primary);
-    width: 40;
-    height: 40px;
   }
 }
 
@@ -148,133 +106,97 @@
   }
 }
 
-.map-item-card {
-  .bg-cover-wrapper {
-    border-radius: 10px 10px 0 0;
-    overflow: hidden;
-    height: 304px;
-    position: relative;
-    z-index: 0;
-
-    img {
-      width: 100%; // Ensure the image covers the wrapper
-      height: 100%; // Ensure the image covers the wrapper
-      object-fit: cover; // Maintain the aspect ratio and cover the container
-      object-position: top;
-      transition: transform 0.3s ease-in-out;
-      position: relative; // Ensure the image is under the gradient
-      z-index: -1; // Keep the image behind the gradient
-    }
-
-    &:hover img {
-      transform: scale(1.1); // Slight zoom on hover
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      top: 30%;
-      background: linear-gradient(
-        to bottom,
-        rgba(var(--#{$prefix}primary-rgb), 0) 0%,
-
-        rgba(var(--#{$prefix}primary-rgb), 0.5) 100%
-      );
-      z-index: 0; // Ensure the gradient stays on top of the image
-    }
-  }
-}
-
-.map-item-card {
-  .card-header {
-    border-radius: 16px 16px 0 0 !important;
-    margin-top: -40px;
-  }
-}
-
 .icons-list {
   ul li i:hover {
     color: var(--#{$prefix}primary);
   }
 }
 
-.card-header {
-  .user-avatar {
-    background-color: var(--vz-card-cap-bg);
-    width: 60px !important;
-    height: 60px !important;
-    margin-top: -74px !important;
-  }
-}
 .list-grid-nav .nav-link.active {
   background-color: var(--#{$prefix}primary);
   color: #fff;
 }
+
+.filters-simple-bar {
+  height: calc(100dvh - 324px);
+}
+
+@media (max-width: 767px) {
+  .filters-simple-bar {
+    height: calc(100dvh - 392px);
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .filters-simple-bar {
+    height: calc(100dvh - 424px);
+  }
+}
 .map-items {
   &.grid-view-filter {
     flex-flow: row wrap;
-
+    .meta-info {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 68px;
+      z-index: 10;
+    }
     .col {
       flex: 0 0 auto;
       width: 50%;
     }
 
-    .team-box {
-      overflow: hidden;
+    .card-container {
+      display: flex;
+      flex-direction: column;
+    }
 
-      .team-row {
-        align-items: start;
+    .map-item-card {
+      .bg-cover-wrapper {
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+        height: 304px;
+        position: relative;
+        z-index: 0;
 
-        .col {
-          width: 100%;
+        img {
+          width: 100%; // Ensure the image covers the wrapper
+          height: 100%; // Ensure the image covers the wrapper
+          object-fit: cover; // Maintain the aspect ratio and cover the container
+          object-position: top;
+          transition: transform 0.3s ease-in-out;
+          position: relative; // Ensure the image is under the gradient
+          z-index: -1; // Keep the image behind the gradient
+        }
+
+        &:hover img {
+          transform: scale(1.1); // Slight zoom on hover
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          top: 30%;
+          background: linear-gradient(
+            to bottom,
+            rgba(var(--#{$prefix}primary-rgb), 0) 0%,
+
+            rgba(var(--#{$prefix}primary-rgb), 0.5) 100%
+          );
+          z-index: 0; // Ensure the gradient stays on top of the image
         }
       }
+    }
 
-      .team-cover {
-        display: block;
-      }
-
-      .team-settings {
-        .col {
-          width: 50% !important;
-          flex: 0 0 auto;
-        }
-
-        .btn-star {
-          color: $white;
-        }
-
-        .dropdown {
-          > a {
-            color: $white;
-          }
-        }
-      }
-
-      .team-profile-img {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 25px;
-        margin-top: 36px;
-
-        .avatar-lg {
-          font-size: 22px;
-        }
-
-        .team-content {
-          margin-left: 0px;
-          margin-top: 25px;
-          text-align: center;
-        }
-      }
-
-      .view-btn {
-        width: 100%;
-        margin-top: 25px;
+    .map-item-card {
+      .card-header {
+        border-radius: 16px 16px 0 0 !important;
+        margin-top: -40px;
       }
     }
 
@@ -303,41 +225,66 @@
   &.list-view-filter {
     flex-direction: column;
 
-    .team-box {
-      margin-bottom: 10px;
+    .meta-info {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+    }
+    .card-container {
+      display: flex;
+      flex-direction: row;
+    }
+    .card {
+      flex: 1;
+      margin: 0;
+    }
+    .map-item-card {
+      .bg-cover-wrapper {
+        border-radius: 10px;
+        overflow: hidden;
+        // height: 228px;
+        width: 348px;
+        position: relative;
+        z-index: 0;
 
-      .team-row {
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .team-profile-img {
-        display: flex;
-        align-items: center;
-
-        .avatar-lg {
-          height: 4rem;
-          width: 4rem;
-          font-size: 16px;
+        img {
+          width: 100%; // Ensure the image covers the wrapper
+          height: 100%; // Ensure the image covers the wrapper
+          object-fit: cover; // Maintain the aspect ratio and cover the container
+          object-position: top;
+          transition: transform 0.3s ease-in-out;
+          position: relative; // Ensure the image is under the gradient
+          z-index: -1; // Keep the image behind the gradient
         }
 
-        .team-content {
-          margin-left: 15px;
+        &:hover img {
+          transform: scale(1.1); // Slight zoom on hover
         }
-      }
 
-      .team-settings {
-        width: auto;
-        flex: 0 0 auto;
-        -webkit-box-ordinal-group: 7;
-        order: 6;
-      }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          top: 30%;
+          background: linear-gradient(
+            to bottom,
+            rgba(var(--#{$prefix}primary-rgb), 0) 0%,
 
-      .btn-star {
-        color: var(--#{$prefix}primary);
+            rgba(var(--#{$prefix}primary-rgb), 0.5) 100%
+          );
+          z-index: 0; // Ensure the gradient stays on top of the image
+        }
       }
     }
 
+    .map-item-card .card-header {
+      margin-top: 0;
+    }
     @media (max-width: 767.98px) {
       flex-direction: row;
       .col {
@@ -346,27 +293,22 @@
         flex: 0 0 auto;
         width: 100%;
       }
-      .team-box {
-        .team-settings {
-          width: 100%;
-          flex: 0 0 auto;
-          order: -1;
-          margin-bottom: 10px;
-
-          .col {
-            width: 50%;
-          }
-        }
-
-        .team-profile-img {
-          margin-bottom: 25px;
-        }
-
-        .view-btn {
-          width: 100%;
-          margin-top: 25px;
-        }
-      }
     }
+  }
+}
+
+.map-container-height {
+  height: calc(100dvh - 164px);
+}
+
+@media (max-width: 767px) {
+  .map-container-height {
+    height: calc(100dvh - 234px);
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .map-container-height {
+    height: calc(100dvh - 265px);
   }
 }

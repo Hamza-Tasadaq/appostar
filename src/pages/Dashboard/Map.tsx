@@ -2,11 +2,10 @@ import { useEffect, useMemo, useState } from 'react'
 import { loadTreeDataset, Tree } from './components/trees';
 import { APIProvider, ControlPosition, Map as GoogleMap, MapControl } from '@vis.gl/react-google-maps';
 import { MarkersCluster } from './components/markers-cluster';
-import '@vis.gl/react-google-maps/examples.css';
+// import '@vis.gl/react-google-maps/examples.css';
 
 
 const Map = () => {
-
     const [trees, setTrees] = useState<Tree[]>();
     const [selectedCategory] = useState<string | null>(null);
 

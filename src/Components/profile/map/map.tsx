@@ -33,7 +33,7 @@ const Map = () => {
     ];
 
     return (
-        <>
+        <div className='map-container-height'>
             <MapContainer center={[40.73061, -73.935242]} zoom={13} scrollWheelZoom={false} style={{ height: '100%' }} zoomControl={false}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -74,7 +74,7 @@ const Map = () => {
 
                 <ZoomControl position='bottomright' />
             </MapContainer>
-        </>
+        </div>
     );
 };
 

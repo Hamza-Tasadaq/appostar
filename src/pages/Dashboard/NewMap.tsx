@@ -2,6 +2,7 @@ import React, { createContext, ReactNode, useContext, useState } from 'react';
 import Map from 'Components/profile/map/map';
 import { Col, Container, Row } from 'reactstrap';
 import Filters from 'Components/profile/map/Filters';
+import Tabs from 'Components/profile/map/Tabs';
 
 
 // Define the shape of the shared state context
@@ -50,29 +51,22 @@ const NewMap = () => {
     return (
         <React.Fragment>
             <SharedStateProvider>
-                <div className="page-content no-padding-x overflow-x-hidden-md  padding-top-large-sm">
+                <div className="d-none d-xl-block page-content no-padding-x overflow-x-hidden-md  padding-top-large-sm">
                     <Container fluid className='no-padding-x overflow-x-hidden-md '
                         style={{ height: "calc(100dvh - 164px)" }}
                     >
                         <Row className='h-100 position-relative '>
-                            <Col xxl={7}
-                                //  style={{
-                                //     zIndex: 10
-                                // }}
-                                className='pe-0'
-                            //  className='position-absolute start-0 top-0 bottom-0'
-                            >
+                            <Col xl={7} xxl={7} className='pe-0'>
                                 <Filters />
                             </Col>
-                            <Col className='position-relative ps-0'
-                            // style={{
-                            //     zIndex: 0
-                            // }}
-                            >
+                            <Col className='position-relative ps-0'>
                                 <Map />
                             </Col>
                         </Row>
                     </Container>
+                </div>
+                <div className='d-xl-none page-content no-padding-x overflow-x-hidden-md no-padding-bottom-md padding-top-large-sm'>
+                    <Tabs />
                 </div>
             </SharedStateProvider>
         </React.Fragment>
