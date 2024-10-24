@@ -1,6 +1,5 @@
 import { Badge, Button, Card, CardBody, CardFooter, CardHeader, Col, Row } from 'reactstrap';
 import SimpleBar from 'simplebar-react';
-import FiltersDropdown from './FilterDropdown';
 import { useEffect } from 'react';
 
 
@@ -68,7 +67,7 @@ const Filters = () => {
                     </Col>
                 </Row>
             </CardHeader>
-            <CardBody>
+            <CardBody className='ps-0 pe-0'>
                 <SimpleBar className='pe-2 filters-simple-bar'>
                     <div id='mapItems'>
                         <Row className='ms-0 me-0 map-items grid-view-filter' >
@@ -79,13 +78,12 @@ const Filters = () => {
                                         className="position-relative map-item-card"
                                     >
                                         <div className='card-container'>
-
                                             <div className='bg-cover-wrapper'>
                                                 <div
                                                     className='flex-column d-flex meta-info justify-content-between'>
                                                     <div className='d-flex mt-1 align-items-center justify-content-between'>
                                                         <button type="button" className="btn fvt-btn btn-primary d-flex align-items-center gap-2 rounded-pill" onClick={(e) => { }}>
-                                                            <i className="ri ri-heart-line fs-3 "></i>
+                                                            <i className="ri ri-heart-line fs-5"></i>
                                                             <span>Save</span>
                                                         </button>
                                                         <h5 className='m-0'>
