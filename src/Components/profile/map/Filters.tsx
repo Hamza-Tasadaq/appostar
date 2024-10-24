@@ -120,7 +120,7 @@ const Filters = () => {
                                                 />
                                             </div>
                                             <Card className='no-box-shadow'>
-                                                <CardHeader>
+                                                <CardHeader className='item-card-padding-y'>
                                                     <div>
                                                         <div className='d-flex justify-content-between align-items-center'>
                                                             <div className='d-flex align-items-center gap-2'>
@@ -137,12 +137,12 @@ const Filters = () => {
                                                         </div>
                                                     </div>
                                                 </CardHeader>
-                                                <CardBody>
-                                                    <p>
+                                                <CardBody className='item-card-padding-y'>
+                                                    <p style={{ fontSize: "12px" }} className='mb-1'>
                                                         Sed interdum metus at nisi tempor laoreet. Integer gravida orci a justo sodales.
                                                     </p>
                                                     <div className='d-flex align-items-center gap-3'>
-                                                        <h5 className='m-0'>Facilities:</h5>
+                                                        <h5 className='m-0' style={{ fontSize: "14px" }}>Facilities:</h5>
                                                         <ul className='list-unstyled mb-0 d-flex gap-3'>
                                                             <li><i className='ri ri-wifi-line fs-3 text-primary'></i></li>
                                                             <li><i className='ri ri-earth-line fs-3 text-primary'></i></li>
@@ -150,7 +150,7 @@ const Filters = () => {
                                                         </ul>
                                                     </div>
                                                 </CardBody>
-                                                <CardFooter className='d-flex align-items-center gap-3'>
+                                                <CardFooter className='item-card-padding-y d-flex align-items-center gap-3'>
                                                     <div className='flex-grow-1 d-flex align-items-center justify-content-between'>
                                                         <div className='d-flex align-items-center gap-2'>
                                                             <div className='d-flex align-items-center justify-content-center rounded-circle' style={{ height: 36, background: "#4C97FD", width: 36 }}>
