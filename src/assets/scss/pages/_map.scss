@@ -147,12 +147,19 @@
       flex: 0 0 auto;
       width: 50%;
     }
-
+    .user-avatar {
+      // background: var(--#{$prefix}secondary);
+      margin-top: -70px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .card-container {
       display: flex;
       flex-direction: column;
     }
-
     .map-item-card {
       .bg-cover-wrapper {
         border-radius: 10px 10px 0 0;
@@ -192,7 +199,6 @@
         }
       }
     }
-
     .map-item-card {
       .card-header {
         border-radius: 16px 16px 0 0 !important;
@@ -310,5 +316,17 @@
 @media (max-width: 1199px) and (min-width: 768px) {
   .map-container-height {
     height: calc(100dvh - 265px);
+  }
+}
+
+.fvt-btn {
+  span {
+    display: none;
+  }
+
+  &:hover {
+    span {
+      display: block;
+    }
   }
 }

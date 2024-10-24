@@ -63,7 +63,7 @@ const Filters = () => {
                             >
                                 <i className="ri-list-unordered fs-3"></i>
                             </Button>
-                            <FiltersDropdown />
+                            {/* <FiltersDropdown /> */}
                         </div>
                     </Col>
                 </Row>
@@ -83,18 +83,25 @@ const Filters = () => {
                                             <div className='bg-cover-wrapper'>
                                                 <div
                                                     className='flex-column d-flex meta-info justify-content-between'>
-                                                    <div className='d-flex align-items-center justify-content-between'>
-                                                        <button type="button" className="btn btn-primary btn-icon rounded-circle" onClick={(e) => { }}>
+                                                    <div className='d-flex mt-1 align-items-center justify-content-between'>
+                                                        <button type="button" className="btn fvt-btn btn-primary d-flex align-items-center gap-2 rounded-pill" onClick={(e) => { }}>
                                                             <i className="ri ri-heart-line fs-3 "></i>
+                                                            <span>Save</span>
                                                         </button>
                                                         <h5 className='m-0'>
-                                                            <Badge color='success' className='rounded-pill'>Open Now</Badge>
+                                                            <Badge color='success' className='rounded-pill d-flex align-items-center gap-1'>
+                                                                <i className=' bx bx-lock-open fs-3'></i>
+                                                                <span className=''>
+                                                                    Open Now
+                                                                </span>
+                                                            </Badge>
                                                         </h5>
                                                     </div>
                                                     <div className='d-flex align-items-center gap-3'>
                                                         <h3 className='h-100 mb-0'>
                                                             <Badge color='primary' className='h-100  d-flex align-items-center'>
-                                                                <span>5.0</span></Badge>
+                                                                <span>5.0</span>
+                                                            </Badge>
                                                         </h3>
                                                         <div>
                                                             <ul className='list-unstyled d-flex m-0'>
@@ -118,11 +125,11 @@ const Filters = () => {
                                                 <CardHeader>
                                                     <div>
                                                         <div className='d-flex justify-content-between align-items-center'>
-                                                            <div className='d-flex align-items-center gap-2 mb-1'>
-                                                                <h4 className='m-0'>Premium Fitness GYM</h4>
-                                                                <i className='ri ri-checkbox-circle-fill text-success fs-2' ></i>
+                                                            <div className='d-flex align-items-center gap-2'>
+                                                                <h5 className='m-0'>Premium Fitness GYM</h5>
+                                                                <i className='ri ri-checkbox-circle-fill text-success fs-3'></i>
                                                             </div>
-                                                            <div className='user-avatar d-flex align-items-center justify-content-center rounded-circle' >
+                                                            <div style={{ background: "var(--vz-secondary-bg)" }} className='user-avatar d-flex align-items-center justify-content-center rounded-circle' >
                                                                 <img src="https://townhub.kwst.net/images/avatar/1.jpg" width={50} height={50} className='rounded-circle' alt="" />
                                                             </div>
                                                         </div>
@@ -137,7 +144,7 @@ const Filters = () => {
                                                         Sed interdum metus at nisi tempor laoreet. Integer gravida orci a justo sodales.
                                                     </p>
                                                     <div className='d-flex align-items-center gap-3'>
-                                                        <h4 className='m-0'>Facilities:</h4>
+                                                        <h5 className='m-0'>Facilities:</h5>
                                                         <ul className='list-unstyled mb-0 d-flex gap-3'>
                                                             <li><i className='ri ri-wifi-line fs-3 text-primary'></i></li>
                                                             <li><i className='ri ri-earth-line fs-3 text-primary'></i></li>
