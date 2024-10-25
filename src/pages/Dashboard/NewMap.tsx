@@ -80,7 +80,7 @@ const NewMap = () => {
                         style={{ height: "calc(100dvh - 164px)" }}
                     >
                         <Row className='h-100 position-relative '>
-                            <Col xl={6} xxl={6} className='pe-0'>
+                            <Col xl={5} xxl={5} className='pe-0'>
                                 <Filters />
                             </Col>
                             <Col className='position-relative ps-0'>
