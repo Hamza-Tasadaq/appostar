@@ -25,13 +25,12 @@ const ChangeView = ({ center }: { center: number[] }) => {
 };
 
 const Map = () => {
-    const { addressCords } = useMapState();
+    const { addressCords, setMarkerRef } = useMapState();
 
     const markers = [
         { lat: 40.73061, lon: -73.935242, name: 'Location 1', image: 'https://example.com/img1.jpg' },
         { lat: 40.74061, lon: -73.945242, name: 'Location 2', image: 'https://example.com/img2.jpg' },
     ];
-
     return (
         <div className='map-container-height'>
             <MapContainer center={[40.73061, -73.935242]} zoom={13} scrollWheelZoom={false} style={{ height: '100%' }} zoomControl={false}>
@@ -49,7 +48,12 @@ const Map = () => {
 
                 <MarkerClusterGroup chunkedLoading>
                     {markers.map((location, index) => (
-                        <Marker key={index} position={[location.lat, location.lon]} icon={customMarkerIcon}>
+                        <Marker
+                            key={index}
+                            position={[location.lat, location.lon]}
+                            icon={customMarkerIcon}
+                            ref={(marker) => setMarkerRef(index, marker)}
+                        >
                             <Popup>
                                 <>
                                     <div className='cover-image-wrapper position-relative overflow-hidden'>

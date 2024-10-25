@@ -1,5 +1,6 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react';
+import React, { createContext, ReactNode, useCallback, useContext, useRef, useState } from 'react';
 import Map from 'Components/profile/map/map';
+import { Marker as LeafletMarker } from 'leaflet';
 import { Col, Container, Row } from 'reactstrap';
 import Filters from 'Components/profile/map/Filters';
 import Tabs from 'Components/profile/map/Tabs';
@@ -13,6 +14,12 @@ interface SharedStateContextType {
 
     address: string;
     setAddress: React.Dispatch<React.SetStateAction<string>>;
+
+
+    // Markers State
+    openPopup: (index: number) => void;
+    setMarkerRef: (index: number, marker: LeafletMarker | null) => void;
+
 }
 
 // Create the context with an initial value of undefined
@@ -28,8 +35,25 @@ export const SharedStateProvider = ({ children }: SharedStateProviderProps) => {
     const [addressCords, setAddressCords] = useState<number[]>([]);
     const [address, setAddress] = useState<string>("");
 
+
+    const markerRefs = useRef<Array<LeafletMarker | null>>([]);
+    console.log(markerRefs)
+    const openPopup = useCallback((index: number) => {
+        const marker = markerRefs.current[index];
+        if (marker) {
+            console.log("IF", marker.openPopup())
+
+            marker.openPopup();
+        }
+    }, []);
+
+    const setMarkerRef = (index: number, marker: LeafletMarker | null) => {
+        console.log("setMarkerRef Running")
+        markerRefs.current[index] = marker;
+    };
+
     return (
-        <SharedStateContext.Provider value={{ addressCords, setAddressCords, address, setAddress }}>
+        <SharedStateContext.Provider value={{ openPopup, setMarkerRef, addressCords, setAddressCords, address, setAddress }}>
             {children}
         </SharedStateContext.Provider>
     );

@@ -348,3 +348,18 @@
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
+
+.tooltip-bg-primary {
+  background-color: var(--#{$prefix}primary);
+}
+.tooltip {
+  --vz-tooltip-bg: var(--#{$prefix}primary) !important;
+}
+
+.gallery-modal-content {
+  background: transparent !important;
+  .modal-header {
+    .btn-close {
+    }
+  }
+}

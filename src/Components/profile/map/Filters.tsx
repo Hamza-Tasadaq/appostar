@@ -1,6 +1,8 @@
 import { Badge, Button, Card, CardBody, CardFooter, CardHeader, Col, Row } from 'reactstrap';
 import SimpleBar from 'simplebar-react';
 import { useEffect } from 'react';
+import ShowOnMap from './ShowOnMap';
+import OpenGallery from './OpenGallery';
 
 
 
@@ -37,7 +39,6 @@ const Filters = () => {
             }
         }
     }, []);
-
     return (
         <Card className='h-100'>
             <CardHeader>
@@ -143,10 +144,10 @@ const Filters = () => {
                                                     </p>
                                                     <div className='d-flex align-items-center gap-3'>
                                                         <h5 className='m-0' style={{ fontSize: "14px" }}>Facilities:</h5>
-                                                        <ul className='list-unstyled mb-0 d-flex gap-3'>
-                                                            <li><i className='ri ri-wifi-line fs-3 text-primary'></i></li>
-                                                            <li><i className='ri ri-earth-line fs-3 text-primary'></i></li>
-                                                            <li><i className='ri ri-parking-box-line fs-3 text-primary'></i></li>
+                                                        <ul className='list-unstyled mb-0 d-flex gap-2'>
+                                                            <li><i className='ri ri-wifi-line fs-4 text-primary'></i></li>
+                                                            <li><i className='ri ri-earth-line fs-4 text-primary'></i></li>
+                                                            <li><i className='ri ri-parking-box-line fs-4 text-primary'></i></li>
                                                         </ul>
                                                     </div>
                                                 </CardBody>
@@ -164,15 +165,8 @@ const Filters = () => {
                                                         className='icons-list'
                                                     >
                                                         <ul className='list-unstyled mb-0 d-flex gap-3'>
-                                                            <li>
-                                                                <i className='ri  ri-search-2-line fs-3 hover:text-primary'></i>
-                                                            </li>
-                                                            <li>
-                                                                <i className='ri ri-user-location-line fs-3'></i>
-                                                            </li>
-                                                            <li>
-                                                                <i className='ri  ri-message-3-line fs-3'></i>
-                                                            </li>
+                                                            <OpenGallery position={index} />
+                                                            <ShowOnMap position={index} />
                                                         </ul>
                                                     </div>
                                                 </CardFooter>
