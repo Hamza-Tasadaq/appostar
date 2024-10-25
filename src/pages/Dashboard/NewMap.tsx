@@ -37,8 +37,9 @@ export const SharedStateProvider = ({ children }: SharedStateProviderProps) => {
 
 
     const markerRefs = useRef<Array<LeafletMarker | null>>([]);
-    console.log(markerRefs)
+    // console.log(markerRefs)
     const openPopup = useCallback((index: number) => {
+        markerRefs.current?.forEach((marker) => marker?.closePopup())
         const marker = markerRefs.current[index];
         if (marker) {
             console.log("IF", marker.openPopup())

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, CardBody, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
 import Filters from './Filters';
 import Map from './map';
