@@ -104,11 +104,11 @@ const Filters = () => {
                                                         </h3>
                                                         <div>
                                                             <ul className='list-unstyled d-flex m-0'>
-                                                                <li><i className='ri ri-star-s-fill text-success'></i></li>
-                                                                <li><i className='ri ri-star-s-fill text-success'></i></li>
-                                                                <li><i className='ri ri-star-s-fill text-success'></i></li>
-                                                                <li><i className='ri ri-star-s-fill text-success'></i></li>
-                                                                <li><i className='ri ri-star-s-fill text-success'></i></li>
+                                                                <li><i className='ri ri-star-s-fill text-warning'></i></li>
+                                                                <li><i className='ri ri-star-s-fill text-warning'></i></li>
+                                                                <li><i className='ri ri-star-s-fill text-warning'></i></li>
+                                                                <li><i className='ri ri-star-s-fill text-warning'></i></li>
+                                                                <li><i className='ri ri-star-s-fill text-warning'></i></li>
                                                             </ul>
                                                             <p className='m-0 text-white'>4 reviews</p>
                                                         </div>
