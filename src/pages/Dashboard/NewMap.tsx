@@ -76,11 +76,9 @@ const NewMap = () => {
         <React.Fragment>
             <SharedStateProvider>
                 <div className="d-none d-xl-block page-content no-padding-x overflow-x-hidden-md  padding-top-large-sm">
-                    <Container fluid className='no-padding-x overflow-x-hidden-md '
-                        style={{ height: "calc(100dvh - 164px)" }}
-                    >
+                    <Container fluid className='no-padding-x overflow-x-hidden-md ' style={{ height: "calc(100dvh - 164px)" }}>
                         <Row className='h-100 position-relative '>
-                            <Col xl={5} xxl={5} className='pe-0'>
+                            <Col xl={5} className='pe-0'>
                                 <Filters />
                             </Col>
                             <Col className='position-relative ps-0'>

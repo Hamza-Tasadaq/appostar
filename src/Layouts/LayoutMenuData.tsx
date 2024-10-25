@@ -8,6 +8,7 @@ const Navdata = () => {
     const [isAuth, setIsAuth] = useState<boolean>(false);
     const [isChat, setIsChat] = useState<boolean>(false);
     const [isCalendar, setIsCalendar] = useState<boolean>(false);
+    const [isMap, setIsMap] = useState<boolean>(false);
 
     // Apps
     // const [isCalendar, setCalendar] = useState<boolean>(false);
@@ -67,6 +68,9 @@ const Navdata = () => {
         }
         if (iscurrentState !== "Chat") {
             setIsChat(false)
+        }
+        if (iscurrentState !== "Map") {
+            setIsMap(false)
         }
     }, [
         history,
@@ -156,7 +160,28 @@ const Navdata = () => {
                     parentId: "calendar",
                 },
             ],
-        }
+        },
+        {
+            id: "map",
+            label: "Map",
+            icon: " ri-map-pin-2-line",
+            link: "/#",
+            click: function (e: any) {
+                e.preventDefault();
+                setIsMap(!isMap);
+                setIscurrentState('Map');
+                updateIconSidebar(e);
+            },
+            stateVariables: isMap,
+            subItems: [
+                {
+                    id: "map",
+                    label: "Map",
+                    link: "/map",
+                    parentId: "map",
+                },
+            ],
+        },
     ];
     return <React.Fragment>{menuItems}</React.Fragment>;
 };

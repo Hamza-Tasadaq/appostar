@@ -185,7 +185,7 @@ import Profile from "pages/Dashboard/Profile";
 import MobileTesting from 'pages/Dashboard/MobileTesting';
 import Chat from 'pages/Dashboard/Chat';
 import Calendar from 'pages/Dashboard/Calendar';
-import Map from 'pages/Dashboard/Map';
+// import Map from 'pages/Dashboard/Map';
 import NewMap from 'pages/Dashboard/NewMap';
 // import Offlinepage from "../pages/AuthenticationInner/Errors/Offlinepage";
 
@@ -267,12 +267,12 @@ const authProtectedRoutes = [
         path: "/mobile-testing",
         component: <MobileTesting />
     },
+    // {
+    //     path: "/map",
+    //     component: <Map />
+    // },
     {
         path: "/map",
-        component: <Map />
-    },
-    {
-        path: "/new-map",
         component: <NewMap />
     }
     // { path: "/dashboard-analytics", component: <DashboardAnalytics /> },

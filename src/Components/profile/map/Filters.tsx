@@ -4,8 +4,6 @@ import { useEffect } from 'react';
 import ShowOnMap from './ShowOnMap';
 import OpenGallery from './OpenGallery';
 
-
-
 const Filters = () => {
     useEffect(() => {
         const list = document.querySelectorAll(".map-items");
@@ -13,7 +11,6 @@ const Filters = () => {
         for (let i = 0; i < buttonGroups.length; i++) {
             buttonGroups[i].addEventListener('click', onButtonGroupClick);
         }
-
 
         function onButtonGroupClick(event: any) {
             const target = event.target as HTMLButtonElement;
@@ -59,7 +56,7 @@ const Filters = () => {
                             <Button
                                 color="primary"
                                 id="list-view-button"
-                                className="d-none d-md-inline btn btn-soft-infos nav-link btn-icon fs-14 active filter-button material-shadow-none"
+                                className="d-none d-md-inline btn btn-soft-infos nav-link btn-icon fs-14 filter-button material-shadow-none"
                             >
                                 <i className="ri-list-unordered fs-3"></i>
                             </Button>
@@ -68,7 +65,7 @@ const Filters = () => {
                     </Col>
                 </Row>
             </CardHeader>
-            <CardBody className='ps-0 pe-0 gray-body-bg'>
+            <CardBody className='ps-0 pe-0 gray-body-bg pb-0'>
                 <SimpleBar className='pe-2 filters-simple-bar'>
                     <div id='mapItems'>
                         <Row className='ms-0 me-0 map-items grid-view-filter' >
@@ -89,9 +86,9 @@ const Filters = () => {
                                                         </button>
                                                         <h5 className='m-0'>
                                                             <Badge color='success' className='rounded-pill d-flex align-items-center gap-1'>
-                                                                <i className=' bx bx-lock-open fs-3'></i>
+                                                                <i className=' bx bx-lock-open fs-5'></i>
                                                                 <span className=''>
-                                                                    Open Now
+                                                                    Open
                                                                 </span>
                                                             </Badge>
                                                         </h5>
@@ -120,16 +117,16 @@ const Filters = () => {
                                                     alt="user-pic"
                                                 />
                                             </div>
-                                            <Card className='no-box-shadow'>
+                                            <Card className='no-box-shadow mb-0'>
                                                 <CardHeader className='item-card-padding-y'>
                                                     <div>
-                                                        <div className='d-flex justify-content-between align-items-center'>
-                                                            <div className='d-flex align-items-center gap-2'>
+                                                        <div className='d-flex justify-content-between gap-1 align-items-center'>
+                                                            <div className='d-flex w-100 flex-grow-1 align-items-center gap-2'>
                                                                 <h5 className='m-0'>Premium Fitness GYM</h5>
                                                                 <i className='ri ri-checkbox-circle-fill text-success fs-3'></i>
                                                             </div>
-                                                            <div style={{ background: "var(--vz-secondary-bg)" }} className='user-avatar d-flex align-items-center justify-content-center rounded-circle' >
-                                                                <img src="https://townhub.kwst.net/images/avatar/1.jpg" width={50} height={50} className='rounded-circle' alt="" />
+                                                            <div className='user-avatar d-flex align-items-center justify-content-center rounded-circle' >
+                                                                <img src="https://townhub.kwst.net/images/avatar/1.jpg" className='rounded-circle' alt="" />
                                                             </div>
                                                         </div>
                                                         <div className='d-flex align-items-center gap-2'>
