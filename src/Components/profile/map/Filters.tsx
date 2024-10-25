@@ -68,7 +68,7 @@ const Filters = () => {
                     </Col>
                 </Row>
             </CardHeader>
-            <CardBody className='ps-0 pe-0'>
+            <CardBody className='ps-0 pe-0 gray-body-bg'>
                 <SimpleBar className='pe-2 filters-simple-bar'>
                     <div id='mapItems'>
                         <Row className='ms-0 me-0 map-items grid-view-filter' >

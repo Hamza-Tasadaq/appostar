@@ -363,3 +363,7 @@
     }
   }
 }
+
+.gray-body-bg {
+  background-color: var(--#{$prefix}body-bg);
+}
