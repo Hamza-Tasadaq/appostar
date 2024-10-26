@@ -5,16 +5,15 @@ import { Link } from 'react-router-dom';
 import { useMapState } from 'pages/Dashboard/NewMap';
 import 'leaflet/dist/leaflet.css';
 
-// Create the custom icon using the provided div content
 const customMarkerIcon = new DivIcon({
-    className: '', // No additional class to avoid default styles
+    className: '',
     html: `
         <div class='rounded-circle marker-item d-flex align-items-center justify-content-center'>
             <img src="https://townhub.kwst.net/images/all/18.jpg" class='rounded-circle' alt="marker-image" />
         </div>
     `,
-    iconSize: [60, 60], // Size of the custom marker
-    iconAnchor: [30, 30], // Anchor point in the middle of the icon
+    iconSize: [60, 60],
+    iconAnchor: [30, 30],
 });
 
 // A custom hook to pan the map to the given position

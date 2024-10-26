@@ -17,6 +17,12 @@ const OpenGallery = ({ position }: OpenGalleryProps) => {
     const [openGallery, setOpenGallery] = useState<boolean>(false);
     return (
         <>
+            {
+                openGallery &&
+                <Suspense fallback={<></>}>
+                    <Gallery open={openGallery} setOpen={setOpenGallery} />
+                </Suspense>
+            }
             <li onClick={() => setOpenGallery(true)} id={`openGalleryToolTip${position}`}>
                 {/* <Button onClick={() => setOpenGallery(true)} className='btn btn-icon btn-topbar btn-ghost-secondarys rounded-circle'> */}
                 <i className='ri ri-zoom-in-line fs-5' ></i>
@@ -31,12 +37,6 @@ const OpenGallery = ({ position }: OpenGalleryProps) => {
             >
                 Open Gallery
             </Tooltip>
-            {
-                openGallery &&
-                <Suspense fallback={<></>}>
-                    <Gallery open={openGallery} setOpen={setOpenGallery} />
-                </Suspense>
-            }
         </>
     )
 }

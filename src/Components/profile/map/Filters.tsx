@@ -37,7 +37,7 @@ const Filters = () => {
         }
     }, []);
     return (
-        <Card className='h-100'>
+        <Card className='h-100 mb-0'>
             <CardHeader>
                 <Row className="g-2 align-items-center">
                     <Col className="d-flex align-items-center gap-2 flex-grow-1">
