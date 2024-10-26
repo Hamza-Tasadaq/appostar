@@ -376,8 +376,10 @@
   img {
     max-width: 600px;
     max-height: 400px;
+    height: 400px;
     display: block !important;
     margin: 0 auto;
+    object-fit: cover;
   }
 }
 .carousel-control-prev,
