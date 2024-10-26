@@ -60,7 +60,6 @@ const Filters = () => {
                             >
                                 <i className="ri-list-unordered fs-3"></i>
                             </Button>
-                            {/* <FiltersDropdown /> */}
                         </div>
                     </Col>
                 </Row>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink, Row, TabContent, TabPane, UncontrolledDropdown } from 'reactstrap';
+import { Col, Dropdown, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
@@ -110,11 +110,10 @@ const NotificationDropdown = ({ isNotificationDropdown, toggleNotificationDropdo
                                                 width: "10px",
                                                 height: "10px"
                                             }} className='bg-primary w-4 h-4 rounded-circle'></div>
-                                            <UncontrolledDropdown direction='start' className="col text-end">
+                                            {/* <UncontrolledDropdown direction='start' className="col text-end">
                                                 <DropdownToggle tag="a" id="dropdownMenuLink2" role="button">
                                                     <i className="ri-more-fill fs-17"></i>
                                                 </DropdownToggle>
-                                                {/* THis Dropdown Menu Is Not Visible  */}
                                                 <DropdownMenu>
                                                     <DropdownItem className="dropdown-item edit-list" href="#addmemberModal" onClick={() => { }}>
                                                         <i className="ri-pencil-line me-2 align-bottom text-muted"></i>Mark as Read
@@ -123,7 +122,7 @@ const NotificationDropdown = ({ isNotificationDropdown, toggleNotificationDropdo
                                                         <i className="ri-delete-bin-5-line me-2 align-bottom text-muted"></i>Remove
                                                     </DropdownItem>
                                                 </DropdownMenu>
-                                            </UncontrolledDropdown>
+                                            </UncontrolledDropdown> */}
                                         </div>
                                     </div>
                                 </div>
@@ -177,7 +176,6 @@ const NotificationDropdown = ({ isNotificationDropdown, toggleNotificationDropdo
                                 </div>
                             </SimpleBar>
                         </TabPane>
-
                         <TabPane tabId="2" className="py-2 ps-2">
                             <SimpleBar style={{ maxHeight: "300px" }} className="pe-2">
                                 <div className="text-reset notification-item d-block dropdown-item">

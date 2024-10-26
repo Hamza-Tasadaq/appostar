@@ -12,7 +12,6 @@ interface SharedStateContextType {
 
     address: string;
     setAddress: React.Dispatch<React.SetStateAction<string>>;
-
     // Markers State
     openPopup: (index: number) => void;
     setMarkerRef: (index: number, marker: LeafletMarker | null) => void;
