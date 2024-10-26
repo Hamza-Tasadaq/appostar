@@ -5,16 +5,13 @@ import { Col, Container, Row } from 'reactstrap';
 import Filters from 'Components/profile/map/Filters';
 import Tabs from 'Components/profile/map/Tabs';
 
-
 // Define the shape of the shared state context
 interface SharedStateContextType {
     addressCords: number[];
     setAddressCords: React.Dispatch<React.SetStateAction<number[]>>;
 
-
     address: string;
     setAddress: React.Dispatch<React.SetStateAction<string>>;
-
 
     // Markers State
     openPopup: (index: number) => void;

@@ -54,8 +54,8 @@ const Gallery = ({ setOpen, open }: GalleryProps) => {
                         activeIndex={activeIndex}
                         next={next}
                         previous={previous}
+                        interval={90000}
                     >
-
                         {
                             items.map((item) => {
                                 return (
@@ -70,8 +70,6 @@ const Gallery = ({ setOpen, open }: GalleryProps) => {
                                 );
                             })
                         }
-
-
                         <CarouselControl
                             direction="prev"
                             directionText="Previous"
