@@ -17,7 +17,13 @@ const Tabs = () => {
             <div className='position-relative'>
                 {
                     currentTab === "2"
-                        ? <Map /> : null
+                        ?
+                        <div className='position-relative' style={{
+                            zIndex: 0
+                        }}>
+                            <Map />
+                        </div>
+                        : null
                 }
                 {
                     currentTab === "1"
@@ -28,7 +34,11 @@ const Tabs = () => {
                     bottom: "8px",
                     zIndex: 10
                 }}>
-                    <Button className='rounded-pill' onClick={() => { toggleCurrentTab("2"); }}>Show on map</Button>
+                    <Button className='rounded-pill' onClick={() => { toggleCurrentTab(currentTab === "1" ? "2" : "1"); }}>
+                        {
+                            currentTab === "1" ? "Show Map" : "Show Filter"
+                        }
+                    </Button>
                 </div>
             </div>
         </>
