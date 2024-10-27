@@ -219,13 +219,13 @@
       }
     }
 
-    @media (min-width: 1600px) {
+    @media (min-width: 1800px) {
       .col {
         flex: 0 0 auto;
         width: 50%;
       }
     }
-    @media (min-width: 1200px) and (max-width: 1599px) {
+    @media (min-width: 1200px) and (max-width: 1799px) {
       .col {
         flex: 0 0 auto;
         width: 100% !important;
