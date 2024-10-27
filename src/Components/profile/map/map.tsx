@@ -1,5 +1,5 @@
 import { DivIcon } from 'leaflet';
-import { MapContainer, Marker, Popup, TileLayer, useMap, ZoomControl } from 'react-leaflet';
+import { Circle, MapContainer, Marker, Popup, TileLayer, useMap, ZoomControl } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { Link } from 'react-router-dom';
 import { useMapState } from 'pages/Dashboard/NewMap';
@@ -27,6 +27,7 @@ const ChangeView = ({ center }: { center: number[] }) => {
 const Map = () => {
     const { addressCords, setMarkerRef } = useMapState();
     const [userCords, setUserCords] = useState<number[] | null>(null); // State to store user’s current location
+    const [circleCenter, setCircleCenter] = useState<number[] | null>(null); // State to store the center of the circle
 
     const markers = [
         { lat: 40.73061, lon: -73.935242, name: 'Location 1', image: 'https://example.com/img1.jpg' },
@@ -41,6 +42,7 @@ const Map = () => {
                 (position) => {
                     const { latitude, longitude } = position.coords;
                     setUserCords([latitude, longitude]);
+                    setCircleCenter([latitude, longitude])
                 },
                 (error) => {
                     console.error("Error fetching user location:", error);
@@ -76,6 +78,15 @@ const Map = () => {
                         <ChangeView center={userCords} /> :
                         null
                 }
+
+                {/* Render a circle at the clicked position */}
+                {circleCenter && (
+                    <Circle
+                        center={{ lat: circleCenter?.[0], lng: circleCenter?.[1] }}
+                        radius={500} // Adjust the radius as needed
+                        pathOptions={{ color: 'blue', fillColor: 'blue', fillOpacity: 0.2 }}
+                    />
+                )}
                 <MarkerClusterGroup chunkedLoading>
                     {markers.map((location, index) => (
                         <Marker
