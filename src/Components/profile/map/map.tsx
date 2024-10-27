@@ -4,6 +4,7 @@ import MarkerClusterGroup from 'react-leaflet-cluster';
 import { Link } from 'react-router-dom';
 import { useMapState } from 'pages/Dashboard/NewMap';
 import 'leaflet/dist/leaflet.css';
+import { useState } from 'react';
 
 const customMarkerIcon = new DivIcon({
     className: '',
@@ -25,26 +26,56 @@ const ChangeView = ({ center }: { center: number[] }) => {
 
 const Map = () => {
     const { addressCords, setMarkerRef } = useMapState();
+    const [userCords, setUserCords] = useState<number[] | null>(null); // State to store user’s current location
 
     const markers = [
         { lat: 40.73061, lon: -73.935242, name: 'Location 1', image: 'https://example.com/img1.jpg' },
         { lat: 40.74061, lon: -73.945242, name: 'Location 2', image: 'https://example.com/img2.jpg' },
     ];
+
+
+    // Function to center map on user's current location
+    const handleCenterMap = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const { latitude, longitude } = position.coords;
+                    setUserCords([latitude, longitude]);
+                },
+                (error) => {
+                    console.error("Error fetching user location:", error);
+                }
+            );
+        } else {
+            alert("Geolocation is not supported by your browser.");
+        }
+    };
     return (
-        <div className='map-container-height'>
-            <MapContainer center={[40.73061, -73.935242]} zoom={13} scrollWheelZoom={false} style={{ height: '100%' }} zoomControl={false}>
+        <div className='map-container-height position-relative'>
+            <div className='position-absolute ' style={{ zIndex: 10, top: "8px", right: "8px" }}>
+                {/* On Click of this Button please center the map to the user current location */}
+                <button style={{
+                    width: "48px",
+                    height: "38px"
+                }} onClick={handleCenterMap} className='btn  btn-primary p-0'>
+                    <i className='ri ri-crosshair-2-line fs-3'></i>
+                </button>
+            </div>
+            <MapContainer center={[40.73061, -73.935242]} className='position-relative' zoom={13} scrollWheelZoom={false} style={{ height: '100%', zIndex: 0 }} zoomControl={false}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-
                 {
                     addressCords?.length ?
                         <ChangeView center={addressCords} /> :
                         null
                 }
-
-
+                {
+                    userCords?.length ?
+                        <ChangeView center={userCords} /> :
+                        null
+                }
                 <MarkerClusterGroup chunkedLoading>
                     {markers.map((location, index) => (
                         <Marker
@@ -74,7 +105,6 @@ const Map = () => {
                         </Marker>
                     ))}
                 </MarkerClusterGroup>
-
                 <ZoomControl position='bottomright' />
             </MapContainer>
         </div>

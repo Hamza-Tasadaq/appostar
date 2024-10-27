@@ -75,7 +75,6 @@ const NewMap = () => {
                 <div className="d-none d-xl-block page-content no-padding-x overflow-x-hidden-md  padding-top-large-sm">
                     <Container fluid className='no-padding-x overflow-x-hidden-md ' style={{ height: "calc(100dvh - 164px)" }}>
                         <Row className='h-100 position-relative '>
-                            {/* On Large Screen i want to render the 5 as the screen shrink 5 will go to the 6 and 7 and so on */}
                             <Col xxl={6} xl={7} className='pe-0'>
                                 <Filters />
                             </Col>
