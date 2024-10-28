@@ -1,10 +1,15 @@
-import React from 'react'
-import { Button, Container, Input, Row } from 'reactstrap'
+import classNames from 'classnames'
+import React, { useState } from 'react'
+import { Badge, Button, Container, Input, Row } from 'reactstrap'
 import SimpleBar from 'simplebar-react'
 
 const Root = () => {
-    return (
+    const [selectedCategory, setSelectedCategory] = useState("1")
 
+    const toggleSelectedCategory = (selectedCategory: string) => {
+        setSelectedCategory(selectedCategory)
+    }
+    return (
         <React.Fragment>
             <div style={{ height: "100dvh" }} className="page-content no-padding-bottom-md no-padding-x overflow-x-hidden-md padding-top-large-sm">
                 <Container style={{ height: "100%" }} fluid className='no-padding-x overflow-x-hidden-md'>
@@ -21,10 +26,34 @@ const Root = () => {
                                 <div className='list-items-wrapper mx-auto'>
                                     <SimpleBar style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                                         <ul className='list-unstyled d-flex align-items-center justify-content-start gap-3'>
-                                            <li className='active'>PLACES</li>
-                                            <li className=''>EVENTS</li>
-                                            <li className=''>RESTAURANTS</li>
-                                            <li className=''>HOTELS</li>
+                                            <li onClick={() => {
+                                                toggleSelectedCategory("1")
+                                            }} className={classNames({
+                                                active: selectedCategory === "1",
+                                                'rounded-pill': selectedCategory === "1",
+                                                'badge': selectedCategory === "1"
+                                            })}>Places</li>
+                                            <li onClick={() => {
+                                                toggleSelectedCategory("2")
+                                            }} className={classNames({
+                                                active: selectedCategory === "2",
+                                                'rounded-pill': selectedCategory === "2",
+                                                'badge': selectedCategory === "2"
+                                            })}>Events</li>
+                                            <li onClick={() => {
+                                                toggleSelectedCategory("3")
+                                            }} className={classNames({
+                                                active: selectedCategory === "3",
+                                                'rounded-pill': selectedCategory === "3",
+                                                'badge': selectedCategory === "3"
+                                            })}>Restaurants</li>
+                                            <li onClick={() => {
+                                                toggleSelectedCategory("4")
+                                            }} className={classNames({
+                                                active: selectedCategory === "4",
+                                                'rounded-pill': selectedCategory === "4",
+                                                'badge': selectedCategory === "4"
+                                            })}>Hotels</li>
                                         </ul>
                                     </SimpleBar>
                                 </div>

@@ -52,13 +52,14 @@
       ul {
         li {
           font-weight: 600;
-          text-transform: uppercase;
           font-size: large;
           color: white;
         }
         li.active {
           font-weight: 600;
-          color: var(--#{$prefix}primary);
+          background-color: var(--#{$prefix}primary);
+          color: white;
+          border: 1px solid white;
         }
       }
     }
@@ -92,7 +93,6 @@
           }
           li.active {
             font-weight: 600;
-            color: var(--#{$prefix}primary);
           }
         }
       }
