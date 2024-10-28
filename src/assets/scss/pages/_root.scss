@@ -63,6 +63,11 @@
       }
     }
 
+    .form-wrapper {
+      max-width: 600px;
+      width: 100%;
+      background-color: rgba(#fff, 0.5) !important;
+    }
     @media (max-width: 767px) {
       h1 {
         font-weight: 900;
@@ -90,10 +95,6 @@
             color: var(--#{$prefix}primary);
           }
         }
-      }
-
-      .form-wrapper {
-        background-color: rgba(#ffffff, 0.5);
       }
     }
   }

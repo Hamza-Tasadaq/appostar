@@ -28,12 +28,27 @@ const Root = () => {
                                         </ul>
                                     </SimpleBar>
                                 </div>
-                                <form className='d-flex align-items-center p-2 form-wrapper rounded'>
-                                    <Input bsSize='lg' style={{ borderRadius: 0 }} placeholder='What are you looking for?' />
-                                    <Input bsSize='lg' style={{ borderRadius: 0 }} placeholder='Location' />
-                                    <Input bsSize='lg' style={{ borderRadius: 0 }} placeholder='All Categories' />
-                                    <Button size='lg' color='primary'>
-                                        <i className='ri  ri-search-2-line me-2'></i>Search
+                                <form className='d-flex flex-column flex-lg-row align-items-center p-2 form-wrapper rounded'>
+                                    <Input
+                                        bsSize='lg'
+                                        style={{ borderRadius: 0 }}
+                                        placeholder='What are you looking for?'
+                                        className='w-100 w-lg-auto'
+                                    />
+                                    <Input
+                                        bsSize='lg'
+                                        style={{ borderRadius: 0 }}
+                                        placeholder='Location'
+                                        className='w-100 w-lg-auto'
+                                    />
+                                    <Input
+                                        bsSize='lg'
+                                        style={{ borderRadius: 0 }}
+                                        placeholder='All Categories'
+                                        className='w-100 w-lg-auto'
+                                    />
+                                    <Button size='lg' color='primary' className='w-100 w-lg-auto'>
+                                        <i className='ri ri-search-2-line me-2'></i>Search
                                     </Button>
                                 </form>
                             </div>
