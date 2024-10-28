@@ -180,6 +180,7 @@ import TwosVerify from '../pages/AuthenticationInner/TwosVerify';
 // import Error500 from '../pages/AuthenticationInner/Errors/Error500';
 
 // import BasicPasswCreate from "../pages/AuthenticationInner/PasswordCreate/BasicPasswCreate";
+import Root from 'pages/Dashboard/Root';
 import CoverPasswCreate from "../pages/AuthenticationInner/PasswordCreate/CoverPasswCreate";
 import Profile from "pages/Dashboard/Profile";
 import MobileTesting from 'pages/Dashboard/MobileTesting';
@@ -253,6 +254,10 @@ const authProtectedRoutes = [
     {
         path: "/",
         exact: true,
+        component: <Root />
+    },
+    {
+        path: "/profile",
         component: <Profile />
     },
     {
