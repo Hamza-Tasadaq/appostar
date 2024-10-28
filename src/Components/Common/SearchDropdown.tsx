@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from 'react';
-import { Button, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Label, Modal, ModalBody, ModalHeader, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
+import { Button, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Label, Modal, ModalBody, ModalHeader, Nav, NavItem, NavLink, Offcanvas, OffcanvasBody, OffcanvasHeader, Row, TabContent, TabPane } from 'reactstrap';
 import classNames from 'classnames';
 import SimpleBar from 'simplebar-react';
 
@@ -22,51 +22,49 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
             setActiveTab(tab);
         }
     };
+
+
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+
+
+    const toggleCanvasOpen = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <React.Fragment>
-            <Dropdown isOpen={isSearchDropdown} toggle={toggleSearchDropdown} className="topbar-head-dropdown ms-1 header-item">
-                <DropdownToggle type="button" tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
-                    <i className='bx bx-search fs-22'></i>
-                </DropdownToggle>
-                <DropdownMenu end={true} className="dropdown-menu-xl full-screen-dropdown dropdown-menu-end p-0">
-                    <div className="dropdown-head bg-primary bg-pattern rounded-top">
-                        <div className="p-3">
-                            <Row className="align-items-center">
-                                <Col>
-                                    <h6 className="m-0 fs-16 fw-semibold text-white">Search</h6>
-                                </Col>
-                                <div className="col-auto dropdown-tabs">
-                                    <button type="button" className="btn btn-soft-success waves-effect waves-light">View All Searches <i className="ri-arrow-right-line align-middle"></i></button>
-                                </div>
-                            </Row>
-                        </div>
-                        <div className="px-2 pt-2">
-                            <Nav className="nav-tabs dropdown-tabs nav-tabs-custom">
-                                <NavItem>
-                                    <NavLink
-                                        href="#"
-                                        className={classNames({ active: activeTab === '1' })}
-                                        onClick={() => { toggleTab('1'); }}
-                                    >
-                                        Categories
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        href="#"
-                                        className={classNames({ active: activeTab === '2' })}
-                                        onClick={() => { toggleTab('2'); }}
-                                    >
-                                        Filters
-                                    </NavLink>
-                                </NavItem>
-                            </Nav>
-                        </div>
-                    </div>
-                    <TabContent className='full-height-tab-content' activeTab={activeTab}>
-                        <TabPane tabId="1" className="p-4">
+            <Button type="button" onClick={toggleCanvasOpen} tag="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+                <i className='bx bx-search fs-22'></i>
+            </Button>
+
+
+            {/* Right offcanvas */}
+            <Offcanvas
+                isOpen={isOpen}
+                direction="end"
+                toggle={toggleCanvasOpen}
+                id="offcanvasRight"
+                className="border-bottom"
+            >                    <OffcanvasHeader className="d-flex align-items-center bg-primary bg-gradient p-3 offcanvas-header-dark" toggle={toggleCanvasOpen}>
+                    <span className="m-0 me-2 text-white">Search</span>
+                </OffcanvasHeader>
+                <OffcanvasBody className="p-3 overflow-hidden">
+                    <Nav tabs className="nav nav-tabs nav-justified mb-3">
+                        <NavItem style={{ flexGrow: 0 }}>
+                            <NavLink style={{ cursor: "pointer" }} className={classNames({ active: activeTab === "1", })} onClick={() => { setActiveTab("1"); }} >
+                                Categories
+                            </NavLink>
+                        </NavItem>
+                        <NavItem style={{ flexGrow: 0 }}>
+                            <NavLink style={{ cursor: "pointer" }} className={classNames({ active: activeTab === "2", })} onClick={() => { setActiveTab("2"); }} >
+                                Filters
+                            </NavLink>
+                        </NavItem>
+                    </Nav>
+                    <TabContent activeTab={activeTab} className="text-muted" >
+                        <TabPane tabId="1" id="categories">
                             <SimpleBar
-                                // style={{ maxHeight: "300px" }}
                                 className=" full-screen-dropdown">
                                 <div className="text-reset rounded search-item d-block dropdown-item position-relative active">
                                     <div className="d-flex align-items-center category-cover position-relative">
@@ -105,8 +103,9 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                                     </div>
                                 </div>
                             </SimpleBar>
+
                         </TabPane>
-                        <TabPane tabId="2" className="p-4">
+                        <TabPane tabId="2" id="filters">
                             <div className="">
                                 <div className='mb-2'>
                                     <Label htmlFor="address" className="form-label">Address</Label>
@@ -130,22 +129,13 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                                 <div className='mb-2'>
                                     <Label htmlFor="address" className="form-label">Price</Label>
                                     <input type="text" className="price-range" data-min="0" data-max="4" name="price-range1" data-step="1" value="$$" />
-                                    {/* <div data-rangeslider data-slider-color="success">
-                                         <Nouislider
-                                            range={{ min: 0, max: 100 }}
-                                            start={[0, 50]}
-                                            connect
-                                            onSlide={() => { }}
-                                            id="product-price-range"
-                                            className='slider1'
-                                        /> 
-                                    </div> */}
                                 </div>
                                 <div className='mb-2'>
                                     <Label htmlFor="status" className="form-label">Status</Label>
                                     <button className='btn btn-primary d-block w-100'>Open now</button>
                                 </div>
                             </div>
+
                         </TabPane>
                     </TabContent>
                     <Row>
@@ -155,9 +145,8 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                             </button>
                         </Col>
                     </Row>
-                </DropdownMenu>
-
-            </Dropdown>
+                </OffcanvasBody>
+            </Offcanvas>
             {
                 showQrCode &&
                 <Suspense fallback={<></>}>
