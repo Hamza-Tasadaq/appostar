@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from 'react';
-import { Button, Col, Dropdown, DropdownMenu, DropdownToggle, Input, Label, Modal, ModalBody, ModalHeader, Nav, NavItem, NavLink, Offcanvas, OffcanvasBody, OffcanvasHeader, Row, TabContent, TabPane } from 'reactstrap';
+import { Button, Col, Input, Label, Modal, ModalBody, ModalHeader, Nav, NavItem, NavLink, Offcanvas, OffcanvasBody, OffcanvasHeader, Row, TabContent, TabPane } from 'reactstrap';
 import classNames from 'classnames';
 import SimpleBar from 'simplebar-react';
 
@@ -17,12 +17,6 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
 
     //Tab 
     const [activeTab, setActiveTab] = useState('1');
-    const toggleTab = (tab: any) => {
-        if (activeTab !== tab) {
-            setActiveTab(tab);
-        }
-    };
-
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
