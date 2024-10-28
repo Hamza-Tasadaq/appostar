@@ -60,6 +60,23 @@
           background-color: var(--#{$prefix}primary);
           color: white;
           border: 1px solid white;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -32px;
+            // bottom: 50px; // Adjust based on positioning
+            // top: -40px;
+            // transform: translateY(-50%);
+            transform: translateX(-50%) rotate(45deg);
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            z-index: 100;
+          }
         }
       }
     }

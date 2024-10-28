@@ -24,40 +24,40 @@ const Root = () => {
                                     </p>
                                 </div>
                                 <div className='list-items-wrapper mx-auto'>
-                                    <SimpleBar style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                        <ul className='list-unstyled d-flex align-items-center justify-content-start gap-3'>
-                                            <li onClick={() => {
-                                                toggleSelectedCategory("1")
-                                            }} className={classNames({
-                                                active: selectedCategory === "1",
-                                                'rounded-pill': selectedCategory === "1",
-                                                'badge': selectedCategory === "1"
-                                            })}>Places</li>
-                                            <li onClick={() => {
-                                                toggleSelectedCategory("2")
-                                            }} className={classNames({
-                                                active: selectedCategory === "2",
-                                                'rounded-pill': selectedCategory === "2",
-                                                'badge': selectedCategory === "2"
-                                            })}>Events</li>
-                                            <li onClick={() => {
-                                                toggleSelectedCategory("3")
-                                            }} className={classNames({
-                                                active: selectedCategory === "3",
-                                                'rounded-pill': selectedCategory === "3",
-                                                'badge': selectedCategory === "3"
-                                            })}>Restaurants</li>
-                                            <li onClick={() => {
-                                                toggleSelectedCategory("4")
-                                            }} className={classNames({
-                                                active: selectedCategory === "4",
-                                                'rounded-pill': selectedCategory === "4",
-                                                'badge': selectedCategory === "4"
-                                            })}>Hotels</li>
-                                        </ul>
-                                    </SimpleBar>
+                                    {/* <SimpleBar style={{ display: "flex", alignItems: "center", justifyContent: "center" }}> */}
+                                    <ul className='list-unstyled d-flex align-items-center justify-content-start gap-3'>
+                                        <li onClick={() => {
+                                            toggleSelectedCategory("1")
+                                        }} className={classNames({
+                                            active: selectedCategory === "1",
+                                            'rounded-pill': selectedCategory === "1",
+                                            'badge': selectedCategory === "1"
+                                        })}>Places</li>
+                                        <li onClick={() => {
+                                            toggleSelectedCategory("2")
+                                        }} className={classNames({
+                                            active: selectedCategory === "2",
+                                            'rounded-pill': selectedCategory === "2",
+                                            'badge': selectedCategory === "2"
+                                        })}>Events</li>
+                                        <li onClick={() => {
+                                            toggleSelectedCategory("3")
+                                        }} className={classNames({
+                                            active: selectedCategory === "3",
+                                            'rounded-pill': selectedCategory === "3",
+                                            'badge': selectedCategory === "3"
+                                        })}>Restaurants</li>
+                                        <li onClick={() => {
+                                            toggleSelectedCategory("4")
+                                        }} className={classNames({
+                                            active: selectedCategory === "4",
+                                            'rounded-pill': selectedCategory === "4",
+                                            'badge': selectedCategory === "4"
+                                        })}>Hotels</li>
+                                    </ul>
+                                    {/* </SimpleBar> */}
                                 </div>
-                                <form className='d-flex flex-column flex-lg-row align-items-center p-2 form-wrapper rounded'>
+                                <form style={{ zIndex: 0 }} className='d-flex position-relative flex-column flex-lg-row align-items-center p-2 form-wrapper rounded'>
                                     <Input
                                         bsSize='lg'
                                         style={{ borderRadius: 0 }}
