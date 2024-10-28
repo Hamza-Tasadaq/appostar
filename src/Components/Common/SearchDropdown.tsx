@@ -62,10 +62,16 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                             </NavLink>
                         </NavItem>
                     </Nav>
-                    <TabContent activeTab={activeTab} className="text-muted" >
+                    <TabContent activeTab={activeTab} className="text-muted" style={{
+                        height: "calc(100dvh - 202px)"
+                    }}
+                    >
                         <TabPane tabId="1" id="categories">
                             <SimpleBar
-                                className=" full-screen-dropdown">
+                                style={{
+                                    height: "calc(100dvh - 196px)"
+                                }}
+                                className="-screen-dropdown">
                                 <div className="text-reset rounded search-item d-block dropdown-item position-relative active">
                                     <div className="d-flex align-items-center category-cover position-relative">
                                         <img
@@ -98,6 +104,24 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                                             >
                                                 <i className='ri   ri-hotel-line fs-4 mr-2'></i>
                                                 Hotels (14)
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="text-reset rounded search-item d-block dropdown-item position-relative active">
+                                    <div className="d-flex align-items-center category-cover position-relative">
+                                        <img
+                                            src='https://townhub.kwst.net/images/all/12.jpg'
+                                            className="w-100 object-fit-cover h-100  rounded"
+                                            alt="user-pic"
+                                        />
+                                        <div className='position-absolute category-button bottom-0 start-0 end-0 p-2'>
+                                            <Button
+                                                color="danger"
+                                                className="w-100 rounded-pill d-flex align-items-center justify-content-center gap-3"
+                                            >
+                                                <i className='ri  ri-restaurant-2-line fs-4 mr-2'></i>
+                                                Restaurants (6)
                                             </Button>
                                         </div>
                                     </div>
@@ -139,7 +163,7 @@ const SearchDropdown = ({ isSearchDropdown, toggleSearchDropdown }: SearchDropdo
                         </TabPane>
                     </TabContent>
                     <Row>
-                        <Col className='ps-4 pe-4 pb-4'>
+                        <Col className='p-4 search-button-wrapper'>
                             <button onClick={() => { }} className='btn  w-100 btn-primary '>
                                 Search
                             </button>
