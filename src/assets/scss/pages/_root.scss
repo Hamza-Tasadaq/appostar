@@ -57,21 +57,20 @@
         }
         li.active {
           font-weight: 600;
-          background-color: var(--#{$prefix}primary);
-          color: white;
-          border: 1px solid white;
+          // background-color: var(--#{$prefix}primary);
+          // color: white;
+          // border: 1px solid white;
+
+          color: var(--#{$prefix}primary);
           position: relative;
           &::before {
             content: "";
             position: absolute;
             left: 50%;
             bottom: -32px;
-            // bottom: 50px; // Adjust based on positioning
-            // top: -40px;
-            // transform: translateY(-50%);
             transform: translateX(-50%) rotate(45deg);
-            width: 10px;
-            height: 10px;
+            width: 14px;
+            height: 14px;
             background-color: white;
             border-top: 1px solid white;
             border-left: 1px solid white;
@@ -84,7 +83,7 @@
     .form-wrapper {
       max-width: 600px;
       width: 100%;
-      background-color: rgba(#fff, 0.5) !important;
+      background-color: rgba(#fff, 0.2) !important;
     }
     @media (max-width: 767px) {
       h1 {
