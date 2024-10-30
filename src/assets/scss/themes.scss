@@ -4,19 +4,18 @@
 // @import "../scss/config/default/app.scss";
 @import "../scss/app.scss";
 // @import "../scss/config/default/custom.scss";
-@import "./components//qrcode";
+@import "./components/qrcode";
 @import "./pages/map";
 @import "./pages/root";
 @import "../scss/custom.scss";
 @import "./shepherd.css";
 @import "./mermaid.min.css";
-
+@import "./pages/comapy-details";
 //RTL
 // @import "../scss/rtl/components-rtl";
 // @import "../scss/rtl/layouts-rtl";
 // @import "../scss/rtl/plugins-rtl";
 // @import "../scss/rtl/pages-rtl";
-
 //Rigthsidebar offcanvas
 .offcanvas-header-dark {
   .btn-close {

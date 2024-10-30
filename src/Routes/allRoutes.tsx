@@ -188,6 +188,7 @@ import Chat from 'pages/Dashboard/Chat';
 import Calendar from 'pages/Dashboard/Calendar';
 // import Map from 'pages/Dashboard/Map';
 import NewMap from 'pages/Dashboard/NewMap';
+import Details from 'pages/Dashboard/company-details/Details';
 // import Offlinepage from "../pages/AuthenticationInner/Errors/Offlinepage";
 
 // // //APi Key
@@ -254,7 +255,8 @@ const authProtectedRoutes = [
     {
         path: "/",
         exact: true,
-        component: <Root />
+        // component: <Root />
+        component: <Details />
     },
     {
         path: "/profile",
@@ -272,13 +274,13 @@ const authProtectedRoutes = [
         path: "/mobile-testing",
         component: <MobileTesting />
     },
-    // {
-    //     path: "/map",
-    //     component: <Map />
-    // },
     {
         path: "/map",
         component: <NewMap />
+    },
+    {
+        path: "/details",
+        component: <Details />
     }
     // { path: "/dashboard-analytics", component: <DashboardAnalytics /> },
     // { path: "/dashboard-crm", component: <DashboardCrm /> },
