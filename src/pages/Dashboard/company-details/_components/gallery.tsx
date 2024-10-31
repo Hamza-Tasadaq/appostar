@@ -4,8 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import "swiper/css";
 import "swiper/css/pagination";
+import 'swiper/css/navigation';
 
-import { Autoplay, Mousewheel } from "swiper/modules";
+
+import { Autoplay, Mousewheel, Navigation } from "swiper/modules";
 
 const GalleryDialog = React.lazy(() => import('../../../../Components/Common/gallery-dailog'));
 
@@ -28,17 +30,20 @@ const Gallery = () => {
                     <Swiper
                         direction={"horizontal"}
                         slidesPerView={"auto"}
-                        // centeredSlides={true} // Centers the slides, minimizing extra space
                         spaceBetween={10}
                         mousewheel={true}
-                        loop={false} // Can change to true if you want a continuous loop without gaps
+                        loop={false}
                         autoplay={{
                             delay: 2000,
                             disableOnInteraction: false,
                         }}
-                        // loopFillGroupWithBlank={true} // Use if loop is enabled
-                        modules={[Autoplay, Mousewheel]}
+                        modules={[
+                            Autoplay,
+                            Mousewheel,
+                            Navigation
+                        ]}
                         className="mySwiper vertical-swiper"
+                        navigation={true}
                     >
                         {
                             Array.from({ length: 6 })?.map((_, index) =>
