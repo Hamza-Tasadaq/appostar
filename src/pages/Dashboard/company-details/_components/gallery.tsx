@@ -27,14 +27,16 @@ const Gallery = () => {
                 <CardBody>
                     <Swiper
                         direction={"horizontal"}
-                        slidesPerView={1.5}
+                        slidesPerView={"auto"}
+                        // centeredSlides={true} // Centers the slides, minimizing extra space
                         spaceBetween={10}
                         mousewheel={true}
-                        loop={false}
+                        loop={false} // Can change to true if you want a continuous loop without gaps
                         autoplay={{
                             delay: 2000,
                             disableOnInteraction: false,
                         }}
+                        // loopFillGroupWithBlank={true} // Use if loop is enabled
                         modules={[Autoplay, Mousewheel]}
                         className="mySwiper vertical-swiper"
                     >
