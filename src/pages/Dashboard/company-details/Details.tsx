@@ -15,6 +15,7 @@ import Banner from './_components/banner'
 import Cover from './_components/cover'
 import Stats from './_components/stats'
 import Navigation from './_components/navigation'
+import Faqs from './_components/faqs'
 
 const Details = () => {
     return (
@@ -69,6 +70,7 @@ const Details = () => {
                             <Description />
                             <ListingFeatures />
                             <Gallery />
+                            <Faqs />
                             <Stats />
                             <ListingReviews />
                             <AddReview />

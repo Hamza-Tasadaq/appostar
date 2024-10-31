@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Navigation = () => {
     return (
-        <ul className='list-unstyled navigation-list mb-0 rounded-top d-flex justify-content-center justify-content-md-start align-items-center gap-4'>
+        <ul className='list-unstyled navigation-list mb-0 rounded-top d-flex justify-content-between justify-content-md-start align-items-center gap-4'>
             <li>
                 <Link to={""} >
                     <i className='ri me-md-1 ri-home-line fs-4'></i>
