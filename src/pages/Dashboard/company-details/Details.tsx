@@ -17,6 +17,7 @@ import Stats from './_components/stats'
 import Navigation from './_components/navigation'
 import Faqs from './_components/faqs'
 import OurTrainer from './_components/our-trainer'
+import ScrollToTop from './_components/scroll-to-top'
 
 const Details = () => {
     return (
@@ -87,6 +88,7 @@ const Details = () => {
                         </Col>
                     </Row>
                 </Container>
+                <ScrollToTop />
             </div>
         </React.Fragment>
     )
