@@ -1,10 +1,9 @@
-import React from 'react'
 import { Card, CardBody, Col, Row } from 'reactstrap'
 
 const Stats = () => {
     return (
         <Row>
-            <Col md={4}>
+            <Col sm={6} md={12} lg={6} xl={4}>
                 <Card className="card-animate">
                     <CardBody>
                         <div className="d-flex justify-content-between">
@@ -28,7 +27,7 @@ const Stats = () => {
                     </CardBody>
                 </Card>
             </Col>
-            <Col md={4}>
+            <Col sm={6} md={12} lg={6} xl={4}>
                 <Card className="card-animate">
                     <CardBody>
                         <div className="d-flex justify-content-between">
@@ -52,7 +51,7 @@ const Stats = () => {
                     </CardBody>
                 </Card>
             </Col>
-            <Col md={4}>
+            <Col sm={12} lg={12} xl={4}>
                 <Card className="card-animate">
                     <CardBody>
                         <div className="d-flex justify-content-between">

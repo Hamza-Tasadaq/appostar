@@ -49,7 +49,6 @@ const Gallery = () => {
                                     </div>
                                 </SwiperSlide>)
                         }
-
                     </Swiper>
                 </CardBody>
             </Card>

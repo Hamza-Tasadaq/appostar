@@ -15,6 +15,7 @@ import Banner from './_components/banner'
 import { Link } from 'react-router-dom'
 import Cover from './_components/cover'
 import Stats from './_components/stats'
+import Navigation from './_components/navigation'
 
 const Details = () => {
     return (
@@ -28,22 +29,7 @@ const Details = () => {
                         <Col>
                             <Card>
                                 <CardBody className='w-100 d-flex align-items-center justify-content-between'>
-                                    <ul className='list-unstyled m-0 d-flex align-items-center gap-4'>
-                                        <li>
-                                            <Link to={""} >
-                                                <i className='ri me-1 ri-home-line fs-4'></i>
-                                                Home</Link>
-                                        </li>
-                                        <li>
-                                            <Link to={""}>
-                                                <i className='ri me-1 ri-chat-3-line fs-4'></i>
-                                                Review</Link>
-                                        </li>
-                                        <li>
-                                            <Link to={""}>
-                                                <i className='ri me-1 ri-chat-3-line fs-4'></i>Chat</Link>
-                                        </li>
-                                    </ul>
+                                    <Navigation />
                                     <ul className='list-unstyled m-0 d-flex align-items-center gap-2'>
                                         <li>
                                             <Button color='primary'>
@@ -79,7 +65,7 @@ const Details = () => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col lg={8}>
+                        <Col xxl={8}>
                             <Cover />
                             <Description />
                             <ListingFeatures />
@@ -88,7 +74,7 @@ const Details = () => {
                             <ListingReviews />
                             <AddReview />
                         </Col>
-                        <Col lg={4}>
+                        <Col xxl={4}>
                             <WorkingHours />
                             <LocationContact />
                             <PriceRange />

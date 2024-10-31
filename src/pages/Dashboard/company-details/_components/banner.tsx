@@ -1,4 +1,3 @@
-import React from 'react'
 import { Badge, Button } from 'reactstrap'
 
 const Banner = () => {
@@ -6,7 +5,7 @@ const Banner = () => {
         <div className='banner-wrapper d-flex align-items-end'>
             <img src='https://townhub.kwst.net/images/bg/6.jpg' alt='hero1' />
             <div className='position-relative banner-content w-100'>
-                <div className='d-flex align-items-center w-100 justify-content-between'>
+                <div className='d-flex flex-column flex-md-row align-items-md-center gap-3 w-100 justify-content-between'>
                     <div>
                         <div className='d-flex align-items-center gap-2'>
                             <h1 className='title'>Iconic Cafe in Manhattan</h1>
@@ -36,7 +35,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <hr />
-                <div className='d-flex align-items-center justify-content-between'>
+                <div className='d-flex flex-column flex-md-row align-items-md-center gap-2 justify-content-between'>
                     <ul className='list-unstyled d-flex align-items-center flex-wrap category gap-3'>
                         <li className='d-flex align-items-center gap-2'>
                             <Button color='success' className='btn-icon rounded-circle'>
