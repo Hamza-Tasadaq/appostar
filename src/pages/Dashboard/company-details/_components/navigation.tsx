@@ -2,24 +2,30 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Navigation = () => {
-
     return (
-        <ul className='list-unstyled m-0 d-none d-flex align-items-center gap-4'>
+        <ul className='list-unstyled navigation-list mb-0 rounded-top d-flex justify-content-center justify-content-md-start align-items-center gap-4'>
             <li>
                 <Link to={""} >
                     <i className='ri me-1 ri-home-line fs-4'></i>
-                    Home
+                    <span className='d-none d-md-inline'>
+                        Home
+                    </span>
                 </Link>
             </li>
             <li>
                 <Link to={""}>
                     <i className='ri me-1 ri-chat-3-line fs-4'></i>
-                    Review
+                    <span className='d-none d-md-inline'>
+                        Review
+                    </span>
                 </Link>
             </li>
             <li>
                 <Link to={""}>
-                    <i className='ri me-1 ri-chat-3-line fs-4'></i>Chat
+                    <i className='ri me-1 ri-chat-3-line fs-4'></i>
+                    <span className='d-none d-md-inline'>
+                        Chat
+                    </span>
                 </Link>
             </li>
         </ul>

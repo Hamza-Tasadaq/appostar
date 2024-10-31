@@ -254,3 +254,16 @@
     }
   }
 }
+
+// Navigation List
+.navigation-list {
+  @media (max-width: 567.98px) {
+    background-color: var(--vz-card-bg);
+    padding: var(--vz-card-spacer-y) var(--vz-card-spacer-x);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+}

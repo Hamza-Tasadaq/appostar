@@ -20,7 +20,7 @@ import Navigation from './_components/navigation'
 const Details = () => {
     return (
         <React.Fragment>
-            <div className="page-content no-padding-bottom-md no-padding-x overflow-x-hidden-md padding-top-large-sm">
+            <div className="page-content no-padding-bottom-md no-padding-x overflow-x-hidden-md padding-top-small-sm">
                 <Container fluid className='no-padding-x overflow-x-hidden-md position-relative'>
                     <Row className='mb-3'>
                         <Banner />

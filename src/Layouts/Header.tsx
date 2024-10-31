@@ -227,7 +227,7 @@ const Header = ({ headerClass }: any) => {
                     </div>
                 </div>
                 {
-                    (isSmallScreen && !pathname?.includes("/chat")) &&
+                    (isSmallScreen && !(pathname?.includes("/chat") || pathname === "/")) &&
 
                     <nav className='navbar-header d-md-none w-100 h-auto pb-2'>
                         <ul className='d-flex w-100 justify-content-between mb-0 align-items-center list-unstyled'>
