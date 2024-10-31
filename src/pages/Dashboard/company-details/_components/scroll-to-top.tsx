@@ -25,13 +25,7 @@ const ScrollToTop = () => {
                 <Button
                     color="primary"
                     onClick={scrollToTop}
-                    style={{
-                        position: 'fixed',
-                        bottom: '20px',
-                        right: '20px',
-                        zIndex: 1000,
-                    }}
-                    className='btn-icon'
+                    className='btn-icon scroll-to-top'
                 >
                     <i className="ri-arrow-up-line"></i>
                 </Button>
