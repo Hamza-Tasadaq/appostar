@@ -10,9 +10,7 @@ const Faqs = () => {
     };
 
     return (
-
         <Card className='comapny-details-card'>
-
             <CardHeader>
                 <h1>Faqs</h1>
             </CardHeader>
@@ -39,9 +37,7 @@ const Faqs = () => {
                         </AccordionBody>
                     </AccordionItem>
                 </Accordion>
-
             </CardBody>
-
         </Card>
     )
 }

@@ -16,6 +16,7 @@ import Cover from './_components/cover'
 import Stats from './_components/stats'
 import Navigation from './_components/navigation'
 import Faqs from './_components/faqs'
+import OurTrainer from './_components/our-trainer'
 
 const Details = () => {
     return (
@@ -67,6 +68,7 @@ const Details = () => {
                     <Row>
                         <Col xxl={8}>
                             <Cover />
+                            <OurTrainer />
                             <Description />
                             <ListingFeatures />
                             <Gallery />
