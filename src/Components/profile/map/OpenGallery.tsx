@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react'
 import { Tooltip } from 'reactstrap'
 
-const Gallery = React.lazy(() => import('./Gallery'));
+const GalleryDialog = React.lazy(() => import('../../Common/gallery-dailog'));
 
 interface OpenGalleryProps {
     position: number
@@ -13,14 +13,13 @@ const OpenGallery = ({ position }: OpenGalleryProps) => {
         setTooltipOpen(!tooltipOpen);
     };
 
-
     const [openGallery, setOpenGallery] = useState<boolean>(false);
     return (
         <>
             {
                 openGallery &&
                 <Suspense fallback={<></>}>
-                    <Gallery open={openGallery} setOpen={setOpenGallery} />
+                    <GalleryDialog open={openGallery} setOpen={setOpenGallery} />
                 </Suspense>
             }
             <li onClick={() => setOpenGallery(true)} id={`openGalleryToolTip${position}`}>

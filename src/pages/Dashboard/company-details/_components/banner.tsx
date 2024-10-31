@@ -36,7 +36,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <hr />
-                <div>
+                <div className='d-flex align-items-center justify-content-between'>
                     <ul className='list-unstyled d-flex align-items-center flex-wrap category gap-3'>
                         <li className='d-flex align-items-center gap-2'>
                             <Button color='success' className='btn-icon rounded-circle'>
@@ -44,9 +44,19 @@ const Banner = () => {
                             </Button>
                             <p className='mb-0 text-white'>Resaurant</p>
                         </li>
-
                     </ul>
-
+                    <ul className='list-unstyled d-flex align-items-center gap-2'>
+                        <li>
+                            <Button color="success" className='material-shadow-none'>
+                                <i className='ri  ri-eye-line fs-5 me-2'></i>
+                                Viewed - 256 </Button>
+                        </li>
+                        <li>
+                            <Button color="success" className='material-shadow-none'>
+                                <i className='ri ri-bookmark-line fs-5 me-2'></i>
+                                Bookmark - 256 </Button>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div >

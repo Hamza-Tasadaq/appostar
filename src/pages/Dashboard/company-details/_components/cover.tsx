@@ -1,13 +1,29 @@
-import React from 'react'
-import { Card, CardBody } from 'reactstrap'
+import { Suspense, useState } from 'react'
+import { Button, Card, CardBody } from 'reactstrap'
+import VideoPlayerDialog from './video-player-dialog'
 
 const Cover = () => {
+    const [openVideoPlayer, setOpenVideoPlayer] = useState(false)
     return (
-        <Card className='comapny-details-card '>
-            <CardBody className='p-0 overflow-hidden'>
-                <img src="https://townhub.kwst.net/images/all/48.jpg" alt="cover" style={{ width: "100%", height: "100%" }} />
-            </CardBody>
-        </Card>
+        <>
+            {
+                openVideoPlayer &&
+                <Suspense fallback={<></>}>
+                    <VideoPlayerDialog open={openVideoPlayer} setOpen={setOpenVideoPlayer} />
+                </Suspense>
+            }
+            <Card className='comapny-details-card cover-card'>
+                <CardBody className='p-0 overflow-hidden position-relative'>
+                    <img src="https://townhub.kwst.net/images/all/48.jpg" className='rounded' alt="cover" />
+                    <Button onClick={() => {
+                        setOpenVideoPlayer(true)
+                    }} className='position-absolute rounded-pill' color='primary'>
+                        <i className='ri  ri-play-circle-line me-2'></i>
+                        Promo
+                    </Button>
+                </CardBody>
+            </Card>
+        </>
     )
 }
 

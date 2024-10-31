@@ -1,8 +1,7 @@
-import React, { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { Carousel, CarouselControl, CarouselItem, Modal, ModalBody, ModalHeader } from 'reactstrap'
 
-interface GalleryProps {
-
+interface GalleryDialogProps {
     open: boolean,
     setOpen: Dispatch<SetStateAction<boolean>>
 }
@@ -29,7 +28,7 @@ const items = [
     },
 ];
 
-const Gallery = ({ setOpen, open }: GalleryProps) => {
+const GalleryDialog = ({ setOpen, open }: GalleryDialogProps) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
 
@@ -87,4 +86,4 @@ const Gallery = ({ setOpen, open }: GalleryProps) => {
     )
 }
 
-export default Gallery
+export default GalleryDialog
