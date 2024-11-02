@@ -21,7 +21,10 @@ import Banner from './_components/banner'
 const Details = () => {
     return (
         <React.Fragment>
-            <div style={{ paddingLeft: 0, paddingRight: 0 }} className="page-content no-padding-bottom-md no-padding-x overflow-x-hidden-md padding-top-small-sm">
+            <div className="page-content ps-0 pe-0 no-padding-bottom-md no-padding-x overflow-x-hidden-md padding-top-small-sm">
+                <Row className='ms-0 me-0 mb-3'>
+                    <Banner />
+                </Row>
                 <Row className='' style={{ position: "sticky", top: "70px", zIndex: 20, left: 0, right: 0, margin: 0 }}>
                     <Col style={{ padding: 0 }}>
                         <Card>
@@ -49,9 +52,7 @@ const Details = () => {
                 </Row>
 
                 <Container fluid className='no-padding-x overflow-x-hidden-md position-relative'>
-                    <Row className='mb-3'>
-                        <Banner />
-                    </Row>
+
                     <Row>
                         <Col xxl={8}>
                             <Cover />
