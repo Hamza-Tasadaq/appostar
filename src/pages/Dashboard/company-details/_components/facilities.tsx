@@ -1,11 +1,11 @@
 import React from 'react'
 import { Button, Card, CardBody, CardHeader } from 'reactstrap'
 
-const ListingFeatures = () => {
+const Facilities = () => {
     return (
         <Card className='comapny-details-card listing-features'>
             <CardHeader>
-                <h1>ListingFeatures</h1>
+                <h1>Facilities</h1>
             </CardHeader>
             <CardBody>
                 <ul className='list-unstyled d-flex align-items-center flex-wrap listing-features-list gap-3'>
@@ -46,4 +46,4 @@ const ListingFeatures = () => {
     )
 }
 
-export default ListingFeatures
+export default Facilities

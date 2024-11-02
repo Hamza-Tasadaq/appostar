@@ -2,11 +2,6 @@ import React, { Suspense, useState } from 'react'
 import { Button, Card, CardBody, CardHeader } from 'reactstrap'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import "swiper/css";
-import "swiper/css/pagination";
-import 'swiper/css/navigation';
-
-
 import { Autoplay, Mousewheel, Navigation } from "swiper/modules";
 
 const GalleryDialog = React.lazy(() => import('../../../../Components/Common/gallery-dailog'));

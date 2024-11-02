@@ -14,13 +14,16 @@ const Cover = () => {
             }
             <Card className='comapny-details-card cover-card'>
                 <CardBody className='p-0 overflow-hidden position-relative'>
-                    <img src="https://townhub.kwst.net/images/all/48.jpg" className='rounded' alt="cover" />
-                    <Button onClick={() => {
-                        setOpenVideoPlayer(true)
-                    }} className='position-absolute rounded-pill' color='primary'>
-                        <i className='ri  ri-play-circle-line me-2'></i>
-                        Promo
-                    </Button>
+                    <video
+                        width="100%"
+                        height="auto"
+                        controls
+                        style={{ maxWidth: '800px', margin: "0 auto" }}
+                        className='rounded'
+                    >
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                 </CardBody>
             </Card>
         </>

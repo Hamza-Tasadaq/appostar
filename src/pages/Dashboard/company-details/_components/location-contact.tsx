@@ -1,5 +1,5 @@
 
-import { Card, CardBody, CardHeader } from 'reactstrap'
+import { Button, Card, CardBody, CardHeader, Col } from 'reactstrap'
 import LocationMap from './location-map'
 
 const LocationContact = () => {
@@ -15,43 +15,29 @@ const LocationContact = () => {
                     <LocationMap />
                 </div>
                 <ul className='list-unstyled contacts-list'>
-                    <li className='d-flex align-items-center m-0 pb-1 pt-1 justify-content-between gap-3' >
+                    <li className='d-flex align-items-center m-0 pb-1 pt-1 justify-content-between gap-2' >
                         <div className='d-flex align-items-center gap-1'>
                             <i className=' bx bx-map-pin fs-4 text-primary'></i>
-                            <h5 className='m-0'>Address:</h5>
                         </div>
                         <div className='flex-grow-1'>
                             <p className='m-0'>Milan, Italy, Europe</p>
                         </div>
                     </li>
-                    <li className='d-flex align-items-center m-0 pb-1 pt-1 justify-content-between gap-3' >
+                    <li className='d-flex align-items-center m-0 pb-1 pt-1 justify-content-between gap-1' >
                         <div className='d-flex align-items-center gap-1'>
-                            <i className=' bx bx-phone fs-4 text-primary'></i>
-                            <h5 className='m-0'>Phone:</h5>
+                            <i className='ri ri-map-pin-4-line fs-4 text-primary'></i>
                         </div>
                         <div className='flex-grow-1'>
-                            <p className='m-0'>+7(123)987654321</p>
-                        </div>
-                    </li>
-                    <li className='d-flex align-items-center m-0 pb-1 pt-1 justify-content-between gap-3' >
-                        <div className='d-flex align-items-center gap-1'>
-                            <i className='ri  ri-mail-send-line fs-4 text-primary'></i>
-                            <h5 className='m-0'>Email:</h5>
-                        </div>
-                        <div className='flex-grow-1'>
-                            <p className='m-0'>admin@apposto.com</p>
-                        </div>
-                    </li>
-                    <li className='d-flex align-items-center m-0 pb-1 pt-1 justify-content-between gap-3' >
-                        <div className='d-flex align-items-center gap-1'>
-                            <i className='ri ri-earth-line fs-4 text-primary'></i>
-                            <h5 className='m-0'>Website:</h5>
-                        </div>
-                        <div className='flex-grow-1'>
-                            <p className='m-0'>www.apposto.com</p>
+                            <p className='m-0'>5.9Km by you</p>
                         </div>
                     </li>
                 </ul>
+                <Col>
+                    <Button color='primary'>
+                        <i className='ri  ri-send-plane-fill me-2'></i>
+                        Open in Maps
+                    </Button>
+                </Col>
             </CardBody>
         </Card>
     )

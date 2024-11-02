@@ -3,7 +3,7 @@ import { Button, Card, CardBody, CardHeader } from 'reactstrap'
 
 const Description = () => {
     return (
-        <Card className='comapny-details-card '>
+        <Card className='comapny-details-card description'>
             <CardHeader>
                 <h1>Description</h1>
             </CardHeader>
@@ -14,6 +14,9 @@ const Description = () => {
                     <br />
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.
                 </p>
+                <div className='mb-3'>
+                    <img className='rounded' src='https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='store' />
+                </div>
                 <Button color='primary' className='d-flex align-items-center'>
                     Visit Website
                     <i className='ri  ri-arrow-drop-right-line ms-2 fs-4'></i>

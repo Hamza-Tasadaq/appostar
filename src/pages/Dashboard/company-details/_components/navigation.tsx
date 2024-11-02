@@ -7,8 +7,16 @@ const Navigation = () => {
             <li>
                 <Link to={""} >
                     <i className='ri me-md-1 ri-home-line fs-4'></i>
-                    <span className='d-none d-md-inline'>
+                    {/* <span className='d-none d-md-inline'>
                         Home
+                    </span> */}
+                </Link>
+            </li>
+            <li>
+                <Link to={""} >
+                    <i className='ri me-md-1 ri-home-line fs-4'></i>
+                    <span className='d-none d-md-inline'>
+                        Reviews
                     </span>
                 </Link>
             </li>
@@ -16,7 +24,7 @@ const Navigation = () => {
                 <Link to={""}>
                     <i className='ri me-md-1 ri-chat-3-line fs-4'></i>
                     <span className='d-none d-md-inline'>
-                        Review
+                        Reservations
                     </span>
                 </Link>
             </li>
@@ -24,7 +32,7 @@ const Navigation = () => {
                 <Link to={""}>
                     <i className='ri me-md-1 ri-chat-3-line fs-4'></i>
                     <span className='d-none d-md-inline'>
-                        Chat
+                        Shop
                     </span>
                 </Link>
             </li>
@@ -32,7 +40,7 @@ const Navigation = () => {
                 <Link to={""}>
                     <i className='ri me-md-1 ri-list-check-2 fs-4'></i>
                     <span className='d-none d-md-inline'>
-                        List
+                        My Store
                     </span>
                 </Link>
             </li>
