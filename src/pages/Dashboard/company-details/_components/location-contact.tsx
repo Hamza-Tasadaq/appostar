@@ -1,5 +1,5 @@
 
-import { Button, Card, CardBody, CardHeader, Col } from 'reactstrap'
+import { Button, Card, CardBody, Col } from 'reactstrap'
 import LocationMap from './location-map'
 
 const LocationContact = () => {

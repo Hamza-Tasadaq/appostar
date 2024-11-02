@@ -1,5 +1,5 @@
 import { Suspense, useState } from 'react'
-import { Button, Card, CardBody } from 'reactstrap'
+import { Card, CardBody } from 'reactstrap'
 import VideoPlayerDialog from './video-player-dialog'
 
 const Cover = () => {
