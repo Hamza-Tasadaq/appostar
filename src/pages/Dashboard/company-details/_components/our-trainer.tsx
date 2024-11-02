@@ -11,8 +11,27 @@ const OurTrainer = () => {
 
                 <Swiper
                     direction={"horizontal"}
-                    slidesPerView={"auto"}
+                    slidesPerView={1}
                     spaceBetween={10}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                        },
+                        1400: {
+                            slidesPerView: 3,
+                            spaceBetween: 10
+                        }
+                    }}
+
                     mousewheel={true}
                     loop={false}
                     autoplay={{

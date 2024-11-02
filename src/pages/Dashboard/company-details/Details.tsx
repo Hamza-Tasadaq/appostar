@@ -16,6 +16,7 @@ import Faqs from './_components/faqs'
 import OurTrainer from './_components/our-trainer'
 import ScrollToTop from './_components/scroll-to-top'
 import Facilities from './_components/facilities'
+import Banner from './_components/banner'
 
 const Details = () => {
     return (
@@ -48,9 +49,9 @@ const Details = () => {
                 </Row>
 
                 <Container fluid className='no-padding-x overflow-x-hidden-md position-relative'>
-                    {/* <Row className='mb-3'>
+                    <Row className='mb-3'>
                         <Banner />
-                    </Row> */}
+                    </Row>
                     <Row>
                         <Col xxl={8}>
                             <Cover />
@@ -59,7 +60,7 @@ const Details = () => {
                             <Facilities />
                             <Gallery />
                             <Faqs />
-                            <Stats />
+                            {/* <Stats /> */}
                             <ListingReviews />
                             <AddReview />
                         </Col>

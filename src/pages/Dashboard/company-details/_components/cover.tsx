@@ -18,7 +18,8 @@ const Cover = () => {
                         width="100%"
                         height="auto"
                         controls
-                        style={{ maxWidth: '800px', margin: "0 auto" }}
+                        // style={{ maxWidth: ' margin: "0 auto" }}
+                        style={{ objectFit: "cover" }}
                         className='rounded'
                     >
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />

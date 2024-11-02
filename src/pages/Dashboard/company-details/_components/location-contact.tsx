@@ -6,9 +6,9 @@ const LocationContact = () => {
     return (
 
         <Card className='comapny-details-card location-and-contact'>
-            <CardHeader>
+            {/* <CardHeader>
                 <h1>Location & Contact</h1>
-            </CardHeader>
+            </CardHeader> */}
 
             <CardBody className='p-0'>
                 <div className='location-map-container'>
