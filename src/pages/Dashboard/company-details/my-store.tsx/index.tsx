@@ -7,6 +7,7 @@ import MenuList from './_components/menu-list'
 import ShippingAndBillingInfo from './_components/shipping-and-billing-info'
 import OrderStatus from './_components/order-status'
 import OrderDetailsTable from './_components/order-details-table'
+import PricingTable from './_components/pricing-table'
 
 const Store = () => {
     return (
@@ -35,6 +36,7 @@ const Store = () => {
                                 <CardBody className=''>
                                     <OrderStatus />
                                     <ShippingAndBillingInfo />
+                                    <PricingTable />
                                     <OrderDetailsTable />
                                 </CardBody>
                             </Card>
