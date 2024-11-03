@@ -5,7 +5,7 @@ const WalletBalance = () => {
         <Card className='wallet-card'>
             <CardHeader className='p-0 overflow-hidden'>
                 <div>
-                    <img src={`https://themes.themesbrand.com/velzon/react-ts/master/static/media/img-9.7c9a4799283c4f821712.jpg`} alt="" className="img-fluid" />
+                    <img src={`https://themes.themesbrand.com/velzon/react-ts/master/static/media/img-9.7c9a4799283c4f821712.jpg`} alt="" className="img-fluid w-100 object-fit" />
                 </div>
             </CardHeader>
             <CardBody className='position-relative'>

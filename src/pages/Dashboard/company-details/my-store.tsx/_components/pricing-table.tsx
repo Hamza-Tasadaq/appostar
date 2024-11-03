@@ -5,7 +5,6 @@ const PricingTable = () => {
     return (
         <Card>
             <CardBody>
-
                 <table className="table table-nowrap">
                     <thead>
                         <tr>
@@ -30,8 +29,10 @@ const PricingTable = () => {
                             <td className='text-center'>190,00€</td>
                             <td></td>
                         </tr>
-                        <tr className='text-center'>
-                            <Button>View more</Button>
+                        <tr>
+                            <td colSpan={6} className="text-center">
+                                <button className='btn btn-ghost-primary'>View more</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
