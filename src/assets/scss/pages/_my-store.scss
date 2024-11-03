@@ -48,3 +48,46 @@
     }
   }
 }
+
+.order-details-card {
+  .card-header {
+    h1 {
+      font-family: 600;
+      font-size: 18px;
+      color: var(--#{$prefix}primary);
+    }
+  }
+}
+
+.shipping-info-card,
+.billing-info-card {
+  h4.title {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  h4.value,
+  a.value {
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  a.value {
+    text-decoration: underline;
+  }
+
+  .edit-btn {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+.order-status-card {
+  .card-body {
+    h3 {
+      font-family: 400;
+      font-size: 16px;
+    }
+  }
+}

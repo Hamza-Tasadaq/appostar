@@ -4,9 +4,6 @@ const MenuList = () => {
     return (
         <Card>
             <nav id="navbar-examplenested" className="navbar navbar-dark flex-column">
-                {/* <a className="navbar-brand mb-2" href="#">
-                <img src="..." alt="..." />
-            </a> */}
                 <nav className="nav nav-pills flex-column p-3 w-100">
                     <a className="nav-link" href="#item-1"><i className="ri-dashboard-2-line align-middle me-2 fs-16"></i> <span>Dashboards</span></a>
                     <nav className="nav nav-pills flex-column">
