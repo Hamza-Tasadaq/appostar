@@ -312,3 +312,12 @@
     }
   }
 }
+
+.navigation-wrapper {
+  position: sticky;
+  top: 70px;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  margin: 0;
+}

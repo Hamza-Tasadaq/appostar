@@ -189,6 +189,7 @@ import Calendar from 'pages/Dashboard/Calendar';
 // import Map from 'pages/Dashboard/Map';
 import NewMap from 'pages/Dashboard/NewMap';
 import Details from 'pages/Dashboard/company-details/Details';
+import Store from 'pages/Dashboard/company-details/my-store.tsx';
 // import Offlinepage from "../pages/AuthenticationInner/Errors/Offlinepage";
 
 // // //APi Key
@@ -252,11 +253,19 @@ import Details from 'pages/Dashboard/company-details/Details';
 
 
 const authProtectedRoutes = [
+    // {
+    //     path: "/",
+    //     exact: true,
+    //     // component: <Root />
+    //     component: <Details />
+    // },
     {
         path: "/",
         exact: true,
+        // component: <Profile />
+        // component: <Details />
         // component: <Root />
-        component: <Details />
+        component: <Store />
     },
     {
         path: "/profile",
