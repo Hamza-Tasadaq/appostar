@@ -8,20 +8,14 @@
 
 // Purchase Card
 .purchase-card {
+  &.active {
+    border: 1px solid var(--#{$prefix}primary);
+  }
   .card-header {
     h2 {
       font-weight: 600;
       font-size: 14px;
       color: var(--#{$prefix}primary);
-    }
-  }
-  .card-body {
-    h3 {
-      font-weight: 500;
-      font-size: 12px;
-    }
-    .grand-total {
-      font-weight: 600 !important;
     }
   }
 }
