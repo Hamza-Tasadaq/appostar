@@ -7,7 +7,6 @@ import MenuList from './_components/menu-list'
 import ShippingAndBillingInfo from './_components/shipping-and-billing-info'
 import OrderStatus from './_components/order-status'
 import OrderDetailsTable from './_components/order-details-table'
-import PricingTable from './_components/pricing-table'
 
 const Store = () => {
     return (
@@ -27,17 +26,29 @@ const Store = () => {
                             <Card className='order-details-card'>
                                 <CardHeader className='d-flex align-items-center justify-content-between'>
                                     <h1 className='mb-0'>Order Details - 20231105635099</h1>
-
-                                    <Button color='danger rounded-pill'>
-                                        <i className='ri  ri-emotion-unhappy-line fs-5 me-2'></i>
-                                        Ask Refund
-                                    </Button>
+                                    <div className='d-flex align-items-center gap-2'>
+                                        <Button
+                                            className="btn btn-success btn-sm"
+                                        >
+                                            <i className="ri-download-2-fill align-middle me-1"></i>{" "}
+                                            Invoice
+                                        </Button>
+                                        <Button color='danger' className='btn-sm btn-danger'>
+                                            <i className='ri  ri-emotion-unhappy-line align-middle me-1'></i>
+                                            Ask Refund
+                                        </Button>
+                                        <Button
+                                            className="btn btn-soft-danger material-shadow-none btn-sm mt-2 mt-sm-0"
+                                        >
+                                            <i className="mdi mdi-archive-remove-outline align-middle me-1"></i>{" "}
+                                            Cancel Order
+                                        </Button>
+                                    </div>
                                 </CardHeader>
                                 <CardBody className=''>
-                                    <OrderStatus />
                                     <ShippingAndBillingInfo />
-                                    <PricingTable />
                                     <OrderDetailsTable />
+                                    <OrderStatus />
                                 </CardBody>
                             </Card>
                         </Col>

@@ -10,7 +10,7 @@ const PurchaseHistory = () => {
             <CardBody>
                 <ul className='list-unstyled'>
                     <li>
-                        <Card className='purchase-card mb-2'>
+                        <Card className='border-primary purchase-card mb-2'>
                             <CardHeader className='d-flex align-items-center justify-content-between'>
                                 <h2 className='mb-0'>Order#45</h2>
                                 <Badge color='warning'>Processing</Badge>

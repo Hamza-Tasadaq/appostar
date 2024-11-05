@@ -38,18 +38,33 @@ const productDetails = [
 const OrderDetailsTable = () => {
     return (
         <Card>
-
+            {/* <CardHeader>
+          <div className="d-flex align-items-center">
+            <h5 className="card-title flex-grow-1 mb-0">Order #VL2667</h5>
+            <div className="flex-shrink-0">
+              <Link
+                to="/apps-invoices-details"
+                className="btn btn-success btn-sm"
+              >
+                <i className="ri-download-2-fill align-middle me-1"></i>{" "}
+                Invoice
+              </Link>
+            </div>
+          </div>
+        </CardHeader> */}
             <CardBody>
                 <div className="table-responsive table-card">
                     <table className="table table-nowrap align-middle table-borderless mb-0">
                         <thead className="table-light text-muted">
                             <tr>
-                                <th scope="col">Product Details</th>
-                                <th scope="col">Item Price</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Rating</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">VAT Rate</th>
+                                <th scope="col">VAT Amount</th>
+                                <th scope="col">Discount</th>
                                 <th scope="col" className="text-end">
-                                    Total Amount
+                                    Total
                                 </th>
                             </tr>
                         </thead>
@@ -85,27 +100,60 @@ const OrderDetailsTable = () => {
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>{product.price}</td>
                                         <td>{product.quantity}</td>
+                                        <td>{product.price}</td>
                                         <td>
-                                            <div className="text-warning fs-15">
-                                                <i className="ri-star-fill"></i>
-                                                <i className="ri-star-fill"></i>
-                                                <i className="ri-star-fill"></i>
-                                                <i className="ri-star-fill"></i>
-                                                <i className="ri-star-half-fill"></i>
-                                            </div>
+                                            20%
+                                        </td>
+                                        <td>
+                                            2,90€
+                                        </td>
+                                        <td>
+                                            0,80€
                                         </td>
                                         <td className="fw-medium text-end">{product.amount}</td>
                                     </tr>
                                 </React.Fragment>
                             ))}
+                            <tr className="border-top border-top-dashed">
+                                <td colSpan={5}></td>
+                                <td colSpan={2} className="fw-medium p-0">
+                                    <table className="table table-borderless mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <td>Sub Total :</td>
+                                                <td className="text-end">$359.96</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Discount{" "}
+                                                    <span className="text-muted">(VELZON15)</span>{" "}
+                                                    : :
+                                                </td>
+                                                <td className="text-end">-$53.99</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Shipping Charge :</td>
+                                                <td className="text-end">$65.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estimated Tax :</td>
+                                                <td className="text-end">$44.99</td>
+                                            </tr>
+                                            <tr className="border-top border-top-dashed">
+                                                <th scope="row">Total (USD) :</th>
+                                                <th className="text-end">$415.96</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </CardBody>
-
         </Card>
+
     )
 }
 
