@@ -101,12 +101,12 @@ const PurchaseHistory = () => {
 
                     <li>
                         <Card className='purchase-card mb-2'>
-                            <CardHeader className='d-flex align-items-center justify-content-between'>
+                            <CardHeader className='bg-body d-flex align-items-center justify-content-between'>
                                 <h2 className='mb-0'>Order#45</h2>
                                 <Badge color='danger'>Refunded</Badge>
                             </CardHeader>
 
-                            <CardBody>
+                            <CardBody className='bg-body'>
                                 <div className="d-flex align-items-center mb-2">
                                     <div className="flex-shrink-0">
                                         <p className="text-muted mb-0">Order date:</p>
