@@ -52,3 +52,7 @@
     }
   }
 }
+
+.bg-body {
+  background-color: var(--#{$prefix}body-bg);
+}

@@ -11,12 +11,14 @@ const PurchaseHistory = () => {
                 <ul className='list-unstyled'>
                     <li>
                         <Card className='border-primary purchase-card mb-2'>
-                            <CardHeader className='d-flex align-items-center justify-content-between'>
+                            <CardHeader className='bg-body d-flex align-items-center justify-content-between'>
                                 <h2 className='mb-0'>Order#45</h2>
-                                <Badge color='warning'>Processing</Badge>
+                                <h5>
+                                    <Badge color='warning'>Processing</Badge>
+                                </h5>
                             </CardHeader>
 
-                            <CardBody>
+                            <CardBody className='bg-body'>
                                 <div className="d-flex align-items-center mb-2">
                                     <div className="flex-shrink-0">
                                         <p className="text-muted mb-0">Order date:</p>
@@ -54,11 +56,13 @@ const PurchaseHistory = () => {
                     </li>
                     <li>
                         <Card className='purchase-card mb-2 active'>
-                            <CardHeader className='d-flex align-items-center justify-content-between'>
+                            <CardHeader className='bg-body d-flex align-items-center justify-content-between'>
                                 <h2 className='mb-0'>Order#45</h2>
-                                <Badge color='success'>Complete</Badge>
+                                <h5>
+                                    <Badge color='success'>Complete</Badge>
+                                </h5>
                             </CardHeader>
-                            <CardBody>
+                            <CardBody className='bg-body'>
                                 <div className="d-flex align-items-center mb-2">
                                     <div className="flex-shrink-0">
                                         <p className="text-muted mb-0">Order date:</p>

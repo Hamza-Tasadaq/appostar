@@ -15,7 +15,7 @@ const ShippingAndBillingInfo = () => {
                         >
                             <i className="ri-map-pin-line align-middle me-1"></i>{" "}
                             Change Address
-                        </Button>{" "}
+                        </Button>
                     </CardHeader>
                     <CardBody>
                         <ul className="list-unstyled vstack gap-2 fs-13 mb-0">
