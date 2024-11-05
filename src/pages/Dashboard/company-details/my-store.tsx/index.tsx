@@ -45,7 +45,7 @@ const Store = () => {
                                         </Button>
                                     </div>
                                 </CardHeader>
-                                <CardBody className='p-0 bg-body'>
+                                <CardBody className='ps-0 pe-0 bg-body'>
                                     <ShippingAndBillingInfo />
                                     <OrderDetailsTable />
                                     <OrderStatus />
