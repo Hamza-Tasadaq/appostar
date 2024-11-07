@@ -136,9 +136,9 @@ const Layout = (props: any) => {
     useEffect(() => {
         const humberIcon = document.querySelector(".hamburger-icon") as HTMLElement;
         if (sidebarVisibilitytype === 'show' || layoutType === "vertical" || layoutType === "twocolumn") {
-            humberIcon.classList.remove('open');
+            humberIcon?.classList?.remove('open');
         } else {
-            humberIcon && humberIcon.classList.add('open');
+            humberIcon && humberIcon?.classList?.add('open');
         }
     }, [sidebarVisibilitytype, layoutType]);
 

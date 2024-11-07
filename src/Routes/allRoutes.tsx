@@ -190,6 +190,8 @@ import Calendar from 'pages/Dashboard/Calendar';
 import NewMap from 'pages/Dashboard/NewMap';
 import Details from 'pages/Dashboard/company-details/Details';
 import Store from 'pages/Dashboard/company-details/my-store.tsx';
+import path from 'path';
+import Copy from 'pages/Dashboard/company-details/my-store.tsx/copy';
 // import Offlinepage from "../pages/AuthenticationInner/Errors/Offlinepage";
 
 // // //APi Key
@@ -266,6 +268,10 @@ const authProtectedRoutes = [
         // component: <Details />
         // component: <Root />
         component: <Store />
+    },
+    {
+        path: "/company",
+        component: <Copy />
     },
     {
         path: "/profile",
