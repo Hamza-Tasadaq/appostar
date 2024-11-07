@@ -4,7 +4,7 @@ const ShippingAndBillingInfo = () => {
     return (
         <Row>
             <Col sm={6}>
-                <Card>
+                <Card className={"mb-0 h-100"}>
                     <CardHeader className='d-flex align-items-center justify-content-between'>
                         <h5 className="card-title mb-0">
                             <i className="ri-map-pin-line align-middle me-1 text-muted"></i>{" "}
@@ -29,7 +29,7 @@ const ShippingAndBillingInfo = () => {
                 </Card>
             </Col>
             <Col sm={6}>
-                <Card>
+                <Card className={"mb-0 h-100"}>
                     <CardHeader className='d-flex align-items-center justify-content-between'>
                         <h5 className="card-title mb-0">
                             <i className="ri-map-pin-line align-middle me-1 text-muted"></i>{" "}
@@ -55,7 +55,7 @@ const ShippingAndBillingInfo = () => {
                 </Card>
             </Col>
             <Col sm={6}>
-                <Card>
+                <Card className={"mb-0 h-100"}>
                     <CardHeader className='d-flex align-items-center justify-content-between'>
                         <h5 className="card-title mb-0">
                             <i className="ri-secure-payment-line align-bottom me-1 text-muted"></i>{" "}
@@ -114,7 +114,7 @@ const ShippingAndBillingInfo = () => {
                 </Card>
             </Col>
             <Col sm={6}>
-                <Card>
+                <Card className={"mb-0 h-100"}>
                     <CardHeader>
                         <div className="d-flex">
                             <h5 className="card-title flex-grow-1 mb-0">
@@ -132,7 +132,6 @@ const ShippingAndBillingInfo = () => {
                         </div>
                     </CardBody>
                 </Card>
-
             </Col>
         </Row>
     )

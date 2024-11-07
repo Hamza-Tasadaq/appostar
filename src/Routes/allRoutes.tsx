@@ -270,6 +270,19 @@ const authProtectedRoutes = [
         component: <Store />
     },
     {
+        path: "/profile",
+        component: <Profile />
+    },
+    {
+        path: "/details",
+        component: <Details />,
+
+    },
+    {
+        path: "/root",
+        component: <Root />
+    },
+    {
         path: "/company",
         component: <Copy />
     },
