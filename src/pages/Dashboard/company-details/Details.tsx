@@ -14,7 +14,6 @@ import OurTrainer from './_components/our-trainer'
 import ScrollToTop from './_components/scroll-to-top'
 import Facilities from './_components/facilities'
 import Banner from './_components/banner'
-import NavigationWrapper from './_components/navigation-wrapper'
 
 const Details = () => {
     return (
@@ -23,7 +22,7 @@ const Details = () => {
                 <Row className='ms-0 me-0 mb-3'>
                     <Banner />
                 </Row>
-                <NavigationWrapper />
+                {/* <NavigationWrapper /> */}
                 <Container fluid className='no-padding-x overflow-x-hidden-md position-relative'>
 
                     <Row>

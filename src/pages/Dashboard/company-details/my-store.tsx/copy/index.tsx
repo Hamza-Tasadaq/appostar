@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button, Card, CardBody, CardHeader, Col, Container, Row } from 'reactstrap'
 import ScrollBar from 'react-perfect-scrollbar'
-import NavigationWrapper from '../../_components/navigation-wrapper'
 import WalletBalance from '../_components/wallet-balance'
 import MenuList from '../_components/menu-list'
 import PurchaseHistory from '../_components/purchase-history'

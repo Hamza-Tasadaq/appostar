@@ -108,7 +108,7 @@ const Header = ({ headerClass }: any) => {
     return (
         <React.Fragment>
             {
-                pathname === "/company" ?
+                pathname === "/company" || pathname === "/details" ?
                     <header id="page-topbar">
                         <Row className='navbar-header'>
                             <Col className='p-0'>
