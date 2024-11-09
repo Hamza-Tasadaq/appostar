@@ -122,7 +122,7 @@ const Navdata = () => {
         {
             id: "chat",
             label: "Chat",
-            icon: " ri-chat-1-line",
+            icon: " ri-home-heart-line",
             link: "/#",
             click: function (e: any) {
                 e.preventDefault();
@@ -143,7 +143,7 @@ const Navdata = () => {
         {
             id: "calendar",
             label: "Calendar",
-            icon: "ri-calendar-line",
+            icon: "ri-store-2-line",
             link: "/#",
             click: function (e: any) {
                 e.preventDefault();
@@ -164,7 +164,7 @@ const Navdata = () => {
         {
             id: "map",
             label: "Map",
-            icon: " ri-map-pin-2-line",
+            icon: "ri-star-smile-line",
             link: "/#",
             click: function (e: any) {
                 e.preventDefault();
@@ -181,6 +181,96 @@ const Navdata = () => {
                     parentId: "map",
                 },
             ],
+        },
+        {
+            id: "map",
+            label: "Map",
+            icon: "ri-speak-line",
+            link: "/#",
+            // click: function (e: any) {
+            //     e.preventDefault();
+            //     setIsMap(!isMap);
+            //     setIscurrentState('Map');
+            //     updateIconSidebar(e);
+            // },
+            // stateVariables: isMap,
+            // subItems: [
+            //     {
+            //         id: "map",
+            //         label: "Map",
+            //         link: "/map",
+            //         parentId: "map",
+            //     },
+            // ],
+        },
+        {
+            id: "map",
+            label: "Map",
+            icon: "ri-calendar-check-line",
+            link: "/#",
+            // click: function (e: any) {
+            //     e.preventDefault();
+            //     setIsMap(!isMap);
+            //     setIscurrentState('Map');
+            //     updateIconSidebar(e);
+            // },
+            // stateVariables: isMap,
+            // subItems: [
+            //     {
+            //         id: "map",
+            //         label: "Map",
+            //         link: "/map",
+            //         parentId: "map",
+            //     },
+            // ],
+        },
+
+        {
+            id: "map",
+            label: "Map",
+            icon: "ri-shopping-cart-line",
+            link: "/#",
+            // click: function (e: any) {
+            //     e.preventDefault();
+            //     setIsMap(!isMap);
+            //     setIscurrentState('Map');
+            //     updateIconSidebar(e);
+            // },
+            // stateVariables: isMap,
+            // subItems: [
+            //     {
+            //         id: "map",
+            //         label: "Map",
+            //         link: "/map",
+            //         parentId: "map",
+            //     },
+            // ],
+        },
+
+
+
+
+
+        {
+            id: "map",
+            label: "Map",
+            icon: "ri-gift-2-line",
+            link: "/#",
+            // click: function (e: any) {
+            //     e.preventDefault();
+            //     setIsMap(!isMap);
+            //     setIscurrentState('Map');
+            //     updateIconSidebar(e);
+            // },
+            // stateVariables: isMap,
+            // subItems: [
+            //     {
+            //         id: "map",
+            //         label: "Map",
+            //         link: "/map",
+            //         parentId: "map",
+            //     },
+            // ],
         },
     ];
     return <React.Fragment>{menuItems}</React.Fragment>;
