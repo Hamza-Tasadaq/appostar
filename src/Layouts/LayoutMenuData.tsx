@@ -6,40 +6,10 @@ const Navdata = () => {
     //state data
     const [isDashboard, setIsDashboard] = useState<boolean>(false);
     const [isAuth, setIsAuth] = useState<boolean>(false);
-    const [isChat, setIsChat] = useState<boolean>(false);
-    const [isCalendar, setIsCalendar] = useState<boolean>(false);
+    const [isRoot, setIsRoot] = useState<boolean>(false);
+    const [isStore, setIsStore] = useState<boolean>(false);
     const [isMap, setIsMap] = useState<boolean>(false);
 
-    // Apps
-    // const [isCalendar, setCalendar] = useState<boolean>(false);
-    // const [isEmail, setEmail] = useState<boolean>(false);
-    // const [isSubEmail, setSubEmail] = useState<boolean>(false);
-    // const [isEcommerce, setIsEcommerce] = useState<boolean>(false);
-    // const [isProjects, setIsProjects] = useState<boolean>(false);
-    // const [isTasks, setIsTasks] = useState<boolean>(false);
-    // const [isCRM, setIsCRM] = useState<boolean>(false);
-    // const [isCrypto, setIsCrypto] = useState<boolean>(false);
-    // const [isInvoices, setIsInvoices] = useState<boolean>(false);
-    // const [isSupportTickets, setIsSupportTickets] = useState<boolean>(false);
-    // const [isNFTMarketplace, setIsNFTMarketplace] = useState<boolean>(false);
-    // const [isJobs, setIsJobs] = useState<boolean>(false);
-    // const [isJobList, setIsJobList] = useState<boolean>(false);
-    // const [isCandidateList, setIsCandidateList] = useState<boolean>(false);
-
-
-    // Authentication
-    const [isSignIn, setIsSignIn] = useState<boolean>(false);
-
-    // Pages
-    // const [isProfile, setIsProfile] = useState<boolean>(false);
-
-
-    // Charts
-    // const [isApex, setIsApex] = useState<boolean>(false);
-
-    // Multi Level
-    // const [isLevel1, setIsLevel1] = useState<boolean>(false);
-    // const [isLevel2, setIsLevel2] = useState<boolean>(false);
 
     const [iscurrentState, setIscurrentState] = useState('Dashboard');
 
@@ -66,8 +36,11 @@ const Navdata = () => {
         if (iscurrentState !== 'Auth') {
             setIsAuth(false);
         }
-        if (iscurrentState !== "Chat") {
-            setIsChat(false)
+        if (iscurrentState !== "Root") {
+            setIsRoot(false)
+        }
+        if (iscurrentState !== "Store") {
+            setIsStore(false)
         }
         if (iscurrentState !== "Map") {
             setIsMap(false)
@@ -76,7 +49,7 @@ const Navdata = () => {
         history,
         iscurrentState,
         isDashboard,
-        isChat,
+        isRoot,
     ]);
 
     const menuItems: any = [
@@ -120,67 +93,67 @@ const Navdata = () => {
         //     ],
         // },
         {
-            id: "chat",
-            label: "Chat",
+            id: "root",
+            label: "Root",
             icon: " ri-home-heart-line",
-            link: "/#",
-            click: function (e: any) {
-                e.preventDefault();
-                setIsChat(!isChat);
-                setIscurrentState('Chat');
-                updateIconSidebar(e);
-            },
-            stateVariables: isChat,
-            subItems: [
-                {
-                    id: "chats",
-                    label: "Chats",
-                    link: "/chat",
-                    parentId: "chat",
-                },
-            ],
+            link: "/",
+            // click: function (e: any) {
+            //     e.preventDefault();
+            //     setIsRoot(!isRoot);
+            //     setIscurrentState('Root');
+            //     updateIconSidebar(e);
+            // },
+            stateVariables: isRoot,
+            // subItems: [
+            //     {
+            //         id: "chats",
+            //         label: "Chats",
+            //         link: "/chat",
+            //         parentId: "chat",
+            //     },
+            // ],
         },
         {
-            id: "calendar",
-            label: "Calendar",
+            id: "store",
+            label: "Store",
             icon: "ri-store-2-line",
-            link: "/#",
+            link: "/store",
             click: function (e: any) {
                 e.preventDefault();
-                setIsCalendar(!isCalendar);
-                setIscurrentState('Calendar');
+                setIsStore(!isStore);
+                setIscurrentState('Store');
                 updateIconSidebar(e);
             },
-            stateVariables: isCalendar,
-            subItems: [
-                {
-                    id: "calendar",
-                    label: "Calendar",
-                    link: "/calendar",
-                    parentId: "calendar",
-                },
-            ],
+            stateVariables: isStore,
+            // subItems: [
+            //     {
+            //         id: "calendar",
+            //         label: "Calendar",
+            //         link: "/calendar",
+            //         parentId: "calendar",
+            //     },
+            // ],
         },
         {
             id: "map",
             label: "Map",
             icon: "ri-star-smile-line",
             link: "/#",
-            click: function (e: any) {
-                e.preventDefault();
-                setIsMap(!isMap);
-                setIscurrentState('Map');
-                updateIconSidebar(e);
-            },
-            stateVariables: isMap,
-            subItems: [
-                {
-                    id: "map",
-                    label: "Map",
-                    link: "/map",
-                    parentId: "map",
-                },
-            ],
+            // click: function (e: any) {
+            //     e.preventDefault();
+            //     setIsMap(!isMap);
+            //     setIscurrentState('Map');
+            //     updateIconSidebar(e);
+            // },
+            // stateVariables: isMap,
+            // subItems: [
+            //     {
+            //         id: "map",
+            //         label: "Map",
+            //         link: "/map",
+            //         parentId: "map",
+            //     },
+            // ],
         },
         {
             id: "map",
@@ -229,7 +202,7 @@ const Navdata = () => {
             id: "map",
             label: "Map",
             icon: "ri-shopping-cart-line",
-            link: "/#",
+            link: "/chat",
             // click: function (e: any) {
             //     e.preventDefault();
             //     setIsMap(!isMap);

@@ -1,4 +1,4 @@
-import { useMapState } from 'pages/Dashboard/NewMap'
+import { useMapState } from 'pages/Dashboard/map/index'
 import { useState } from 'react'
 import { Tooltip } from 'reactstrap'
 

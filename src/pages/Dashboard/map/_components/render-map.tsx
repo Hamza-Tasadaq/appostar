@@ -2,7 +2,7 @@ import { DivIcon } from 'leaflet';
 import { Circle, MapContainer, Marker, Popup, TileLayer, useMap, ZoomControl } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { Link } from 'react-router-dom';
-import { useMapState } from 'pages/Dashboard/NewMap';
+import { useMapState } from 'pages/Dashboard/map';
 import 'leaflet/dist/leaflet.css';
 import { useState } from 'react';
 
@@ -24,7 +24,7 @@ const ChangeView = ({ center }: { center: number[] }) => {
     return null;
 };
 
-const Map = () => {
+const RenderMap = () => {
     const { addressCords, setMarkerRef } = useMapState();
     const [userCords, setUserCords] = useState<number[] | null>(null); // State to store user’s current location
     const [circleCenter, setCircleCenter] = useState<number[] | null>(null); // State to store the center of the circle
@@ -122,4 +122,4 @@ const Map = () => {
     );
 };
 
-export default Map;
+export default RenderMap;

@@ -1,9 +1,9 @@
 import React, { createContext, ReactNode, useCallback, useContext, useRef, useState } from 'react';
-import Map from 'Components/profile/map/map';
 import { Marker as LeafletMarker } from 'leaflet';
 import { Col, Container, Row } from 'reactstrap';
-import Filters from 'Components/profile/map/Filters';
-import Tabs from 'Components/profile/map/Tabs';
+import Filters from 'pages/Dashboard/map/_components/Filters';
+import Tabs from 'pages/Dashboard/map/_components/Tabs';
+import RenderMap from './_components/render-map';
 
 // Define the shape of the shared state context
 interface SharedStateContextType {
@@ -68,7 +68,7 @@ export const useMapState = () => {
 };
 
 
-const NewMap = () => {
+const Map = () => {
     return (
         <React.Fragment>
             <SharedStateProvider>
@@ -79,7 +79,7 @@ const NewMap = () => {
                                 <Filters />
                             </Col>
                             <Col className='position-relative ps-0'>
-                                <Map />
+                                <RenderMap />
                             </Col>
                         </Row>
                     </Container>
@@ -92,4 +92,4 @@ const NewMap = () => {
     )
 }
 
-export default NewMap
+export default Map

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
-import { Badge, Button, Container, Input, Row } from 'reactstrap'
-import SimpleBar from 'simplebar-react'
+import { Button, Container, Input, Row } from 'reactstrap'
+import { useNavigate } from 'react-router-dom';
 
 const Root = () => {
     const [selectedCategory, setSelectedCategory] = useState("1")
@@ -9,6 +9,9 @@ const Root = () => {
     const toggleSelectedCategory = (selectedCategory: string) => {
         setSelectedCategory(selectedCategory)
     }
+
+    const navigate = useNavigate();
+
     return (
         <React.Fragment>
             <div style={{ height: "100dvh" }} className="page-content no-padding-bottom-md no-padding-x overflow-x-hidden-md padding-top-large-sm">
@@ -76,7 +79,9 @@ const Root = () => {
                                         placeholder='All Categories'
                                         className='w-100 w-lg-auto'
                                     />
-                                    <Button size='lg' color='primary' className='w-100 w-lg-auto'>
+                                    <Button size='lg' color='primary' onClick={() => {
+                                        navigate("/map")
+                                    }} className='w-100 w-lg-auto'>
                                         <i className='ri ri-search-2-line me-2'></i>Search
                                     </Button>
                                 </form>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button } from 'reactstrap';
 import Filters from './Filters';
-import Map from './map';
+import Map from '../index';
 
 const Tabs = () => {
     const [currentTab, setCurrentTab] = useState<string>("1");

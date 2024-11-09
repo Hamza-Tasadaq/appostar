@@ -15,7 +15,7 @@ import ScrollToTop from './_components/scroll-to-top'
 import Facilities from './_components/facilities'
 import Banner from './_components/banner'
 
-const Details = () => {
+const Store = () => {
     return (
         <React.Fragment>
             <div className="page-content ps-0 pe-0 no-padding-bottom-md no-padding-x overflow-x-hidden-md padding-top-small-sm">
@@ -53,4 +53,4 @@ const Details = () => {
     )
 }
 
-export default Details
+export default Store

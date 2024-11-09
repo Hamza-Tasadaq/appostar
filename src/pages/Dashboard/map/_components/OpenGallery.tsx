@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react'
 import { Tooltip } from 'reactstrap'
 
-const GalleryDialog = React.lazy(() => import('../../Common/gallery-dailog'));
+const GalleryDialog = React.lazy(() => import('../../../../Components/Common/gallery-dailog'));
 
 interface OpenGalleryProps {
     position: number
