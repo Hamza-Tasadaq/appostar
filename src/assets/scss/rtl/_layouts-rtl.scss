@@ -214,9 +214,7 @@
   }
 
   .main-content {
-    margin-right: calc(
-      #{$twocolumn-menu-width} + #{$twocolumn-menu-iconview-width}
-    );
+    margin-right: calc(#{$twocolumn-menu-width});
     margin-left: 0px;
   }
 

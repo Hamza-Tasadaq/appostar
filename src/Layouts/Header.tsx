@@ -7,26 +7,19 @@ import logoDark from "../assets/images/logo-light.png";
 import logoLight from "../assets/images/logo-dark.png";
 
 import FullScreenDropdown from '../Components/Common/FullScreenDropdown';
-
-import { changeSidebarVisibility } from '../slices/thunks';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { createSelector } from 'reselect';
 import NotificationDropdown from 'Components/Common/NotificationDropdown';
 import SearchDropdown from 'Components/Common/SearchDropdown';
 import classNames from 'classnames';
 import LightDark from 'Components/Common/LightDark';
-import { Button, Card, CardBody, Col, Row } from 'reactstrap';
+import { Button, Col, Row } from 'reactstrap';
 
 const Header = ({ headerClass }: any) => {
     const { pathname } = useLocation()
-    const dispatch: any = useDispatch();
     const navigate = useNavigate()
 
 
-    const selectDashboardData = createSelector(
-        (state: any) => state.Layout,
-        (sidebarVisibilitytype: any) => sidebarVisibilitytype.sidebarVisibilitytype
-    );
 
     const chatLayoutState = createSelector((state: any) => state.ChatLayout, (state) => ({
         isOnChatDetailsPage: state?.isOnChatDetailsPage
@@ -34,42 +27,7 @@ const Header = ({ headerClass }: any) => {
 
     const { isOnChatDetailsPage } = useSelector(chatLayoutState)
 
-    // Inside your component
-    const sidebarVisibilitytype = useSelector(selectDashboardData);
 
-    const toogleMenuBtn = () => {
-        var windowSize = document.documentElement.clientWidth;
-        const humberIcon = document.querySelector(".hamburger-icon") as HTMLElement;
-        dispatch(changeSidebarVisibility("show"));
-
-        if (windowSize > 767)
-            humberIcon?.classList?.toggle('open');
-
-        //For collapse horizontal menu
-        if (document.documentElement.getAttribute('data-layout') === "horizontal") {
-            document.body?.classList?.contains("menu") ? document.body.classList?.remove("menu") : document.body.classList?.add("menu");
-        }
-
-        //For collapse vertical and semibox menu
-        if (sidebarVisibilitytype === "show" && (document.documentElement.getAttribute('data-layout') === "vertical" || document.documentElement.getAttribute('data-layout') === "semibox")) {
-            if (windowSize < 1025 && windowSize > 767) {
-                document.body?.classList.remove('vertical-sidebar-enable');
-                (document.documentElement.getAttribute('data-sidebar-size') === 'sm') ? document.documentElement.setAttribute('data-sidebar-size', '') : document.documentElement.setAttribute('data-sidebar-size', 'sm');
-            } else if (windowSize > 1025) {
-                document.body?.classList?.remove('vertical-sidebar-enable');
-                (document.documentElement.getAttribute('data-sidebar-size') === 'lg') ? document.documentElement.setAttribute('data-sidebar-size', 'sm') : document.documentElement.setAttribute('data-sidebar-size', 'lg');
-            } else if (windowSize <= 767) {
-                document.body?.classList?.add('vertical-sidebar-enable');
-                document.documentElement.setAttribute('data-sidebar-size', 'lg');
-            }
-        }
-
-
-        //Two column menu
-        if (document.documentElement.getAttribute('data-layout') === "twocolumn") {
-            document.body?.classList?.contains('twocolumn-panel') ? document.body?.classList?.remove('twocolumn-panel') : document.body?.classList?.add('twocolumn-panel');
-        }
-    };
     //Dropdown Toggle
     const [isNotificationDropdown, setIsNotificationDropdown] = useState<boolean>(false);
     const toggleNotificationDropdown = () => {
@@ -236,7 +194,7 @@ const Header = ({ headerClass }: any) => {
                                             <i className=' ri-arrow-left-line fs-2'></i>
                                         </button>
                                     }
-                                    <button
+                                    {/* <button
                                         onClick={toogleMenuBtn}
                                         type="button"
                                         className="d-none d-md-block btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
@@ -246,7 +204,7 @@ const Header = ({ headerClass }: any) => {
                                             <span></span>
                                             <span></span>
                                         </span>
-                                    </button>
+                                    </button> */}
                                     {/* <SearchOption /> */}
                                 </div>
                                 <div className="d-flex align-items-center">

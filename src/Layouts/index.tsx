@@ -149,9 +149,7 @@ const Layout = (props: any) => {
                     headerClass={headerClass}
                     onChangeLayoutMode={onChangeLayoutMode}
                 />
-                <Sidebar
-                    layoutType={layoutType}
-                />
+                <Sidebar />
                 <div className="main-content">
                     {props.children}
                     <div className='d-none d-md-block'>

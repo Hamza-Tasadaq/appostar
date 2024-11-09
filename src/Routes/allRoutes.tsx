@@ -41,10 +41,10 @@ const authProtectedRoutes = [
     //     path: "/profile",
     //     component: <Profile />
     // },
-    {
-        path: "/root",
-        component: <Root />
-    },
+    // {
+    //     path: "/root",
+    //     component: <Root />
+    // },
     // {
     //     path: "/company",
     //     component: <Copy />
