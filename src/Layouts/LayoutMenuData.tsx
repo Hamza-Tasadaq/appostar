@@ -88,37 +88,37 @@ const Navdata = () => {
         //     label: "pages",
         //     isHeader: true,
         // },
-        {
-            id: "authentication",
-            label: "Authentication",
-            icon: "ri-account-circle-line",
-            link: "/#",
-            click: function (e: any) {
-                e.preventDefault();
-                setIsAuth(!isAuth);
-                setIscurrentState('Auth');
-                updateIconSidebar(e);
-            },
-            stateVariables: isAuth,
-            subItems: [
-                {
-                    id: "signIn",
-                    label: "Sign In",
-                    link: "/#",
-                    isChildItem: true,
-                    click: function (e: any) {
-                        e.preventDefault();
-                        setIsSignIn(!isSignIn);
-                    },
-                    parentId: "authentication",
-                    stateVariables: isSignIn,
-                    childItems: [
-                        { id: 1, label: "Basic", link: "/auth-signin-basic" },
-                        { id: 2, label: "Cover", link: "/auth-signin-cover" },
-                    ]
-                }
-            ],
-        },
+        // {
+        //     id: "authentication",
+        //     label: "Authentication",
+        //     icon: "ri-account-circle-line",
+        //     link: "/#",
+        //     click: function (e: any) {
+        //         e.preventDefault();
+        //         setIsAuth(!isAuth);
+        //         setIscurrentState('Auth');
+        //         updateIconSidebar(e);
+        //     },
+        //     stateVariables: isAuth,
+        //     subItems: [
+        //         {
+        //             id: "signIn",
+        //             label: "Sign In",
+        //             link: "/#",
+        //             isChildItem: true,
+        //             click: function (e: any) {
+        //                 e.preventDefault();
+        //                 setIsSignIn(!isSignIn);
+        //             },
+        //             parentId: "authentication",
+        //             stateVariables: isSignIn,
+        //             childItems: [
+        //                 { id: 1, label: "Basic", link: "/auth-signin-basic" },
+        //                 { id: 2, label: "Cover", link: "/auth-signin-cover" },
+        //             ]
+        //         }
+        //     ],
+        // },
         {
             id: "chat",
             label: "Chat",
@@ -246,11 +246,6 @@ const Navdata = () => {
             //     },
             // ],
         },
-
-
-
-
-
         {
             id: "map",
             label: "Map",
