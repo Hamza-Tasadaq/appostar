@@ -19,12 +19,6 @@ import Store from 'pages/Dashboard/store/index.tsx';
 
 
 const authProtectedRoutes = [
-    // {
-    //     path: "/",
-    //     exact: true,
-    //     // component: <Root />
-    //     component: <Details />
-    // },
     {
         path: "/",
         exact: true,
@@ -37,18 +31,10 @@ const authProtectedRoutes = [
         path: "/store",
         component: <Store />,
     },
-    // {
-    //     path: "/profile",
-    //     component: <Profile />
-    // },
-    // {
-    //     path: "/root",
-    //     component: <Root />
-    // },
-    // {
-    //     path: "/company",
-    //     component: <Copy />
-    // },
+    {
+        path: "/map",
+        component: <Map />
+    },
     {
         path: "/profile",
         component: <Profile />
@@ -60,14 +46,6 @@ const authProtectedRoutes = [
     {
         path: "/calendar",
         component: <Calendar />
-    },
-    {
-        path: "/mobile-testing",
-        component: <MobileTesting />
-    },
-    {
-        path: "/map",
-        component: <Map />
     },
     // {
     //     path: "/details",
