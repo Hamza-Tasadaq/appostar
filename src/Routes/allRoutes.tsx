@@ -13,6 +13,7 @@ import Chat from 'pages/Dashboard/Chat';
 import Calendar from 'pages/Dashboard/Calendar';
 import Map from 'pages/Dashboard/map/index';
 import Store from 'pages/Dashboard/store/index.tsx';
+import MyShop from 'pages/Dashboard/store/my-shop';
 // import Copy from 'pages/Dashboard/company-details/my-store.tsx/copy';
 
 
@@ -28,6 +29,10 @@ const authProtectedRoutes = [
     {
         path: "/store",
         component: <Store />,
+    },
+    {
+        path: "/my-shop",
+        component: <MyShop />
     },
     {
         path: "/map",

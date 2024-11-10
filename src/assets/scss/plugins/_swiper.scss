@@ -1,44 +1,30 @@
 //
 // _swiper.scss
 //
-
 .swiper-button-next,
 .swiper-button-prev {
-  height: 32px !important;
-  width: 32px !important;
-  background-color: rgba(var(--#{$prefix}primary-rgb), 0.5);
-  margin-top: 0 !important;
+  height: 32px;
+  width: 32px;
+  background-color: rgba(var(--#{$prefix}primary-rgb), 0.2);
+  backdrop-filter: blur(2px);
   border-radius: 8px;
-  &:hover {
-    background-color: rgba(var(--#{$prefix}primary-rgb), 1);
+  &::after {
+    font-family: remixicon !important;
+    font-size: 28px !important;
+    color: rgba(var(--#{$prefix}primary-rgb), 1);
+    transition: all 0.3s ease;
   }
 }
 
 .swiper-button-prev {
   &::after {
-    color: var(--#{$prefix}primary);
+    content: "\ea64" !important;
   }
 }
 .swiper-button-next {
   &::after {
-    color: var(--#{$prefix}primary-rgb);
+    content: "\ea6e" !important;
   }
-}
-
-.swiper-button-prev {
-  position: absolute;
-  top: 50%;
-  left: 0 !important;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.swiper-button-next {
-  position: absolute;
-  top: 50%;
-  right: 0 !important;
-  transform: translateY(-50%);
-  z-index: 10;
 }
 
 .swiper-pagination-bullet {

@@ -66,13 +66,11 @@ const Header = ({ headerClass }: any) => {
     return (
         <React.Fragment>
             {
-                pathname === "/store" || pathname === "/details" ?
+                pathname === "/store" || pathname === "/my-shop" ?
                     <header id="page-topbar">
                         <Row className='navbar-header'>
                             <Col className='p-0'>
-                                {/* <Card> */}
                                 <div className='w-100 d-flex align-items-center justify-content-between'>
-
                                     <ul className='list-unstyled navigation-list mb-0 rounded-top d-flex justify-content-between justify-content-md-start align-items-center gap-4'>
                                         <li>
                                             <Link to={""} >
@@ -99,7 +97,7 @@ const Header = ({ headerClass }: any) => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to={""}>
+                                            <Link to={"/my-shop"}>
                                                 <i className='ri me-md-1 ri-chat-3-line fs-4'></i>
                                                 <span className='d-none d-md-inline'>
                                                     Shop
@@ -132,7 +130,6 @@ const Header = ({ headerClass }: any) => {
                                         </li>
                                     </ul>
                                 </div>
-                                {/* </Card> */}
                             </Col>
                         </Row>
                     </header> :
