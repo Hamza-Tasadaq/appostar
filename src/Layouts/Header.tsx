@@ -66,7 +66,7 @@ const Header = ({ headerClass }: any) => {
     return (
         <React.Fragment>
             {
-                pathname === "/store" || pathname === "/my-shop" ?
+                pathname === "/store" || pathname === "/my-shop" || pathname.includes("/categories") ?
                     <header id="page-topbar">
                         <Row className='navbar-header'>
                             <Col className='p-0'>
@@ -75,41 +75,31 @@ const Header = ({ headerClass }: any) => {
                                         <li>
                                             <Link to={""} >
                                                 <i className='ri me-md-1 ri-home-line fs-4'></i>
-                                                {/* <span className='d-none d-md-inline'>
-                        Home
-                    </span> */}
+                                                {/* <span className='d-none d-md-inline'>Home</span> */}
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to={""} >
                                                 <i className='ri me-md-1 ri-home-line fs-4'></i>
-                                                <span className='d-none d-md-inline'>
-                                                    Reviews
-                                                </span>
+                                                <span className='d-none d-md-inline'>Reviews</span>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to={""}>
                                                 <i className='ri me-md-1 ri-chat-3-line fs-4'></i>
-                                                <span className='d-none d-md-inline'>
-                                                    Reservations
-                                                </span>
+                                                <span className='d-none d-md-inline'>Reservations</span>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to={"/my-shop"}>
                                                 <i className='ri me-md-1 ri-chat-3-line fs-4'></i>
-                                                <span className='d-none d-md-inline'>
-                                                    Shop
-                                                </span>
+                                                <span className='d-none d-md-inline'>Shop</span>
                                             </Link>
                                         </li>
                                         <li className='d-inline d-md-none'>
                                             <Link to={""}>
                                                 <i className='ri me-md-1 ri-list-check-2 fs-4'></i>
-                                                <span className='d-none d-md-inline'>
-                                                    My Store
-                                                </span>
+                                                <span className='d-none d-md-inline'>My Store</span>
                                             </Link>
                                         </li>
                                     </ul>

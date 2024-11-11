@@ -14,6 +14,7 @@ import Calendar from 'pages/Dashboard/Calendar';
 import Map from 'pages/Dashboard/map/index';
 import Store from 'pages/Dashboard/store/index.tsx';
 import MyShop from 'pages/Dashboard/store/my-shop';
+import Categories from 'pages/Dashboard/store/categories';
 // import Copy from 'pages/Dashboard/company-details/my-store.tsx/copy';
 
 
@@ -21,10 +22,7 @@ const authProtectedRoutes = [
     {
         path: "/",
         exact: true,
-        // component: <Profile />
-        // component: <Details />
         component: <Root />
-        // component: <Store />
     },
     {
         path: "/store",
@@ -33,6 +31,10 @@ const authProtectedRoutes = [
     {
         path: "/my-shop",
         component: <MyShop />
+    },
+    {
+        path: "/categories/:category-id",
+        component: <Categories />
     },
     {
         path: "/map",

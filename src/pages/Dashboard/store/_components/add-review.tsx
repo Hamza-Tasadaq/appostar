@@ -5,7 +5,6 @@ import { Button, Card, CardBody, CardHeader, Col, Input, Row } from 'reactstrap'
 const AddReview = () => {
     const [selectedFiles, setselectedFiles] = useState([]);
     // const [files, setFiles] = useState<any>([]);
-
     function handleAcceptedFiles(files: any) {
         files.map((file: any) =>
             Object.assign(file, {

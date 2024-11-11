@@ -20,16 +20,12 @@ const Sidebar = () => {
                     margin: "0 auto"
                 }} >
                     <ul className="d-flex flex-column gap-2 p-0">
-                        {
-                            navData?.map((item) =>
-                                <Link to={item?.link} key={item?.id} className={classNames("nav-icon ", item?.active?.includes(location.pathname) ? "active" : "")}>
-                                    <i className={classNames("fs-3", item?.icon)}></i>
-                                </Link>
-                            )}
+                        {navData?.map((item) =>
+                            <Link to={item?.link} key={item?.id} className={classNames("nav-icon ", item?.active?.includes(location.pathname) ? "active" : "")}>
+                                <i className={classNames("fs-3", item?.icon)}></i>
+                            </Link>)}
                     </ul>
-
                 </SimpleBar>
-
                 <div className="d-flex align-items-center justify-content-center">
                     <img src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png" width={48} height={48} alt="rounded-circle" />
                 </div>

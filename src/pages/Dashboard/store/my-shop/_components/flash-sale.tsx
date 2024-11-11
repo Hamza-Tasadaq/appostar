@@ -11,7 +11,7 @@ const FlashSale = () => {
                             <i className=' ri-timer-flash-line fs-3 text-primary'></i>
                             <h3 className='mb-0 text-primary'>Flash Sale</h3>
                         </div>
-                        <Link to={"/#"}>View All</Link>
+                        <Link to={"/categories/all"}>View All</Link>
                     </Col>
                     <Col sm={3}>
                         <div className='h-100 w-100 pb-4'>

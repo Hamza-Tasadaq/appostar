@@ -11,7 +11,7 @@ export const navData = [
         label: "Store",
         icon: "ri-store-2-line",
         link: "/store",
-        active: ["/store", "/my-shop"],
+        active: ["/store", "/my-shop", "/categories/"],
     },
     {
         id: "map",
