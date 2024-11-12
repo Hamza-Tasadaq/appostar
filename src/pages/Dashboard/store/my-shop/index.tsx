@@ -5,6 +5,8 @@ import Features from './_components/features'
 import CategoriesSelector from './_components/categories-selector'
 import DiscountGallery from './_components/discount-gallery'
 import FlashSale from './_components/flash-sale'
+import CategorySale from './_components/category-sale'
+import CategorySalesTwo from './_components/category-sales-two'
 
 const MyShop = () => {
     return (
@@ -23,6 +25,8 @@ const MyShop = () => {
                 </Row>
                 <Features />
                 <FlashSale />
+                <CategorySale />
+                <CategorySalesTwo />
             </div>
         </React.Fragment>
     )
