@@ -7,6 +7,13 @@ import classNames from "classnames";
 
 const Sidebar = () => {
     const location = useLocation();
+    const isActive = (activeList: string[]) => {
+        if (location.pathname === "/") {
+            return activeList?.includes(location.pathname)
+        } else {
+            return activeList?.some(listItem => location.pathname?.includes(listItem) && listItem.length > 1 && location.pathname !== '/')
+        }
+    }
 
     return (
         <React.Fragment>
@@ -21,7 +28,7 @@ const Sidebar = () => {
                 }} >
                     <ul className="d-flex flex-column gap-2 p-0">
                         {navData?.map((item) =>
-                            <Link to={item?.link} key={item?.id} className={classNames("nav-icon ", item?.active?.includes(location.pathname) ? "active" : "")}>
+                            <Link to={item?.link} key={item?.id} className={classNames("nav-icon ", isActive(item?.active) ? "active" : "")}>
                                 <i className={classNames("fs-3", item?.icon)}></i>
                             </Link>)}
                     </ul>
